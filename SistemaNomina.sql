@@ -89,6 +89,7 @@ CREATE TABLE Detalle_Nomina
 	ID_Nomina INT IDENTITY PRIMARY KEY,
 	ID_Empleado INT,
 	Sueldo_Base FLOAT,
+	Horas_Trabajadas FLOAT,
 	AFP FLOAT,
 	ARS FLOAT,
 	ISR FLOAT,
