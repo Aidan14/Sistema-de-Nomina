@@ -77,25 +77,25 @@ CREATE TABLE Nomina
 (
 	ID_Nomina INT IDENTITY PRIMARY KEY,
 	ID_Usuario INT,
-	ID_Empleado INT,
 	Fecha DATE,
 	Periodo_Desde DATE,
 	Periodo_Hasta DATE,
 
-	CONSTRAINT FK_Usuario_Nomina FOREIGN KEY (ID_Usuario) REFERENCES Usuario(ID_Usuario),
-	CONSTRAINT FK_Empleado_Nomina FOREIGN KEY (ID_Empleado) REFERENCES Empleado(Cedula),
+	CONSTRAINT FK_Usuario_Nomina FOREIGN KEY (ID_Usuario) REFERENCES Usuario(ID_Usuario)
 )
 
 CREATE TABLE Detalle_Nomina
 (
 	ID_Nomina INT IDENTITY PRIMARY KEY,
+	ID_Empleado INT,
 	Sueldo_Base FLOAT,
 	AFP FLOAT,
 	ARS FLOAT,
 	ISR FLOAT,
 	Sueldo_Neto FLOAT,
 
-	CONSTRAINT FK_Nomina_Detalle FOREIGN KEY (ID_Nomina) REFERENCES Nomina(ID_Nomina)
+	CONSTRAINT FK_Nomina_Detalle FOREIGN KEY (ID_Nomina) REFERENCES Nomina(ID_Nomina),
+	CONSTRAINT FK_Empleado_Nomina FOREIGN KEY (ID_Empleado) REFERENCES Empleado(Cedula)
 )
                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 
