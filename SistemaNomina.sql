@@ -33,13 +33,6 @@ CREATE TABLE Cargo
 	Descripcion NVARCHAR(200)
 )
 
-CREATE TABLE Horario
-(
-	ID_Horario INT IDENTITY PRIMARY KEY,
-	Entrada TIME,
-	Salida TIME
-)
-
 CREATE TABLE Turno
 (
 	ID_Turno INT IDENTITY PRIMARY KEY,
@@ -105,46 +98,6 @@ CREATE TABLE Detalle_Nomina
 	CONSTRAINT FK_Nomina_Detalle FOREIGN KEY (ID_Nomina) REFERENCES Nomina(ID_Nomina)
 )
                                                                                                                                                                                                                                                                                                                                                                                                                                                            
--- PROCEDIMIENTOS --
-
--- PROCEDIMIENTOS: Rol
-
-GO
-CREATE PROCEDURE SP_BUSCAR_ROL
-@Buscar NVARCHAR(50)
-AS
-SELECT * FROM Rol
-WHERE	ID_Rol LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
-
-GO
-CREATE PROCEDURE SP_INSERTAR_ROL
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
-AS
-INSERT INTO Rol
-VALUES(@Nombre, @Contraseña, @Rol)
-
-GO
-CREATE PROCEDURE SP_EDITAR_ROL
-@ID_Rol INT,
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
-AS
-UPDATE Rol
-SET Nombre = @Nombre, Contraseña = @Contraseña, Rol = @Rol
-WHERE ID_Rol = @ID_Rol
-
-GO
-CREATE PROCEDURE SP_ELIMINAR_ROL
-@ID_Rol INT
-AS
-DELETE FROM Rol
-WHERE ID_Rol = @ID_Rol
 
 -- PROCEDIMIENTOS: Usuario
 
@@ -256,45 +209,6 @@ CREATE PROCEDURE SP_ELIMINAR_CARGO
 AS
 DELETE FROM Cargo
 WHERE ID_Cargo = @ID_Cargo
-
--- PROCEDIMIENTOS: Horario
-
-GO
-CREATE PROCEDURE SP_BUSCAR_HORARIO
-@Buscar NVARCHAR(50)
-AS
-SELECT * FROM Horario
-WHERE	ID_Horario LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
-
-GO
-CREATE PROCEDURE SP_INSERTAR_HORARIO
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
-AS
-INSERT INTO Horario
-VALUES(@Nombre, @Contraseña, @Rol)
-
-GO
-CREATE PROCEDURE SP_EDITAR_HORARIO
-@ID_Horario INT,
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
-AS
-UPDATE Horario
-SET Nombre = @Nombre, Contraseña = @Contraseña, Rol = @Rol
-WHERE ID_Horario = @ID_Horario
-
-GO
-CREATE PROCEDURE SP_ELIMINAR_HORARIO
-@ID_Horario INT
-AS
-DELETE FROM Horario
-WHERE ID_Horario = @ID_Horario
 
 --PROCEDIMIENTOS: Turno
 
