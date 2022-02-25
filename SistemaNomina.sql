@@ -36,10 +36,9 @@ CREATE TABLE Cargo
 CREATE TABLE Turno
 (
 	ID_Turno INT IDENTITY PRIMARY KEY,
-	ID_Horario INT,
-	Tipo NVARCHAR(50)
-
-	CONSTRAINT FK_Horario_Jornada FOREIGN KEY (ID_Horario) REFERENCES Horario(ID_Horario)
+	Tipo NVARCHAR(20),
+	Desde TIME,
+	Hasta TIME,
 )
 
 CREATE TABLE Jornada
@@ -56,12 +55,12 @@ CREATE TABLE Jornada
 
 CREATE TABLE Empleado
 (
-	Cedula INT IDENTITY PRIMARY KEY,
+	ID_Empleado INT IDENTITY PRIMARY KEY,
+	Cedula NVARCHAR(20),
 	Nombre NVARCHAR(100),
 	Fecha_Nacimiento DATE,
 	ID_Departamento INT,
 	ID_Cargo INT,
-	ID_Jornada INT,
 	Sexo CHAR,
 	Telefono NVARCHAR(15),
 	Direccion NVARCHAR(200),
@@ -70,7 +69,6 @@ CREATE TABLE Empleado
 
 	CONSTRAINT FK_Departamento_Empleado FOREIGN KEY (ID_Departamento) REFERENCES Departamento(ID_Departamento),
 	CONSTRAINT FK_Cargo_Empleado FOREIGN KEY (ID_Cargo) REFERENCES Cargo(ID_Cargo),
-	CONSTRAINT FK_Jornada_Empleado FOREIGN KEY (ID_Jornada) REFERENCES Jornada(ID_Jornada)
 )
 
 CREATE TABLE Nomina
@@ -96,7 +94,7 @@ CREATE TABLE Detalle_Nomina
 	Sueldo_Neto FLOAT,
 
 	CONSTRAINT FK_Nomina_Detalle FOREIGN KEY (ID_Nomina) REFERENCES Nomina(ID_Nomina),
-	CONSTRAINT FK_Empleado_Nomina FOREIGN KEY (ID_Empleado) REFERENCES Empleado(Cedula)
+	CONSTRAINT FK_Empleado_Nomina FOREIGN KEY (ID_Empleado) REFERENCES Empleado(ID_Empleado)
 )
                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 
@@ -147,8 +145,8 @@ CREATE PROCEDURE SP_BUSCAR_DEPARTAMENTO
 AS
 SELECT * FROM Departamento
 WHERE	ID_Departamento LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Departamento LIKE '%' + @Buscar '%' OR
+		Nombre LIKE '%' + @Buscar + '%' OR
+		Descripcion LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_DEPARTAMENTO
@@ -196,9 +194,9 @@ VALUES(@Nombre, @Descripcion)
 
 GO
 CREATE PROCEDURE SP_EDITAR_CARGO
-ID_Cargo INT,
-Nombre NVARCHAR(50),
-Descripcion NVARCHAR(200)
+@ID_Cargo INT,
+@Nombre NVARCHAR(50),
+@Descripcion NVARCHAR(200)
 AS
 UPDATE Cargo
 SET Nombre = @Nombre, Descripcion = @Descripcion
@@ -256,123 +254,153 @@ GO
 CREATE PROCEDURE SP_BUSCAR_JORNADA
 @Buscar NVARCHAR(50)
 AS
-SELECT * FROM Usuario
-WHERE	ID_Usuario LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
+SELECT * FROM Jornada
+WHERE	ID_Jornada LIKE '%' + @Buscar + '%' OR
+		ID_Turno LIKE '%' + @Buscar '%' OR
+		Fecha LIKE '%' + @Buscar '%' OR
+		Hora_Entrada LIKE '%' + @Buscar '%' OR
+		Hora_Salida LIKE '%' + @Buscar '%' OR
+		Observacion LIKE '%' + @Buscar '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_JORNADA
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
+@ID_Turno INT,
+@Fecha DATE,
+@Hora_Entrada TIME,
+@Hora_Salida TIME,
+@Observacion NVARCHAR(200)
 AS
-INSERT INTO Usuario
-VALUES(@Nombre, @Contraseña, @Rol)
+INSERT INTO Jornada
+VALUES(@ID_Turno, @Fecha, @Hora_Entrada, @Hora_Salida, @Observacion)
 
 GO
 CREATE PROCEDURE SP_EDITAR_JORNADA
-@ID_Usuario INT,
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
+@ID_Jornada INT,
+@ID_Turno INT,
+@Fecha DATE,
+@Hora_Entrada TIME,
+@Hora_Salida TIME,
+@Observacion NVARCHAR(200)
 AS
-UPDATE Usuario
-SET Nombre = @Nombre, Contraseña = @Contraseña, Rol = @Rol
-WHERE ID_Usuario = @ID_Usuario
+UPDATE Jornada
+SET ID_Turno = @ID_Turno, Fecha = @Fecha, Hora_Entrada = @Hora_Entrada, Hora_Salida = @Hora_Salida, Observacion = @Observacion
+WHERE ID_Jornada = @ID_Jornada
 
 GO
 CREATE PROCEDURE SP_ELIMINAR_JORNADA
-@ID_Usuario INT
+@ID_Jornada INT
 AS
-DELETE FROM Usuario
-WHERE ID_Usuario = @ID_Usuario
+DELETE FROM Jornada
+WHERE ID_Jornada = @ID_Jornada
 
 --PROCEDIMIENTOS: Empleado
 GO
 CREATE PROCEDURE SP_BUSCAR_EMPLEADO
 @Buscar NVARCHAR(50)
 AS
-SELECT * FROM Usuario
-WHERE	ID_Usuario LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
+SELECT * FROM Empleado
+WHERE	ID_Empleado LIKE '%' + @Buscar + '%' OR
+		Cedula LIKE '%' + @Buscar + '%' OR
+		Nombre LIKE '%' + @Buscar + '%' OR
+		Fecha_Nacimiento LIKE '%' + @Buscar + '%' OR
+		ID_Departamento LIKE '%' + @Buscar + '%' OR
+		ID_Cargo LIKE '%' + @Buscar + '%' OR
+		Sexo LIKE '%' + @Buscar + '%' OR
+		Telefono LIKE '%' + @Buscar + '%' OR
+		Direccion LIKE '%' + @Buscar + '%' OR
+		Estado LIKE '%' + @Buscar + '%' OR
+		Pago_Hora LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_EMPLEADO
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
+@Cedula NVARCHAR(20),
+@Nombre NVARCHAR(100),
+@Fecha_Nacimiento DATE,
+@ID_Departamento INT,
+@ID_Cargo INT,
+@Sexo CHAR,
+@Telefono NVARCHAR(15),
+@Direccion NVARCHAR(200),
+@Estado NVARCHAR(20),
+@Pago_Hora FLOAT
 AS
-INSERT INTO Usuario
-VALUES(@Nombre, @Contraseña, @Rol)
+INSERT INTO Empleado
+VALUES(@Cedula, @Nombre, @Fecha_Nacimiento, @ID_Departamento, @ID_Cargo, @Sexo, @Telefono, @Direccion, @Estado, @Pago_Hora)
 
 GO
 CREATE PROCEDURE SP_EDITAR_EMPLEADO
-@ID_Usuario INT,
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
+@ID_Empleado INT,
+@Cedula NVARCHAR(20),
+@Nombre NVARCHAR(100),
+@Fecha_Nacimiento DATE,
+@ID_Departamento INT,
+@ID_Cargo INT,
+@Sexo CHAR,
+@Telefono NVARCHAR(15),
+@Direccion NVARCHAR(200),
+@Estado NVARCHAR(20),
+@Pago_Hora FLOAT
 AS
-UPDATE Usuario
-SET Nombre = @Nombre, Contraseña = @Contraseña, Rol = @Rol
-WHERE ID_Usuario = @ID_Usuario
+UPDATE Empleado
+SET Cedula = @Cedula, Nombre = @Nombre, Fecha_Nacimiento = @Fecha_Nacimiento, ID_Departamento = @ID_Departamento, ID_Cargo = @ID_Cargo, Sexo = @Sexo, Telefono = @Telefono, Direccion = @Direccion, Estado = @Estado, Pago_Hora = @Pago_Hora
+WHERE ID_Empleado = @ID_Empleado
 
 GO
 CREATE PROCEDURE SP_ELIMINAR_EMPLEADO
-@ID_Usuario INT
+@ID_Empleado INT
 AS
-DELETE FROM Usuario
-WHERE ID_Usuario = @ID_Usuario
+DELETE FROM Empleado
+WHERE ID_Empleado = @ID_Empleado
 
 --PROCEDIMIENTOS: Nomina
 GO
 CREATE PROCEDURE SP_BUSCAR_NOMINA
 @Buscar NVARCHAR(50)
 AS
-SELECT * FROM Usuario
-WHERE	ID_Usuario LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
+SELECT * FROM Nomina
+WHERE	ID_Nomina LIKE '%' + @Buscar + '%' OR
+		ID_Usuario LIKE '%' + @Buscar '%' OR
+		Fecha LIKE '%' + @Buscar '%' OR
+		Periodo_Desde LIKE '%' + @Buscar '%' OR
+		Periodo_Hasta LIKE '%' + @Buscar '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_NOMINA
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
+@ID_Usuario INT,
+@Fecha DATE,
+@Periodo_Desde DATE,
+@Periodo_Hasta DATE
 AS
-INSERT INTO Usuario
-VALUES(@Nombre, @Contraseña, @Rol)
+INSERT INTO Nomina
+VALUES(@ID_Usuario, @Fecha, @Periodo_Desde, @Periodo_Hasta)
 
 GO
 CREATE PROCEDURE SP_EDITAR_NOMINA
+@ID_Nomina INT,
 @ID_Usuario INT,
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
+@Fecha DATE,
+@Periodo_Desde DATE,
+@Periodo_Hasta DATE
 AS
-UPDATE Usuario
-SET Nombre = @Nombre, Contraseña = @Contraseña, Rol = @Rol
-WHERE ID_Usuario = @ID_Usuario
+UPDATE Nomina
+SET ID_Nomina = @ID_Nomina, ID_Usuario = @ID_Usuario, Fecha = @Fecha, Periodo_Desde = @Periodo_Desde, Periodo_Hasta = @Periodo_Hasta
+WHERE ID_Nomina = @ID_Nomina
 
 GO
 CREATE PROCEDURE SP_ELIMINAR_NOMINA
-@ID_Usuario INT
+@ID_Nomina INT
 AS
-DELETE FROM Usuario
-WHERE ID_Usuario = @ID_Usuario
+DELETE FROM Nomina
+WHERE ID_Nomina = @ID_Nomina
 
 --PROCEDIMIENTOS: Detalle Nomina
 GO
 CREATE PROCEDURE SP_BUSCAR_DETALLE
 @Buscar NVARCHAR(50)
 AS
-SELECT * FROM Usuario
-WHERE	ID_Usuario LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
+SELECT * FROM Detalle
+WHERE	ID_Nomina LIKE '%' + @Buscar + '%' OR
+		ID_Empleado LIKE '%' + @Buscar '%' OR
 		Contraseña LIKE '%' + @Buscar '%' OR
 		Rol LIKE '%' + @Buscar '%'
 
@@ -382,26 +410,30 @@ CREATE PROCEDURE SP_INSERTAR_DETALLE
 @Contraseña NVARCHAR(50),
 @Rol NVARCHAR(50)
 AS
-INSERT INTO Usuario
+INSERT INTO Detalle
 VALUES(@Nombre, @Contraseña, @Rol)
 
 GO
 CREATE PROCEDURE SP_EDITAR_DETALLE
-@ID_Usuario INT,
-@Nombre NVARCHAR(50),
-@Contraseña NVARCHAR(50),
-@Rol NVARCHAR(50)
+@ID_Nomina INT,
+@ID_Empleado INT,
+@Sueldo_Base FLOAT,
+@Horas_Trabajadas FLOAT,
+@AFP FLOAT,
+@ARS FLOAT,
+@ISR FLOAT,
+@Sueldo_Neto FLOAT
 AS
-UPDATE Usuario
-SET Nombre = @Nombre, Contraseña = @Contraseña, Rol = @Rol
-WHERE ID_Usuario = @ID_Usuario
+UPDATE Detalle
+SET ID_Nomina = @ID_Nomina, ID
+WHERE ID_Detalle = @ID_Detalle
 
 GO
 CREATE PROCEDURE SP_ELIMINAR_DETALLE
-@ID_Usuario INT
+@ID_Detalle INT
 AS
-DELETE FROM Usuario
-WHERE ID_Usuario = @ID_Usuario
+DELETE FROM Detalle
+WHERE ID_Detalle = @ID_Detalle
 
 -- INNER JOIN NOMINA
 
