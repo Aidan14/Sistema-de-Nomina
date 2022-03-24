@@ -1,11 +1,10 @@
 USE master
+DROP DATABASE Sistema_Nomina
 
 GO
 CREATE DATABASE Sistema_Nomina
 GO
 USE Sistema_Nomina
-
-DROP DATABASE Sistema_Nomina
 
 SET DATEFORMAT DMY
 
@@ -22,8 +21,7 @@ CREATE TABLE Usuario
 CREATE TABLE Departamento
 (
 	ID_Departamento INT IDENTITY PRIMARY KEY,
-	Nombre NVARCHAR(50),
-	Descripcion NVARCHAR(200)
+	Nombre NVARCHAR(50)
 )
 
 CREATE TABLE Cargo
@@ -106,9 +104,9 @@ CREATE PROCEDURE SP_BUSCAR_USUARIO
 AS
 SELECT * FROM Usuario
 WHERE	ID_Usuario LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
+		Nombre LIKE '%' + @Buscar + '%' OR
+		Contraseña LIKE '%' + @Buscar + '%' OR
+		Rol LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_USUARIO
@@ -145,25 +143,22 @@ CREATE PROCEDURE SP_BUSCAR_DEPARTAMENTO
 AS
 SELECT * FROM Departamento
 WHERE	ID_Departamento LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar + '%' OR
-		Descripcion LIKE '%' + @Buscar + '%'
+		Nombre LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_DEPARTAMENTO
-@Nombre NVARCHAR(50),
-@Descripcion NVARCHAR(200)
+@Nombre NVARCHAR(50)
 AS
-INSERT INTO Usuario
-VALUES(@Nombre, @Descripcion)
+INSERT INTO Departamento
+VALUES(@Nombre)
 
 GO
 CREATE PROCEDURE SP_EDITAR_DEPARTAMENTO
 @ID_Departamento INT,
-@Nombre NVARCHAR(50),
-@Descripcion NVARCHAR(200)
+@Nombre NVARCHAR(50)
 AS
-UPDATE Usuario
-SET Nombre = @Nombre, @Descripcion = @Descripcion
+UPDATE Departamento
+SET Nombre = @Nombre
 WHERE @ID_Departamento = @ID_Departamento
 
 GO
@@ -181,15 +176,15 @@ CREATE PROCEDURE SP_BUSCAR_CARGO
 AS
 SELECT * FROM Cargo
 WHERE	ID_Cargo LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Departamento LIKE '%' + @Buscar '%' OR
+		Nombre LIKE '%' + @Buscar + '%' OR
+		Descripcion LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_CARGO
 @Nombre NVARCHAR(50),
 @Descripcion NVARCHAR(200)
 AS
-INSERT INTO Usuario
+INSERT INTO Cargo
 VALUES(@Nombre, @Descripcion)
 
 GO
@@ -217,9 +212,9 @@ CREATE PROCEDURE SP_BUSCAR_TURNO
 AS
 SELECT * FROM Usuario
 WHERE	ID_Usuario LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
+		Nombre LIKE '%' + @Buscar + '%' OR
+		Contraseña LIKE '%' + @Buscar + '%' OR
+		Rol LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_TURNO
@@ -256,11 +251,11 @@ CREATE PROCEDURE SP_BUSCAR_JORNADA
 AS
 SELECT * FROM Jornada
 WHERE	ID_Jornada LIKE '%' + @Buscar + '%' OR
-		ID_Turno LIKE '%' + @Buscar '%' OR
-		Fecha LIKE '%' + @Buscar '%' OR
-		Hora_Entrada LIKE '%' + @Buscar '%' OR
-		Hora_Salida LIKE '%' + @Buscar '%' OR
-		Observacion LIKE '%' + @Buscar '%'
+		ID_Turno LIKE '%' + @Buscar + '%' OR
+		Fecha LIKE '%' + @Buscar + '%' OR
+		Hora_Entrada LIKE '%' + @Buscar + '%' OR
+		Hora_Salida LIKE '%' + @Buscar + '%' OR
+		Observacion LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_JORNADA
@@ -359,10 +354,10 @@ CREATE PROCEDURE SP_BUSCAR_NOMINA
 AS
 SELECT * FROM Nomina
 WHERE	ID_Nomina LIKE '%' + @Buscar + '%' OR
-		ID_Usuario LIKE '%' + @Buscar '%' OR
-		Fecha LIKE '%' + @Buscar '%' OR
-		Periodo_Desde LIKE '%' + @Buscar '%' OR
-		Periodo_Hasta LIKE '%' + @Buscar '%'
+		ID_Usuario LIKE '%' + @Buscar + '%' OR
+		Fecha LIKE '%' + @Buscar + '%' OR
+		Periodo_Desde LIKE '%' + @Buscar + '%' OR
+		Periodo_Hasta LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_NOMINA
@@ -383,7 +378,7 @@ CREATE PROCEDURE SP_EDITAR_NOMINA
 @Periodo_Hasta DATE
 AS
 UPDATE Nomina
-SET ID_Nomina = @ID_Nomina, ID_Usuario = @ID_Usuario, Fecha = @Fecha, Periodo_Desde = @Periodo_Desde, Periodo_Hasta = @Periodo_Hasta
+SET ID_Usuario = @ID_Usuario, Fecha = @Fecha, Periodo_Desde = @Periodo_Desde, Periodo_Hasta = @Periodo_Hasta
 WHERE ID_Nomina = @ID_Nomina
 
 GO
@@ -400,9 +395,9 @@ CREATE PROCEDURE SP_BUSCAR_DETALLE
 AS
 SELECT * FROM Detalle
 WHERE	ID_Nomina LIKE '%' + @Buscar + '%' OR
-		ID_Empleado LIKE '%' + @Buscar '%' OR
-		Contraseña LIKE '%' + @Buscar '%' OR
-		Rol LIKE '%' + @Buscar '%'
+		ID_Empleado LIKE '%' + @Buscar + '%' OR
+		Contraseña LIKE '%' + @Buscar + '%' OR
+		Rol LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_DETALLE
@@ -425,19 +420,21 @@ CREATE PROCEDURE SP_EDITAR_DETALLE
 @Sueldo_Neto FLOAT
 AS
 UPDATE Detalle
-SET ID_Nomina = @ID_Nomina, ID
-WHERE ID_Detalle = @ID_Detalle
+SET ID_Nomina = @ID_Nomina, ID_Empleado = @ID_Empleado, Sueldo_Base = @Sueldo_Base, Horas_Trabajadas = @Horas_Trabajadas,
+AFP = @AFP, ARS = @ARS, ISR = @ISR, Sueldo_Neto = @Sueldo_Neto
+WHERE ID_Nomina = @ID_Nomina AND ID_Empleado = @ID_Empleado
 
 GO
 CREATE PROCEDURE SP_ELIMINAR_DETALLE
-@ID_Detalle INT
+@ID_Nomina INT,
+@ID_Empleado INT
 AS
 DELETE FROM Detalle
-WHERE ID_Detalle = @ID_Detalle
+WHERE ID_Nomina = @ID_Nomina AND ID_Empleado = @ID_Empleado
 
 -- INNER JOIN NOMINA
 
-SELECT Nomina.ID_Empleado, Nomina.ID_Empleado, Nomina.Fecha, Nomina.Periodo_Desde, Nomina.Periodo_Hasta, Sueldo_Base, AFP, ARS, ISR, Sueldo_Base
+SELECT Nomina.Fecha, Nomina.Periodo_Desde, Nomina.Periodo_Hasta, Sueldo_Base, AFP, ARS, ISR, Sueldo_Neto
 FROM Nomina
 INNER JOIN Detalle_Nomina
 ON Detalle_Nomina.ID_Nomina = Nomina.ID_Nomina
