@@ -82,7 +82,7 @@ namespace CapaPresentacion
             this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 20;
             this.iconButton1.Location = new System.Drawing.Point(29, 243);
@@ -100,7 +100,7 @@ namespace CapaPresentacion
             this.cbMostrarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMostrarContraseña.Font = new System.Drawing.Font("Arial Narrow", 9F);
             this.cbMostrarContraseña.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.cbMostrarContraseña.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.cbMostrarContraseña.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.cbMostrarContraseña.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.cbMostrarContraseña.IconSize = 24;
             this.cbMostrarContraseña.Location = new System.Drawing.Point(223, 240);
@@ -120,7 +120,7 @@ namespace CapaPresentacion
             this.iconUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconUser.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconUser.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconUser.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.iconUser.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconUser.IconSize = 20;
             this.iconUser.Location = new System.Drawing.Point(29, 181);
@@ -132,7 +132,7 @@ namespace CapaPresentacion
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.flowLayoutPanel2.Location = new System.Drawing.Point(29, 271);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(220, 3);
@@ -140,7 +140,7 @@ namespace CapaPresentacion
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(29, 208);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 3);
@@ -163,7 +163,7 @@ namespace CapaPresentacion
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,7 +184,7 @@ namespace CapaPresentacion
             this.iconUserCircle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconUserCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconUserCircle.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            this.iconUserCircle.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconUserCircle.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.iconUserCircle.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconUserCircle.IconSize = 126;
             this.iconUserCircle.Location = new System.Drawing.Point(86, 24);
@@ -205,9 +205,9 @@ namespace CapaPresentacion
             this.txtUsuario.Size = new System.Drawing.Size(155, 23);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.Text = "Usuario";
-            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
+            this.txtUsuario.Enter += new System.EventHandler(this.txt_Enter);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
-            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
+            this.txtUsuario.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // btnClose
             // 
@@ -215,7 +215,7 @@ namespace CapaPresentacion
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnClose.IconColor = System.Drawing.Color.Silver;
+            this.btnClose.IconColor = System.Drawing.SystemColors.Control;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 24;
             this.btnClose.Location = new System.Drawing.Point(518, 3);
@@ -230,7 +230,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
             this.ClientSize = new System.Drawing.Size(542, 506);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel1);

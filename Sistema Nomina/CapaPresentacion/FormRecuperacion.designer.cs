@@ -91,8 +91,8 @@ namespace CapaPresentacion
             this.txtAdmin.Size = new System.Drawing.Size(155, 23);
             this.txtAdmin.TabIndex = 0;
             this.txtAdmin.Text = "Admin";
-            this.txtAdmin.Enter += new System.EventHandler(this.txtAdmin_Enter);
-            this.txtAdmin.Leave += new System.EventHandler(this.txtAdmin_Leave);
+            this.txtAdmin.Enter += new System.EventHandler(this.txt_Enter);
+            this.txtAdmin.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // panel1
             // 
@@ -146,8 +146,8 @@ namespace CapaPresentacion
             this.txtClaveAdmin.Size = new System.Drawing.Size(155, 23);
             this.txtClaveAdmin.TabIndex = 1;
             this.txtClaveAdmin.Text = "Contraseña";
-            this.txtClaveAdmin.Enter += new System.EventHandler(this.txtClaveAdmin_Enter);
-            this.txtClaveAdmin.Leave += new System.EventHandler(this.txtClaveAdmin_Leave);
+            this.txtClaveAdmin.Enter += new System.EventHandler(this.txt_Enter);
+            this.txtClaveAdmin.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // flowLayoutPanel2
             // 
@@ -189,8 +189,8 @@ namespace CapaPresentacion
             this.txtUsuario.Size = new System.Drawing.Size(155, 23);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Text = "Usuario";
-            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
-            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
+            this.txtUsuario.Enter += new System.EventHandler(this.txt_Enter);
+            this.txtUsuario.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // flowLayoutPanel3
             // 
@@ -232,8 +232,8 @@ namespace CapaPresentacion
             this.txtClaveUsuario.Size = new System.Drawing.Size(155, 23);
             this.txtClaveUsuario.TabIndex = 3;
             this.txtClaveUsuario.Text = "Contraseña Nueva";
-            this.txtClaveUsuario.Enter += new System.EventHandler(this.txtClaveUsuario_Enter);
-            this.txtClaveUsuario.Leave += new System.EventHandler(this.txtClaveUsuario_Leave);
+            this.txtClaveUsuario.Enter += new System.EventHandler(this.txt_Enter);
+            this.txtClaveUsuario.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // flowLayoutPanel4
             // 
@@ -275,8 +275,8 @@ namespace CapaPresentacion
             this.txtConfirmacion.Size = new System.Drawing.Size(155, 23);
             this.txtConfirmacion.TabIndex = 4;
             this.txtConfirmacion.Text = "Confirmar Clave";
-            this.txtConfirmacion.Enter += new System.EventHandler(this.txtConfirmacion_Enter);
-            this.txtConfirmacion.Leave += new System.EventHandler(this.txtConfirmacion_Leave);
+            this.txtConfirmacion.Enter += new System.EventHandler(this.txt_Enter);
+            this.txtConfirmacion.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // flowLayoutPanel5
             // 

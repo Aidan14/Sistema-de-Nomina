@@ -113,5 +113,33 @@ namespace CapaPresentacion
         {
             if (txtConfirmacion.Text == "") txtConfirmacion.Text = "Confirmar Clave";
         }
+
+        private void txt_Enter(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+
+            switch (txt.Name)
+            {
+                case "txtUsuario": if (txt.Text == "Usuario") txt.Text = ""; break;
+                case "txtAdmin": if (txt.Text == "Admin") txt.Text = ""; break;
+                case "txtClaveAdmin": if (txt.Text == "Contraseña") txt.Text = ""; break;
+                case "txtClaveUsuario": if (txt.Text == "Contraseña Nueva") txt.Text = ""; break;
+                case "txtConfirmacion": if (txt.Text == "Confirmar Clave") txt.Text = ""; break;
+            }
+        }
+
+        private void txt_Leave(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+
+            switch (txt.Name)
+            {
+                case "txtUsuario": if (txt.Text == "") txt.Text = "Usuario"; break;
+                case "txtAdmin": if (txt.Text == "") txt.Text = "Admin"; break;
+                case "txtClaveAdmin": if (txt.Text == "") txt.Text = "Contraseña"; break;
+                case "txtClaveUsuario": if (txt.Text == "") txt.Text = "Contraseña Nueva"; break;
+                case "txtConfirmacion": if (txt.Text == "") txt.Text = "Confirmar Clave"; break;
+            }
+        }
     }
 }

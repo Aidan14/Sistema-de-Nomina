@@ -32,16 +32,6 @@ namespace CapaPresentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void txtUsuario_Enter(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "Usuario") txtUsuario.Text = "";
-        }
-
-        private void txtUsuario_Leave(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "") txtUsuario.Text = "Usuario";
-        }
-
         private void txtContraseña_Enter(object sender, EventArgs e)
         {
             if (txtClave.Text == "Contraseña")
@@ -83,14 +73,60 @@ namespace CapaPresentacion
             if (e.KeyChar == (char)Keys.Enter) btnLogin_Click(sender, e);
         }
 
+        public struct Datos
+        {
+            public string nombre, clave;
+
+            public Datos(string nombre, string clave)
+            {
+                this.nombre = nombre;
+                this.clave = clave;
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios WHERE Nombre = @Nombre AND Contraseña = @Contraseña", conexion);
+            cmd.Parameters.AddWithValue("Nombre", txtUsuario.Text);
+            cmd.Parameters.AddWithValue("Contraseña", txtClave.Text);
+
+            conexion.Open();
+
+            if (cmd.ExecuteReader().HasRows)
+            {
+                Datos datos1 = new Datos(txtUsuario.Text, txtClave.Text);
+                new FormMenu(datos1).Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Las credenciales no coinciden");
+
+            conexion.Close();
         }
 
         private void lbRecuperar_Click(object sender, EventArgs e)
         {
             new FormRecuperacion().Show();
+        }
+
+        private void txt_Enter(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+
+            switch (txt.Name)
+            {
+                case "txtUsuario": if (txt.Text == "Usuario") txt.Text = ""; break;
+            }
+        }
+
+        private void txt_Leave(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+
+            switch (txt.Name)
+            {
+                case "txtUsuario": if (txt.Text == "") txt.Text = "Usuario"; break;
+            }
         }
     }
 }
