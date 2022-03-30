@@ -30,6 +30,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
@@ -39,44 +40,54 @@ namespace CapaPresentacion
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.btnNominas = new FontAwesome.Sharp.IconButton();
             this.btnDetalles = new FontAwesome.Sharp.IconButton();
+            this.lbRol = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
             this.btnCargos = new FontAwesome.Sharp.IconButton();
             this.btnDepartamentos = new FontAwesome.Sharp.IconButton();
             this.btnJornadas = new FontAwesome.Sharp.IconButton();
             this.btnEmpleados = new FontAwesome.Sharp.IconButton();
+            this.btnAsistencia = new FontAwesome.Sharp.IconButton();
+            this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.btnHorarios = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lbUsuario = new System.Windows.Forms.Label();
             this.iconUserCircle = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.iconButton12 = new FontAwesome.Sharp.IconButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbPagado = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.iconButton11 = new FontAwesome.Sharp.IconButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbNominas = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbNeto = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.iconButton10 = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.lbEmpleados = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.iconButton12 = new FontAwesome.Sharp.IconButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbBruto = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.iconButton11 = new FontAwesome.Sharp.IconButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbNominas = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.barra = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.barra.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.btnMinimize);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -86,13 +97,23 @@ namespace CapaPresentacion
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MouseDown);
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(146)))), ((int)(((byte)(213)))));
+            this.panel9.Controls.Add(this.label2);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(186, 28);
+            this.panel9.TabIndex = 4;
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(41, 4);
+            this.label2.Location = new System.Drawing.Point(22, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 19);
             this.label2.TabIndex = 0;
@@ -101,11 +122,11 @@ namespace CapaPresentacion
             // btnMinimize
             // 
             this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
+            this.btnMinimize.BackColor = System.Drawing.Color.Gainsboro;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.SystemColors.Control;
+            this.btnMinimize.IconColor = System.Drawing.Color.DarkGray;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 24;
             this.btnMinimize.Location = new System.Drawing.Point(1224, 0);
@@ -119,12 +140,12 @@ namespace CapaPresentacion
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
+            this.btnClose.BackColor = System.Drawing.Color.Gainsboro;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnClose.IconColor = System.Drawing.SystemColors.Control;
+            this.btnClose.IconColor = System.Drawing.Color.DarkGray;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 24;
             this.btnClose.Location = new System.Drawing.Point(1262, 0);
@@ -137,278 +158,363 @@ namespace CapaPresentacion
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.btnConfiguracion);
             this.panel2.Controls.Add(this.btnUsuarios);
             this.panel2.Controls.Add(this.btnNominas);
             this.panel2.Controls.Add(this.btnDetalles);
+            this.panel2.Controls.Add(this.lbRol);
+            this.panel2.Controls.Add(this.lbUsuario);
             this.panel2.Controls.Add(this.btnCargos);
             this.panel2.Controls.Add(this.btnDepartamentos);
             this.panel2.Controls.Add(this.btnJornadas);
             this.panel2.Controls.Add(this.btnEmpleados);
+            this.panel2.Controls.Add(this.btnAsistencia);
+            this.panel2.Controls.Add(this.btnDashboard);
             this.panel2.Controls.Add(this.btnHorarios);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.lbUsuario);
             this.panel2.Controls.Add(this.iconUserCircle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.ForeColor = System.Drawing.Color.DimGray;
             this.panel2.Location = new System.Drawing.Point(0, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 772);
+            this.panel2.Size = new System.Drawing.Size(186, 722);
             this.panel2.TabIndex = 1;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MouseDown);
             // 
             // btnLogout
             // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.DimGray;
             this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnLogout.IconColor = System.Drawing.Color.White;
+            this.btnLogout.IconColor = System.Drawing.Color.DarkGray;
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogout.IconSize = 36;
+            this.btnLogout.IconSize = 25;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(3, 724);
+            this.btnLogout.Location = new System.Drawing.Point(0, 676);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(217, 45);
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(199, 45);
             this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "Cerrar Sesion";
+            this.btnLogout.Text = "           Cerrar Sesion";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnConfiguracion
             // 
-            this.btnConfiguracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
+            this.btnConfiguracion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnConfiguracion.BackColor = System.Drawing.Color.White;
             this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
+            this.btnConfiguracion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracion.ForeColor = System.Drawing.Color.DimGray;
             this.btnConfiguracion.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.btnConfiguracion.IconColor = System.Drawing.Color.White;
+            this.btnConfiguracion.IconColor = System.Drawing.Color.DarkGray;
             this.btnConfiguracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnConfiguracion.IconSize = 36;
+            this.btnConfiguracion.IconSize = 25;
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 610);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 609);
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnConfiguracion.Size = new System.Drawing.Size(220, 45);
+            this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnConfiguracion.Size = new System.Drawing.Size(202, 45);
             this.btnConfiguracion.TabIndex = 0;
-            this.btnConfiguracion.Text = "Configuracion";
+            this.btnConfiguracion.Text = "           Configuracion";
+            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguracion.UseVisualStyleBackColor = false;
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
+            this.btnUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnUsuarios.BackColor = System.Drawing.Color.White;
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.DimGray;
             this.btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.btnUsuarios.IconColor = System.Drawing.Color.White;
+            this.btnUsuarios.IconColor = System.Drawing.Color.DarkGray;
             this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnUsuarios.IconSize = 36;
+            this.btnUsuarios.IconSize = 25;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 559);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 558);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnUsuarios.Size = new System.Drawing.Size(220, 45);
+            this.btnUsuarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnUsuarios.Size = new System.Drawing.Size(202, 45);
             this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.Text = "           Usuarios";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnNominas
             // 
-            this.btnNominas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNominas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
+            this.btnNominas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnNominas.BackColor = System.Drawing.Color.White;
             this.btnNominas.FlatAppearance.BorderSize = 0;
-            this.btnNominas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnNominas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.btnNominas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNominas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnNominas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNominas.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnNominas.ForeColor = System.Drawing.Color.White;
+            this.btnNominas.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNominas.ForeColor = System.Drawing.Color.DimGray;
             this.btnNominas.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.btnNominas.IconColor = System.Drawing.Color.White;
+            this.btnNominas.IconColor = System.Drawing.Color.DarkGray;
             this.btnNominas.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnNominas.IconSize = 36;
+            this.btnNominas.IconSize = 25;
             this.btnNominas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNominas.Location = new System.Drawing.Point(0, 508);
+            this.btnNominas.Location = new System.Drawing.Point(0, 507);
             this.btnNominas.Name = "btnNominas";
-            this.btnNominas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnNominas.Size = new System.Drawing.Size(220, 45);
+            this.btnNominas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnNominas.Size = new System.Drawing.Size(202, 45);
             this.btnNominas.TabIndex = 0;
-            this.btnNominas.Text = "Nominas";
+            this.btnNominas.Text = "           Nominas";
+            this.btnNominas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNominas.UseVisualStyleBackColor = false;
+            this.btnNominas.Click += new System.EventHandler(this.btnNominas_Click);
             // 
             // btnDetalles
             // 
-            this.btnDetalles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
+            this.btnDetalles.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDetalles.BackColor = System.Drawing.Color.White;
             this.btnDetalles.FlatAppearance.BorderSize = 0;
-            this.btnDetalles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.btnDetalles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalles.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnDetalles.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalles.ForeColor = System.Drawing.Color.DimGray;
             this.btnDetalles.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.btnDetalles.IconColor = System.Drawing.Color.White;
+            this.btnDetalles.IconColor = System.Drawing.Color.DarkGray;
             this.btnDetalles.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnDetalles.IconSize = 36;
+            this.btnDetalles.IconSize = 25;
             this.btnDetalles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalles.Location = new System.Drawing.Point(0, 457);
+            this.btnDetalles.Location = new System.Drawing.Point(0, 456);
             this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDetalles.Size = new System.Drawing.Size(220, 45);
+            this.btnDetalles.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnDetalles.Size = new System.Drawing.Size(202, 45);
             this.btnDetalles.TabIndex = 0;
-            this.btnDetalles.Text = "Detalles";
+            this.btnDetalles.Text = "           Detalles";
+            this.btnDetalles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetalles.UseVisualStyleBackColor = false;
+            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
-            // btnCargos
+            // lbRol
             // 
-            this.btnCargos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.btnCargos.FlatAppearance.BorderSize = 0;
-            this.btnCargos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnCargos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.btnCargos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargos.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnCargos.ForeColor = System.Drawing.Color.White;
-            this.btnCargos.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
-            this.btnCargos.IconColor = System.Drawing.Color.White;
-            this.btnCargos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCargos.IconSize = 36;
-            this.btnCargos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargos.Location = new System.Drawing.Point(0, 406);
-            this.btnCargos.Name = "btnCargos";
-            this.btnCargos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCargos.Size = new System.Drawing.Size(220, 45);
-            this.btnCargos.TabIndex = 0;
-            this.btnCargos.Text = "Cargos";
-            this.btnCargos.UseVisualStyleBackColor = false;
-            // 
-            // btnDepartamentos
-            // 
-            this.btnDepartamentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDepartamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.btnDepartamentos.FlatAppearance.BorderSize = 0;
-            this.btnDepartamentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnDepartamentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.btnDepartamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepartamentos.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnDepartamentos.ForeColor = System.Drawing.Color.White;
-            this.btnDepartamentos.IconChar = FontAwesome.Sharp.IconChar.Building;
-            this.btnDepartamentos.IconColor = System.Drawing.Color.White;
-            this.btnDepartamentos.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnDepartamentos.IconSize = 36;
-            this.btnDepartamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartamentos.Location = new System.Drawing.Point(0, 355);
-            this.btnDepartamentos.Name = "btnDepartamentos";
-            this.btnDepartamentos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDepartamentos.Size = new System.Drawing.Size(220, 45);
-            this.btnDepartamentos.TabIndex = 0;
-            this.btnDepartamentos.Text = "Departamentos";
-            this.btnDepartamentos.UseVisualStyleBackColor = false;
-            // 
-            // btnJornadas
-            // 
-            this.btnJornadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnJornadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.btnJornadas.FlatAppearance.BorderSize = 0;
-            this.btnJornadas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnJornadas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.btnJornadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJornadas.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnJornadas.ForeColor = System.Drawing.Color.White;
-            this.btnJornadas.IconChar = FontAwesome.Sharp.IconChar.UserClock;
-            this.btnJornadas.IconColor = System.Drawing.Color.White;
-            this.btnJornadas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnJornadas.IconSize = 36;
-            this.btnJornadas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJornadas.Location = new System.Drawing.Point(0, 304);
-            this.btnJornadas.Name = "btnJornadas";
-            this.btnJornadas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnJornadas.Size = new System.Drawing.Size(220, 45);
-            this.btnJornadas.TabIndex = 0;
-            this.btnJornadas.Text = "Jornadas";
-            this.btnJornadas.UseVisualStyleBackColor = false;
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnEmpleados.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            this.btnEmpleados.IconColor = System.Drawing.Color.White;
-            this.btnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEmpleados.IconSize = 36;
-            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 253);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEmpleados.Size = new System.Drawing.Size(220, 45);
-            this.btnEmpleados.TabIndex = 0;
-            this.btnEmpleados.Text = "Empleados";
-            this.btnEmpleados.UseVisualStyleBackColor = false;
-            // 
-            // btnHorarios
-            // 
-            this.btnHorarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHorarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.btnHorarios.FlatAppearance.BorderSize = 0;
-            this.btnHorarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.btnHorarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.btnHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHorarios.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
-            this.btnHorarios.ForeColor = System.Drawing.Color.White;
-            this.btnHorarios.IconChar = FontAwesome.Sharp.IconChar.Clock;
-            this.btnHorarios.IconColor = System.Drawing.Color.White;
-            this.btnHorarios.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnHorarios.IconSize = 36;
-            this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorarios.Location = new System.Drawing.Point(0, 202);
-            this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHorarios.Size = new System.Drawing.Size(220, 45);
-            this.btnHorarios.TabIndex = 0;
-            this.btnHorarios.Text = "Horarios";
-            this.btnHorarios.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(15, 175);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(187, 1);
-            this.panel4.TabIndex = 0;
+            this.lbRol.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbRol.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRol.ForeColor = System.Drawing.Color.DimGray;
+            this.lbRol.Location = new System.Drawing.Point(63, 40);
+            this.lbRol.Name = "lbRol";
+            this.lbRol.Size = new System.Drawing.Size(116, 23);
+            this.lbRol.TabIndex = 0;
+            this.lbRol.Text = "Rol";
+            this.lbRol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbUsuario
             // 
             this.lbUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbUsuario.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.ForeColor = System.Drawing.Color.White;
-            this.lbUsuario.Location = new System.Drawing.Point(14, 137);
+            this.lbUsuario.ForeColor = System.Drawing.Color.DimGray;
+            this.lbUsuario.Location = new System.Drawing.Point(63, 17);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(190, 23);
+            this.lbUsuario.Size = new System.Drawing.Size(116, 23);
             this.lbUsuario.TabIndex = 0;
             this.lbUsuario.Text = "Username";
-            this.lbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnCargos
+            // 
+            this.btnCargos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnCargos.BackColor = System.Drawing.Color.White;
+            this.btnCargos.FlatAppearance.BorderSize = 0;
+            this.btnCargos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCargos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCargos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargos.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCargos.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnCargos.IconColor = System.Drawing.Color.DarkGray;
+            this.btnCargos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCargos.IconSize = 25;
+            this.btnCargos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargos.Location = new System.Drawing.Point(0, 405);
+            this.btnCargos.Name = "btnCargos";
+            this.btnCargos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnCargos.Size = new System.Drawing.Size(202, 45);
+            this.btnCargos.TabIndex = 0;
+            this.btnCargos.Text = "           Cargos";
+            this.btnCargos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargos.UseVisualStyleBackColor = false;
+            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
+            // 
+            // btnDepartamentos
+            // 
+            this.btnDepartamentos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDepartamentos.BackColor = System.Drawing.Color.White;
+            this.btnDepartamentos.FlatAppearance.BorderSize = 0;
+            this.btnDepartamentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDepartamentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDepartamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepartamentos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepartamentos.ForeColor = System.Drawing.Color.DimGray;
+            this.btnDepartamentos.IconChar = FontAwesome.Sharp.IconChar.Building;
+            this.btnDepartamentos.IconColor = System.Drawing.Color.DarkGray;
+            this.btnDepartamentos.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDepartamentos.IconSize = 25;
+            this.btnDepartamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepartamentos.Location = new System.Drawing.Point(0, 354);
+            this.btnDepartamentos.Name = "btnDepartamentos";
+            this.btnDepartamentos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnDepartamentos.Size = new System.Drawing.Size(202, 45);
+            this.btnDepartamentos.TabIndex = 0;
+            this.btnDepartamentos.Text = "           Departamentos";
+            this.btnDepartamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepartamentos.UseVisualStyleBackColor = false;
+            this.btnDepartamentos.Click += new System.EventHandler(this.btnDepartamentos_Click);
+            // 
+            // btnJornadas
+            // 
+            this.btnJornadas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnJornadas.BackColor = System.Drawing.Color.White;
+            this.btnJornadas.FlatAppearance.BorderSize = 0;
+            this.btnJornadas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnJornadas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnJornadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJornadas.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJornadas.ForeColor = System.Drawing.Color.DimGray;
+            this.btnJornadas.IconChar = FontAwesome.Sharp.IconChar.UserClock;
+            this.btnJornadas.IconColor = System.Drawing.Color.DarkGray;
+            this.btnJornadas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnJornadas.IconSize = 25;
+            this.btnJornadas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJornadas.Location = new System.Drawing.Point(0, 303);
+            this.btnJornadas.Name = "btnJornadas";
+            this.btnJornadas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnJornadas.Size = new System.Drawing.Size(202, 45);
+            this.btnJornadas.TabIndex = 0;
+            this.btnJornadas.Text = "           Jornadas";
+            this.btnJornadas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJornadas.UseVisualStyleBackColor = false;
+            this.btnJornadas.Click += new System.EventHandler(this.btnJornadas_Click);
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnEmpleados.BackColor = System.Drawing.Color.White;
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados.ForeColor = System.Drawing.Color.DimGray;
+            this.btnEmpleados.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
+            this.btnEmpleados.IconColor = System.Drawing.Color.DarkGray;
+            this.btnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEmpleados.IconSize = 25;
+            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 252);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnEmpleados.Size = new System.Drawing.Size(202, 45);
+            this.btnEmpleados.TabIndex = 0;
+            this.btnEmpleados.Text = "           Empleados";
+            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.UseVisualStyleBackColor = false;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
+            // btnAsistencia
+            // 
+            this.btnAsistencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnAsistencia.BackColor = System.Drawing.Color.White;
+            this.btnAsistencia.FlatAppearance.BorderSize = 0;
+            this.btnAsistencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAsistencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAsistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsistencia.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsistencia.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAsistencia.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btnAsistencia.IconColor = System.Drawing.Color.DarkGray;
+            this.btnAsistencia.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnAsistencia.IconSize = 25;
+            this.btnAsistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsistencia.Location = new System.Drawing.Point(0, 150);
+            this.btnAsistencia.Name = "btnAsistencia";
+            this.btnAsistencia.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnAsistencia.Size = new System.Drawing.Size(202, 45);
+            this.btnAsistencia.TabIndex = 0;
+            this.btnAsistencia.Text = "           Asistencia";
+            this.btnAsistencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsistencia.UseVisualStyleBackColor = false;
+            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDashboard.BackColor = System.Drawing.Color.White;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.DimGray;
+            this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.btnDashboard.IconColor = System.Drawing.Color.DarkGray;
+            this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDashboard.IconSize = 25;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 99);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(202, 45);
+            this.btnDashboard.TabIndex = 0;
+            this.btnDashboard.Text = "           Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnHorarios
+            // 
+            this.btnHorarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnHorarios.BackColor = System.Drawing.Color.White;
+            this.btnHorarios.FlatAppearance.BorderSize = 0;
+            this.btnHorarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHorarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorarios.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHorarios.ForeColor = System.Drawing.Color.DimGray;
+            this.btnHorarios.IconChar = FontAwesome.Sharp.IconChar.Clock;
+            this.btnHorarios.IconColor = System.Drawing.Color.DarkGray;
+            this.btnHorarios.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnHorarios.IconSize = 25;
+            this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHorarios.Location = new System.Drawing.Point(0, 201);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnHorarios.Size = new System.Drawing.Size(202, 45);
+            this.btnHorarios.TabIndex = 0;
+            this.btnHorarios.Text = "           Horarios";
+            this.btnHorarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHorarios.UseVisualStyleBackColor = false;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.ForeColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(7, 80);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(167, 3);
+            this.panel4.TabIndex = 0;
             // 
             // iconUserCircle
             // 
@@ -419,174 +525,99 @@ namespace CapaPresentacion
             this.iconUserCircle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconUserCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconUserCircle.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            this.iconUserCircle.IconColor = System.Drawing.Color.White;
+            this.iconUserCircle.IconColor = System.Drawing.Color.DarkGray;
             this.iconUserCircle.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconUserCircle.IconSize = 126;
-            this.iconUserCircle.Location = new System.Drawing.Point(54, 20);
+            this.iconUserCircle.IconSize = 60;
+            this.iconUserCircle.Location = new System.Drawing.Point(7, 15);
             this.iconUserCircle.Name = "iconUserCircle";
-            this.iconUserCircle.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.iconUserCircle.Size = new System.Drawing.Size(110, 110);
+            this.iconUserCircle.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.iconUserCircle.Size = new System.Drawing.Size(50, 50);
             this.iconUserCircle.TabIndex = 3;
             this.iconUserCircle.TabStop = false;
             this.iconUserCircle.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // panel11
             // 
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.panel3.Location = new System.Drawing.Point(220, 28);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1080, 772);
-            this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel11.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel11.Location = new System.Drawing.Point(35, 47);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1042, 133);
+            this.panel11.TabIndex = 5;
             // 
-            // panel8
+            // panel10
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.panel8.Controls.Add(this.iconButton12);
-            this.panel8.Controls.Add(this.label10);
-            this.panel8.Controls.Add(this.lbPagado);
-            this.panel8.Controls.Add(this.label12);
-            this.panel8.Location = new System.Drawing.Point(746, 92);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(268, 128);
-            this.panel8.TabIndex = 3;
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.panel5);
+            this.panel10.Controls.Add(this.panel6);
+            this.panel10.Controls.Add(this.panel8);
+            this.panel10.Controls.Add(this.panel7);
+            this.panel10.Location = new System.Drawing.Point(32, 44);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1045, 132);
+            this.panel10.TabIndex = 4;
             // 
-            // iconButton12
+            // panel5
             // 
-            this.iconButton12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButton12.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton12.FlatAppearance.BorderSize = 0;
-            this.iconButton12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            this.iconButton12.IconColor = System.Drawing.Color.White;
-            this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton12.IconSize = 75;
-            this.iconButton12.Location = new System.Drawing.Point(176, 30);
-            this.iconButton12.Name = "iconButton12";
-            this.iconButton12.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.iconButton12.Size = new System.Drawing.Size(89, 87);
-            this.iconButton12.TabIndex = 3;
-            this.iconButton12.TabStop = false;
-            this.iconButton12.UseVisualStyleBackColor = false;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(75)))), ((int)(((byte)(57)))));
+            this.panel5.Controls.Add(this.iconButton1);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.lbNeto);
+            this.panel5.Location = new System.Drawing.Point(803, 13);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(222, 103);
+            this.panel5.TabIndex = 3;
             // 
-            // label10
+            // iconButton1
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(12, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(170, 35);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Total pagado";
+            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(64)))), ((int)(((byte)(49)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton1.IconSize = 75;
+            this.iconButton1.Location = new System.Drawing.Point(133, 5);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(89, 87);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.TabStop = false;
+            this.iconButton1.UseVisualStyleBackColor = false;
             // 
-            // lbPagado
+            // label1
             // 
-            this.lbPagado.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPagado.ForeColor = System.Drawing.Color.White;
-            this.lbPagado.Location = new System.Drawing.Point(4, 34);
-            this.lbPagado.Name = "lbPagado";
-            this.lbPagado.Size = new System.Drawing.Size(167, 51);
-            this.lbPagado.TabIndex = 4;
-            this.lbPagado.Text = "0";
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 35);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Neto Pagado";
             // 
-            // label12
+            // lbNeto
             // 
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label12.Size = new System.Drawing.Size(268, 27);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Nominas";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.panel7.Controls.Add(this.iconButton11);
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.lbNominas);
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Location = new System.Drawing.Point(398, 92);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(268, 128);
-            this.panel7.TabIndex = 3;
-            // 
-            // iconButton11
-            // 
-            this.iconButton11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButton11.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton11.FlatAppearance.BorderSize = 0;
-            this.iconButton11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.iconButton11.IconColor = System.Drawing.Color.White;
-            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton11.IconSize = 75;
-            this.iconButton11.Location = new System.Drawing.Point(176, 30);
-            this.iconButton11.Name = "iconButton11";
-            this.iconButton11.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.iconButton11.Size = new System.Drawing.Size(89, 87);
-            this.iconButton11.TabIndex = 3;
-            this.iconButton11.TabStop = false;
-            this.iconButton11.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(170, 35);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Nominas efectuadas";
-            // 
-            // lbNominas
-            // 
-            this.lbNominas.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNominas.ForeColor = System.Drawing.Color.White;
-            this.lbNominas.Location = new System.Drawing.Point(6, 34);
-            this.lbNominas.Name = "lbNominas";
-            this.lbNominas.Size = new System.Drawing.Size(168, 51);
-            this.lbNominas.TabIndex = 4;
-            this.lbNominas.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label9.Size = new System.Drawing.Size(268, 27);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Nominas";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbNeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNeto.ForeColor = System.Drawing.Color.White;
+            this.lbNeto.Location = new System.Drawing.Point(6, 9);
+            this.lbNeto.Name = "lbNeto";
+            this.lbNeto.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lbNeto.Size = new System.Drawing.Size(167, 51);
+            this.lbNeto.TabIndex = 4;
+            this.lbNeto.Text = "0";
+            this.lbNeto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(239)))));
             this.panel6.Controls.Add(this.iconButton10);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.lbEmpleados);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(54, 92);
+            this.panel6.Location = new System.Drawing.Point(16, 13);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(268, 128);
+            this.panel6.Size = new System.Drawing.Size(222, 103);
             this.panel6.TabIndex = 3;
             // 
             // iconButton10
@@ -598,10 +629,10 @@ namespace CapaPresentacion
             this.iconButton10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            this.iconButton10.IconColor = System.Drawing.Color.White;
+            this.iconButton10.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(163)))), ((int)(((byte)(203)))));
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton10.IconSize = 100;
-            this.iconButton10.Location = new System.Drawing.Point(176, 30);
+            this.iconButton10.Location = new System.Drawing.Point(133, 0);
             this.iconButton10.Name = "iconButton10";
             this.iconButton10.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.iconButton10.Size = new System.Drawing.Size(89, 87);
@@ -611,63 +642,178 @@ namespace CapaPresentacion
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 93);
+            this.label6.Location = new System.Drawing.Point(12, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(170, 35);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Total de empleados";
+            this.label6.Text = "Total Empleados";
             // 
             // lbEmpleados
             // 
-            this.lbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmpleados.ForeColor = System.Drawing.Color.White;
-            this.lbEmpleados.Location = new System.Drawing.Point(2, 34);
+            this.lbEmpleados.Location = new System.Drawing.Point(6, 9);
             this.lbEmpleados.Name = "lbEmpleados";
+            this.lbEmpleados.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.lbEmpleados.Size = new System.Drawing.Size(168, 51);
             this.lbEmpleados.TabIndex = 4;
             this.lbEmpleados.Text = "0";
             // 
-            // label4
+            // panel8
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(64)))), ((int)(((byte)(95)))));
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(268, 27);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Empleados";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
+            this.panel8.Controls.Add(this.iconButton12);
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Controls.Add(this.lbBruto);
+            this.panel8.Location = new System.Drawing.Point(538, 13);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(222, 103);
+            this.panel8.TabIndex = 3;
             // 
-            // panel5
+            // iconButton12
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.panel5.Location = new System.Drawing.Point(17, 45);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1038, 2);
-            this.panel5.TabIndex = 2;
+            this.iconButton12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButton12.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton12.FlatAppearance.BorderSize = 0;
+            this.iconButton12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
+            this.iconButton12.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(133)))), ((int)(((byte)(15)))));
+            this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton12.IconSize = 75;
+            this.iconButton12.Location = new System.Drawing.Point(133, 5);
+            this.iconButton12.Name = "iconButton12";
+            this.iconButton12.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.iconButton12.Size = new System.Drawing.Size(89, 87);
+            this.iconButton12.TabIndex = 3;
+            this.iconButton12.TabStop = false;
+            this.iconButton12.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(12, 68);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(170, 35);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Bruto Pagado";
+            // 
+            // lbBruto
+            // 
+            this.lbBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBruto.ForeColor = System.Drawing.Color.White;
+            this.lbBruto.Location = new System.Drawing.Point(5, 9);
+            this.lbBruto.Name = "lbBruto";
+            this.lbBruto.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lbBruto.Size = new System.Drawing.Size(167, 51);
+            this.lbBruto.TabIndex = 4;
+            this.lbBruto.Text = "0";
+            this.lbBruto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.panel7.Controls.Add(this.iconButton11);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.lbNominas);
+            this.panel7.Location = new System.Drawing.Point(276, 13);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(222, 103);
+            this.panel7.TabIndex = 3;
+            // 
+            // iconButton11
+            // 
+            this.iconButton11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButton11.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton11.FlatAppearance.BorderSize = 0;
+            this.iconButton11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.iconButton11.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(78)))));
+            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton11.IconSize = 76;
+            this.iconButton11.Location = new System.Drawing.Point(140, 5);
+            this.iconButton11.Name = "iconButton11";
+            this.iconButton11.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.iconButton11.Size = new System.Drawing.Size(89, 87);
+            this.iconButton11.TabIndex = 3;
+            this.iconButton11.TabStop = false;
+            this.iconButton11.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(12, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(162, 35);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Nominas Efectuadas";
+            // 
+            // lbNominas
+            // 
+            this.lbNominas.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNominas.ForeColor = System.Drawing.Color.White;
+            this.lbNominas.Location = new System.Drawing.Point(7, 9);
+            this.lbNominas.Name = "lbNominas";
+            this.lbNominas.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lbNominas.Size = new System.Drawing.Size(168, 51);
+            this.lbNominas.TabIndex = 4;
+            this.lbNominas.Text = "0";
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel12.Location = new System.Drawing.Point(35, 201);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1042, 495);
+            this.panel12.TabIndex = 5;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.Location = new System.Drawing.Point(32, 198);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1045, 494);
+            this.panel13.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(94)))), ((int)(((byte)(130)))));
-            this.label3.Location = new System.Drawing.Point(11, 8);
+            this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(30, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 33);
+            this.label3.Size = new System.Drawing.Size(104, 26);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Inicio";
+            this.label3.Text = "Dashboard";
+            // 
+            // barra
+            // 
+            this.barra.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.barra.Controls.Add(this.label3);
+            this.barra.Controls.Add(this.panel13);
+            this.barra.Controls.Add(this.panel12);
+            this.barra.Controls.Add(this.panel10);
+            this.barra.Controls.Add(this.panel11);
+            this.barra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.barra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.barra.Location = new System.Drawing.Point(186, 28);
+            this.barra.Name = "barra";
+            this.barra.Size = new System.Drawing.Size(1114, 722);
+            this.barra.TabIndex = 2;
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 800);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1300, 750);
+            this.Controls.Add(this.barra);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -676,13 +822,16 @@ namespace CapaPresentacion
             this.Text = "FormMenu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.barra.ResumeLayout(false);
+            this.barra.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -691,7 +840,6 @@ namespace CapaPresentacion
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnClose;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private System.Windows.Forms.Panel panel4;
@@ -699,8 +847,6 @@ namespace CapaPresentacion
         private FontAwesome.Sharp.IconButton iconUserCircle;
         private FontAwesome.Sharp.IconButton btnHorarios;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnConfiguracion;
         private FontAwesome.Sharp.IconButton btnUsuarios;
@@ -708,22 +854,33 @@ namespace CapaPresentacion
         private FontAwesome.Sharp.IconButton btnDetalles;
         private FontAwesome.Sharp.IconButton btnJornadas;
         private FontAwesome.Sharp.IconButton btnEmpleados;
+        private FontAwesome.Sharp.IconButton btnCargos;
+        private FontAwesome.Sharp.IconButton btnDepartamentos;
+        private System.Windows.Forms.Label lbRol;
+        private System.Windows.Forms.Panel panel9;
+        private FontAwesome.Sharp.IconButton btnDashboard;
+        private FontAwesome.Sharp.IconButton btnAsistencia;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel5;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbNeto;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton iconButton10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbEmpleados;
-        private FontAwesome.Sharp.IconButton iconButton10;
         private System.Windows.Forms.Panel panel8;
         private FontAwesome.Sharp.IconButton iconButton12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lbPagado;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbBruto;
         private System.Windows.Forms.Panel panel7;
         private FontAwesome.Sharp.IconButton iconButton11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbNominas;
-        private System.Windows.Forms.Label label9;
-        private FontAwesome.Sharp.IconButton btnCargos;
-        private FontAwesome.Sharp.IconButton btnDepartamentos;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel barra;
     }
 }

@@ -75,12 +75,12 @@ namespace CapaPresentacion
 
         public struct Datos
         {
-            public string nombre, clave;
+            public string nombre, rol;
 
-            public Datos(string nombre, string clave)
+            public Datos(string nombre, string rol)
             {
                 this.nombre = nombre;
-                this.clave = clave;
+                this.rol = rol;
             }
         }
 
@@ -92,10 +92,12 @@ namespace CapaPresentacion
             cmd.Parameters.AddWithValue("Contraseña", txtClave.Text);
 
             conexion.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
 
-            if (cmd.ExecuteReader().HasRows)
+            if (dr.HasRows)
             {
-                Datos datos1 = new Datos(txtUsuario.Text, txtClave.Text);
+                dr.Read();
+                Datos datos1 = new Datos(dr.GetString(1), txtClave.Text);
                 new FormMenu(datos1).Show();
                 this.Hide();
             }

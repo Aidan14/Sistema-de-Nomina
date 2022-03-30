@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using CapaNegocios;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,14 +28,18 @@ namespace CapaPresentacion
 
             conexion.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(ID_Empleado), COUNT(ID_Nomina) FROM Empleados, Nominas", conexion);
-            SqlDataReader dr = cmd.ExecuteReader();
+            SqlDataReader dr1 = new SqlCommand("SELECT COUNT(ID_Empleado) FROM Empleados", conexion).ExecuteReader();
+            while (dr1.Read()) lbEmpleados.Text = dr1.GetInt32(0).ToString();
 
-            while (dr.Read())
-            {
-                lbEmpleados.Text = dr.GetInt32(0).ToString();
-                lbNominas.Text = dr.GetInt32(0).ToString();
-            }
+            conexion.Close(); conexion.Open();
+
+            SqlDataReader dr2 = new SqlCommand("SELECT COUNT(ID_Nomina) FROM Nominas", conexion).ExecuteReader();
+            while (dr2.Read()) lbNominas.Text = dr2.GetInt32(0).ToString();
+
+
+            DetallesNegocios negocios = new DetallesNegocios();
+            lbBruto.Text = Convert.ToString(negocios.BrutoPagado());
+            lbNeto.Text = Convert.ToString(negocios.NetoPagado());
 
             conexion.Close();
 
@@ -68,9 +73,72 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
         {
+            if (activeForm != null) activeForm.Close();
 
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.Dock = DockStyle.Fill;
+            barra.Controls.Add(childForm);
+            barra.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm = null;
+            }
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormHorarios());
+        }
+
+        private void btnCargos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormCargos());
+        }
+
+        private void btnDepartamentos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDepartamentos());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormUsuarios());
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormEmpleados());
+        }
+
+        private void btnJornadas_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormJornadas());
+        }
+
+        private void btnAsistencia_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormAsistencia());
+        }
+
+        private void btnNominas_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormNominas());
+        }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDetalles());
         }
     }
 }

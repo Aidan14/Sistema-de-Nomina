@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,11 +55,47 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsistencia.Designer.cs">
+      <DependentUpon>FormAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCargos.Designer.cs">
+      <DependentUpon>FormCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDepartamentos.Designer.cs">
+      <DependentUpon>FormDepartamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetalles.Designer.cs">
+      <DependentUpon>FormDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleados.Designer.cs">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHorarios.Designer.cs">
       <DependentUpon>FormHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJornadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJornadas.Designer.cs">
+      <DependentUpon>FormJornadas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -72,16 +109,94 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNominas.Designer.cs">
+      <DependentUpon>FormNominas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRecuperacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRecuperacion.designer.cs">
       <DependentUpon>FormRecuperacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuarios.Designer.cs">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarCargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarCargos.Designer.cs">
+      <DependentUpon>ManejarCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarDepartamentos.Designer.cs">
+      <DependentUpon>ManejarDepartamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarDetalles.Designer.cs">
+      <DependentUpon>ManejarDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarEmpleados.Designer.cs">
+      <DependentUpon>ManejarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarHorarios.Designer.cs">
+      <DependentUpon>ManejarHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarJornadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarJornadas.Designer.cs">
+      <DependentUpon>ManejarJornadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarNominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarNominas.Designer.cs">
+      <DependentUpon>ManejarNominas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejarUsuarios.Designer.cs">
+      <DependentUpon>ManejarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAsistencia.resx">
+      <DependentUpon>FormAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCargos.resx">
+      <DependentUpon>FormCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDepartamentos.resx">
+      <DependentUpon>FormDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetalles.resx">
+      <DependentUpon>FormDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpleados.resx">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHorarios.resx">
       <DependentUpon>FormHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJornadas.resx">
+      <DependentUpon>FormJornadas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -89,8 +204,38 @@
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNominas.resx">
+      <DependentUpon>FormNominas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRecuperacion.resx">
       <DependentUpon>FormRecuperacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarCargos.resx">
+      <DependentUpon>ManejarCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarDepartamentos.resx">
+      <DependentUpon>ManejarDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarDetalles.resx">
+      <DependentUpon>ManejarDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarEmpleados.resx">
+      <DependentUpon>ManejarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarHorarios.resx">
+      <DependentUpon>ManejarHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarJornadas.resx">
+      <DependentUpon>ManejarJornadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarNominas.resx">
+      <DependentUpon>ManejarNominas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManejarUsuarios.resx">
+      <DependentUpon>ManejarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +259,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{834711e3-5219-4391-878b-84a6861da264}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
+      <Project>{307a89be-7fef-4e20-9cd2-078e630796af}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

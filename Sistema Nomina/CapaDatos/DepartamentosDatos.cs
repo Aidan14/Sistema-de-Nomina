@@ -14,10 +14,10 @@ namespace CapaDatos
     {
         SqlConnection Conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["Conectar"].ConnectionString);
 
-        public List<DepartamentosEntidades> ListarCiudades(string buscar)
+        public List<DepartamentosEntidades> ListarDepartamentos(string buscar)
         {
             SqlDataReader LeerFilas;
-            SqlCommand cmd = new SqlCommand("SP_BUSCAR_CIUDADES", Conexion);
+            SqlCommand cmd = new SqlCommand("SP_BUSCAR_DEPARTAMENTO", Conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             Conexion.Open();
 
@@ -42,43 +42,29 @@ namespace CapaDatos
             return Listar;
         }
 
-        public void InsertarCiudad(DepartamentosEntidades Ciudad)
+        public void InsertarDepartamento(DepartamentosEntidades Departamento)
         {
-            SqlCommand cmd = new SqlCommand("SP_INSERTAR_CIUDADES", Conexion);
+            SqlCommand cmd = new SqlCommand("SP_INSERTAR_DEPARTAMENTO", Conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             Conexion.Open();
 
-            cmd.Parameters.AddWithValue("@Nombre", Ciudad.Nombre);
-            //cmd.Parameters.AddWithValue("@Region", Ciudad.Region);
+            cmd.Parameters.AddWithValue("@Nombre", Departamento.Nombre);
 
             cmd.ExecuteNonQuery();
             Conexion.Close();
         }
 
-        /*public void EditarCiudad(CiudadesEntidades Ciudad)
+        public void EditarDepartamento(DepartamentosEntidades Departamento)
         {
-            SqlCommand cmd = new SqlCommand("SP_EDITAR_CIUDADES", Conexion);
+            SqlCommand cmd = new SqlCommand("SP_EDITAR_DEPARTAMENTO", Conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             Conexion.Open();
 
-            cmd.Parameters.AddWithValue("@Cod_Ciudad", Ciudad.Codigo);
-            cmd.Parameters.AddWithValue("@Nombre", Ciudad.Nombre);
-            cmd.Parameters.AddWithValue("@Region", Ciudad.Region);
+            cmd.Parameters.AddWithValue("@ID_Departamento", Departamento.ID);
+            cmd.Parameters.AddWithValue("@Nombre", Departamento.Nombre);
 
             cmd.ExecuteNonQuery();
             Conexion.Close();
         }
-
-        public void EliminarCiudad(CiudadesEntidades Ciudad)
-        {
-            SqlCommand cmd = new SqlCommand("SP_ELIMINAR_CIUDADES", Conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            Conexion.Open();
-
-            cmd.Parameters.AddWithValue("@Cod_Ciudad", Ciudad.Codigo);
-
-            cmd.ExecuteNonQuery();
-            Conexion.Close();
-        }*/
     }
 }

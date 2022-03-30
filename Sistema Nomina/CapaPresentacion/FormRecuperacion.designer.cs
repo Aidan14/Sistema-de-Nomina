@@ -32,8 +32,6 @@ namespace CapaPresentacion
             this.iconUser = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtAdmin = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.txtClaveAdmin = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -48,7 +46,7 @@ namespace CapaPresentacion
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.btnEfectuar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // iconUser
@@ -60,7 +58,7 @@ namespace CapaPresentacion
             this.iconUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconUser.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
-            this.iconUser.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconUser.IconColor = System.Drawing.Color.Silver;
             this.iconUser.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconUser.IconSize = 20;
             this.iconUser.Location = new System.Drawing.Point(38, 98);
@@ -73,19 +71,19 @@ namespace CapaPresentacion
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkGray;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(38, 125);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 3);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 2);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // txtAdmin
             // 
             this.txtAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(246)))));
+            this.txtAdmin.BackColor = System.Drawing.Color.White;
             this.txtAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAdmin.Font = new System.Drawing.Font("Calibri", 14F);
-            this.txtAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.txtAdmin.ForeColor = System.Drawing.Color.DimGray;
             this.txtAdmin.Location = new System.Drawing.Point(71, 98);
             this.txtAdmin.Name = "txtAdmin";
             this.txtAdmin.Size = new System.Drawing.Size(155, 23);
@@ -94,39 +92,11 @@ namespace CapaPresentacion
             this.txtAdmin.Enter += new System.EventHandler(this.txt_Enter);
             this.txtAdmin.Leave += new System.EventHandler(this.txt_Leave);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 26);
-            this.panel1.TabIndex = 11;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnClose.IconColor = System.Drawing.Color.Silver;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 24;
-            this.btnClose.Location = new System.Drawing.Point(278, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnClose.Size = new System.Drawing.Size(22, 22);
-            this.btnClose.TabIndex = 11;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // lbTitulo
             // 
             this.lbTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTitulo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.lbTitulo.ForeColor = System.Drawing.Color.Gray;
             this.lbTitulo.Location = new System.Drawing.Point(16, 39);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(268, 34);
@@ -137,10 +107,10 @@ namespace CapaPresentacion
             // txtClaveAdmin
             // 
             this.txtClaveAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtClaveAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(246)))));
+            this.txtClaveAdmin.BackColor = System.Drawing.Color.White;
             this.txtClaveAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClaveAdmin.Font = new System.Drawing.Font("Calibri", 14F);
-            this.txtClaveAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.txtClaveAdmin.ForeColor = System.Drawing.Color.DimGray;
             this.txtClaveAdmin.Location = new System.Drawing.Point(71, 152);
             this.txtClaveAdmin.Name = "txtClaveAdmin";
             this.txtClaveAdmin.Size = new System.Drawing.Size(155, 23);
@@ -152,10 +122,10 @@ namespace CapaPresentacion
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.DarkGray;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(38, 179);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(220, 3);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(220, 2);
             this.flowLayoutPanel2.TabIndex = 9;
             // 
             // iconButton1
@@ -167,7 +137,7 @@ namespace CapaPresentacion
             this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconButton1.IconColor = System.Drawing.Color.Silver;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton1.IconSize = 20;
             this.iconButton1.Location = new System.Drawing.Point(38, 152);
@@ -180,10 +150,10 @@ namespace CapaPresentacion
             // txtUsuario
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(246)))));
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Calibri", 14F);
-            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsuario.Location = new System.Drawing.Point(71, 228);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(155, 23);
@@ -195,10 +165,10 @@ namespace CapaPresentacion
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.DarkGray;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(38, 255);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(220, 3);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(220, 2);
             this.flowLayoutPanel3.TabIndex = 9;
             // 
             // iconButton2
@@ -210,7 +180,7 @@ namespace CapaPresentacion
             this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconButton2.IconColor = System.Drawing.Color.Silver;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton2.IconSize = 20;
             this.iconButton2.Location = new System.Drawing.Point(38, 228);
@@ -223,10 +193,10 @@ namespace CapaPresentacion
             // txtClaveUsuario
             // 
             this.txtClaveUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtClaveUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(246)))));
+            this.txtClaveUsuario.BackColor = System.Drawing.Color.White;
             this.txtClaveUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClaveUsuario.Font = new System.Drawing.Font("Calibri", 14F);
-            this.txtClaveUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.txtClaveUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.txtClaveUsuario.Location = new System.Drawing.Point(71, 284);
             this.txtClaveUsuario.Name = "txtClaveUsuario";
             this.txtClaveUsuario.Size = new System.Drawing.Size(155, 23);
@@ -238,10 +208,10 @@ namespace CapaPresentacion
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.DarkGray;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(38, 311);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(220, 3);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(220, 2);
             this.flowLayoutPanel4.TabIndex = 9;
             // 
             // iconButton3
@@ -253,7 +223,7 @@ namespace CapaPresentacion
             this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconButton3.IconColor = System.Drawing.Color.Silver;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton3.IconSize = 20;
             this.iconButton3.Location = new System.Drawing.Point(38, 284);
@@ -266,10 +236,10 @@ namespace CapaPresentacion
             // txtConfirmacion
             // 
             this.txtConfirmacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtConfirmacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(246)))));
+            this.txtConfirmacion.BackColor = System.Drawing.Color.White;
             this.txtConfirmacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmacion.Font = new System.Drawing.Font("Calibri", 14F);
-            this.txtConfirmacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.txtConfirmacion.ForeColor = System.Drawing.Color.DimGray;
             this.txtConfirmacion.Location = new System.Drawing.Point(71, 343);
             this.txtConfirmacion.Name = "txtConfirmacion";
             this.txtConfirmacion.Size = new System.Drawing.Size(155, 23);
@@ -281,10 +251,10 @@ namespace CapaPresentacion
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel5.BackColor = System.Drawing.Color.DarkGray;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(38, 370);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(220, 3);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(220, 2);
             this.flowLayoutPanel5.TabIndex = 9;
             // 
             // iconButton4
@@ -296,7 +266,7 @@ namespace CapaPresentacion
             this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
-            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.iconButton4.IconColor = System.Drawing.Color.Silver;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton4.IconSize = 20;
             this.iconButton4.Location = new System.Drawing.Point(38, 343);
@@ -309,7 +279,7 @@ namespace CapaPresentacion
             // btnEfectuar
             // 
             this.btnEfectuar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEfectuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.btnEfectuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(146)))), ((int)(((byte)(213)))));
             this.btnEfectuar.FlatAppearance.BorderSize = 0;
             this.btnEfectuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEfectuar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,14 +292,35 @@ namespace CapaPresentacion
             this.btnEfectuar.UseVisualStyleBackColor = false;
             this.btnEfectuar.Click += new System.EventHandler(this.btnEfectuar_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnClose.IconColor = System.Drawing.Color.Silver;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 24;
+            this.btnClose.Location = new System.Drawing.Point(262, -1);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Padding = new System.Windows.Forms.Padding(1, 3, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(39, 28);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FormRecuperacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(300, 473);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEfectuar);
             this.Controls.Add(this.lbTitulo);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
@@ -350,7 +341,7 @@ namespace CapaPresentacion
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRecuperacion";
-            this.panel1.ResumeLayout(false);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,8 +352,6 @@ namespace CapaPresentacion
         private FontAwesome.Sharp.IconButton iconUser;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox txtAdmin;
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.TextBox txtClaveAdmin;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -377,5 +366,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private FontAwesome.Sharp.IconButton iconButton4;
         private System.Windows.Forms.Button btnEfectuar;
+        private FontAwesome.Sharp.IconButton btnClose;
     }
 }

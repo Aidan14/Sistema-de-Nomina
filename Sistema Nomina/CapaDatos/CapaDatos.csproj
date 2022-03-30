@@ -42,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargosDatos.cs" />
     <Compile Include="DepartamentosDatos.cs" />
+    <Compile Include="DetallesDatos.cs" />
+    <Compile Include="EmpleadosDatos.cs" />
+    <Compile Include="HorariosDatos.cs" />
+    <Compile Include="JornadasDatos.cs" />
+    <Compile Include="NominasDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuariosDatos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">

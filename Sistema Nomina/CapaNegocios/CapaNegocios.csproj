@@ -41,7 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargosNegocios.cs" />
+    <Compile Include="DepartamentosNegocios.cs" />
+    <Compile Include="DetallesNegocios.cs" />
+    <Compile Include="EmpleadosNegocios.cs" />
+    <Compile Include="HorariosNegocios.cs" />
+    <Compile Include="JornadasNegocios.cs" />
+    <Compile Include="NominasNegocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuariosNegocios.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{9cc9e774-9bb4-4e5f-b60f-c8b10996a420}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{834711e3-5219-4391-878b-84a6861da264}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
