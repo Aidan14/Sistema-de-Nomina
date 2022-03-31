@@ -140,5 +140,11 @@ namespace CapaPresentacion
         {
             openChildForm(new FormDetalles());
         }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

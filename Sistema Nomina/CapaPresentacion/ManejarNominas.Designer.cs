@@ -57,6 +57,7 @@ namespace CapaPresentacion
             this.rb15 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.cBAuto = new System.Windows.Forms.CheckBox();
+            this.lbID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -379,6 +380,17 @@ namespace CapaPresentacion
             this.cBAuto.TabIndex = 96;
             this.cBAuto.UseVisualStyleBackColor = true;
             // 
+            // lbID
+            // 
+            this.lbID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.ForeColor = System.Drawing.Color.DimGray;
+            this.lbID.Location = new System.Drawing.Point(28, 96);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(191, 19);
+            this.lbID.TabIndex = 86;
+            this.lbID.Text = "1";
+            this.lbID.Visible = false;
+            // 
             // ManejarNominas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +406,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbUsuario);
             this.Controls.Add(this.cbID);
@@ -464,5 +477,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.RadioButton rb15;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox cBAuto;
+        private System.Windows.Forms.Label lbID;
     }
 }

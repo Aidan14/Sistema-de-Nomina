@@ -56,7 +56,8 @@ namespace CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro("", "", "", "", "", false);
+            mostrarBuscarTabla("");
+            Registro registro = new Registro(Convert.ToString(Convert.ToInt32(tablaNominas.Rows[tablaNominas.Rows.Count - 1].Cells["ID"].Value.ToString()) + 1), "", "", "", "", false);
 
             AbrirManejo(registro);
         }

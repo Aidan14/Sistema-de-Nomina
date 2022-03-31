@@ -27,8 +27,7 @@ CREATE TABLE Departamentos
 CREATE TABLE Cargos
 (
 	ID_Cargo INT IDENTITY PRIMARY KEY,
-	Nombre NVARCHAR(50),
-	Descripcion NVARCHAR(200)
+	Nombre NVARCHAR(50)
 )
 
 CREATE TABLE Horarios
@@ -60,15 +59,13 @@ CREATE TABLE Empleados
 CREATE TABLE Jornadas
 (
 	ID_Jornada INT IDENTITY PRIMARY KEY,
-	ID_Horario INT,
 	ID_Empleado INT,
 	Fecha DATE,
 	Hora_Entrada TIME,
 	Hora_Salida TIME,
 	Observacion NVARCHAR(200),
 
-	CONSTRAINT FK_Horario_Empleado FOREIGN KEY (ID_Empleado) REFERENCES Empleados(ID_Empleado),
-	CONSTRAINT FK_Horario_Jornada FOREIGN KEY (ID_Horario) REFERENCES Horarios(ID_Horario)
+	CONSTRAINT FK_Horario_Empleado FOREIGN KEY (ID_Empleado) REFERENCES Empleados(ID_Empleado)
 )
 
 CREATE TABLE Nominas
@@ -87,7 +84,7 @@ CREATE TABLE Detalles
 	ID_Nomina INT,
 	ID_Empleado INT,
 	Sueldo_Base FLOAT,
-	Horas_Trabajadas FLOAT,
+	Horas_Trabajadas INT,
 	AFP FLOAT,
 	ARS FLOAT,
 	ISR FLOAT,
@@ -160,10 +157,10 @@ CREATE PROCEDURE SP_EDITAR_DEPARTAMENTO
 AS
 UPDATE Departamentos
 SET Nombre = @Nombre
-WHERE @ID_Departamento = @ID_Departamento
+WHERE ID_Departamento = @ID_Departamento
 
 GO
-CREATE PROCEDURE SP_ELIMINAR_Departamento
+CREATE PROCEDURE SP_ELIMINAR_DEPARTAMENTO
 @ID_Departamento INT
 AS
 DELETE FROM Departamentos
@@ -177,25 +174,22 @@ CREATE PROCEDURE SP_BUSCAR_CARGO
 AS
 SELECT * FROM Cargos
 WHERE	ID_Cargo LIKE '%' + @Buscar + '%' OR
-		Nombre LIKE '%' + @Buscar + '%' OR
-		Descripcion LIKE '%' + @Buscar + '%'
+		Nombre LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_CARGO
-@Nombre NVARCHAR(50),
-@Descripcion NVARCHAR(200)
+@Nombre NVARCHAR(50)
 AS
 INSERT INTO Cargos
-VALUES(@Nombre, @Descripcion)
+VALUES(@Nombre)
 
 GO
 CREATE PROCEDURE SP_EDITAR_CARGO
 @ID_Cargo INT,
-@Nombre NVARCHAR(50),
-@Descripcion NVARCHAR(200)
+@Nombre NVARCHAR(50)
 AS
 UPDATE Cargos
-SET Nombre = @Nombre, Descripcion = @Descripcion
+SET Nombre = @Nombre
 WHERE ID_Cargo = @ID_Cargo
 
 GO
@@ -312,7 +306,6 @@ CREATE PROCEDURE SP_BUSCAR_JORNADA
 AS
 SELECT * FROM Jornadas
 WHERE	ID_Jornada LIKE '%' + @Buscar + '%' OR
-		ID_Horario LIKE '%' + @Buscar + '%' OR
 		ID_Empleado LIKE '%' + @Buscar + '%' OR
 		Fecha LIKE '%' + @Buscar + '%' OR
 		Hora_Entrada LIKE '%' + @Buscar + '%' OR
@@ -322,27 +315,25 @@ WHERE	ID_Jornada LIKE '%' + @Buscar + '%' OR
 GO
 CREATE PROCEDURE SP_INSERTAR_JORNADA
 @ID_Empleado INT,
-@ID_Horario INT,
 @Fecha DATE,
 @Hora_Entrada TIME,
 @Hora_Salida TIME,
 @Observacion NVARCHAR(200)
 AS
 INSERT INTO Jornadas
-VALUES(@ID_Empleado, @ID_Horario, @Fecha, @Hora_Entrada, @Hora_Salida, @Observacion)
+VALUES(@ID_Empleado, @Fecha, @Hora_Entrada, @Hora_Salida, @Observacion)
 
 GO
 CREATE PROCEDURE SP_EDITAR_JORNADA
 @ID_Empleado INT,
 @ID_Jornada INT,
-@ID_Horario INT,
 @Fecha DATE,
 @Hora_Entrada TIME,
 @Hora_Salida TIME,
 @Observacion NVARCHAR(200)
 AS
 UPDATE Jornadas
-SET ID_Empleado = @ID_Empleado, ID_Horario = @ID_Horario, Fecha = @Fecha, Hora_Entrada = @Hora_Entrada, Hora_Salida = @Hora_Salida, Observacion = @Observacion
+SET ID_Empleado = @ID_Empleado, Fecha = @Fecha, Hora_Entrada = @Hora_Entrada, Hora_Salida = @Hora_Salida, Observacion = @Observacion
 WHERE ID_Jornada = @ID_Jornada
 
 GO
@@ -401,21 +392,14 @@ CREATE PROCEDURE SP_BUSCAR_DETALLE
 @Buscar NVARCHAR(50)
 AS
 SELECT * FROM Detalles
-WHERE	ID_Nomina LIKE '%' + @Buscar + '%' OR
-		ID_Empleado LIKE '%' + @Buscar + '%' OR
-		Horas_Trabajadas LIKE '%' + @Buscar + '%' OR
-		Sueldo_Base LIKE '%' + @Buscar + '%' OR
-		AFP LIKE '%' + @Buscar + '%' OR
-		ARS LIKE '%' + @Buscar + '%' OR
-		ISR LIKE '%' + @Buscar + '%' OR
-		Sueldo_Neto LIKE '%' + @Buscar + '%'
+WHERE	ID_Nomina LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_DETALLE
 @ID_Nomina INT,
 @ID_Empleado INT,
 @Sueldo_Base FLOAT,
-@Horas_Trabajadas FLOAT,
+@Horas_Trabajadas INT,
 @AFP FLOAT,
 @ARS FLOAT,
 @ISR FLOAT,
@@ -429,7 +413,7 @@ CREATE PROCEDURE SP_EDITAR_DETALLE
 @ID_Nomina INT,
 @ID_Empleado INT,
 @Sueldo_Base FLOAT,
-@Horas_Trabajadas FLOAT,
+@Horas_Trabajadas INT,
 @AFP FLOAT,
 @ARS FLOAT,
 @ISR FLOAT,
@@ -455,6 +439,79 @@ FROM Nomina
 INNER JOIN Detalle_Nomina
 ON Detalle_Nomina.ID_Nomina = Nomina.ID_Nomina*/
 
-INSERT INTO Usuarios VALUES ('admin', '1234', 'admin')
+GO
+INSERT INTO Usuarios VALUES ('Admin', '1234', 'admin')
 
-select * from Horarios
+INSERT INTO Horarios VALUES ('Matutino', '8:00:00', '16:00:00')
+INSERT INTO Horarios VALUES ('Nocturno', '22:00:00', '6:00:00')
+
+INSERT INTO Cargos VALUES ('Programador')
+INSERT INTO Cargos VALUES ('Contable')
+INSERT INTO Cargos VALUES ('Director')
+INSERT INTO Cargos VALUES ('Gerente')
+INSERT INTO Cargos VALUES ('Publicista')
+
+INSERT INTO Departamentos VALUES ('Recursos Humanos')
+INSERT INTO Departamentos VALUES ('Tecnologia')
+INSERT INTO Departamentos VALUES ('Administracion')
+INSERT INTO Departamentos VALUES ('Contabilidad')
+INSERT INTO Departamentos VALUES ('Marketing')
+INSERT INTO Departamentos VALUES ('Procesos')
+
+INSERT INTO Empleados VALUES ('B1651616', 'Pepe Ortega', '14/07/2005', 2, 1, 'M', '849-897-3216', 'La Esperilla, Calle Primera', 'Activo', 200)
+INSERT INTO Empleados VALUES ('B1651616', 'Jack Sparrow', '09/03/2004', 3, 2, 'M', '809-163-7137', 'La Altagracia, Calle #6', 'Activo', 100)
+INSERT INTO Empleados VALUES ('B1651616', 'Pepe Ortega', '10/11/2005', 1, 4, 'M', '829-180-6106', 'Av. John F. Kennedy', 'Activo', 150)
+
+INSERT INTO Jornadas VALUES (1, '01/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '02/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '03/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '04/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '05/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '06/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '07/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '08/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '09/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '10/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '11/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '12/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '13/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '14/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '15/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '16/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '17/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '18/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '19/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '20/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '21/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '22/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '23/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '24/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '25/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '26/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '27/03/2022', '08:00:00', '16:00:00', '');
+
+INSERT INTO Nominas VALUES (1, '29/03/2022', '01/03/2022', '15/03/2022')
+
+GO
+SELECT * FROM Cargos
+SELECT * FROM Departamentos
+SELECT * FROM Detalles
+SELECT * FROM Empleados
+SELECT * FROM Horarios
+SELECT * FROM Jornadas
+SELECT * FROM Nominas
+SELECT * FROM Usuarios
+
+
+
+SELECT * FROM Jornadas WHERE Fecha = '29/03/2022' AND ID_Empleado = 1
+
+SELECT * FROM Jornadas WHERE ID_Empleado = 1 AND Fecha BETWEEN '01/03/2022' AND '30/03/2022'
+
+SELECT Periodo_Desde, Periodo_Hasta FROM Nominas WHERE ID_Nomina = 1
+
+SELECT * FROM Jornadas WHERE ID_Empleado = 1 AND Fecha BETWEEN '01/03/2022' AND '16/03/2022'
+
+SELECT ID_Empleado, Pago_Hora FROM Empleados WHERE Estado = 'Activo'
+
+SELECT SUM(Sueldo_Base) AS 'Bruto Pagado' FROM Detalles

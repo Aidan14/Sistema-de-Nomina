@@ -32,6 +32,8 @@ namespace CapaPresentacion
             if (registro.editarse == false)
             {
                 cbID.Visible = false;
+                lbID.Visible = true;
+                lbID.Text = registro.id;
                 mtxtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 lbFuncion.Text = "Agregar Nomina";
             }
@@ -121,11 +123,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnCalendar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void rb15_CheckedChanged(object sender, EventArgs e)
         {
             mtxtDesde_TextChanged(sender, e);
@@ -192,7 +189,7 @@ namespace CapaPresentacion
 
                 detalles.InsertarDetalle(new DetallesEntidades
                 {
-                    Nomina = Convert.ToInt32(cbID.Text),
+                    Nomina = Convert.ToInt32(lbID.Text),
                     Empleado = idEmpleado,
                     Bruto = bruto,
                     Horas_Trabajadas = HT,
