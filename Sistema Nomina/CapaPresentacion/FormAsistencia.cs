@@ -39,45 +39,69 @@ namespace CapaPresentacion
             cbID.DataSource = empleados.ListarEmpleados("");
             cbID.DisplayMember = "ID";
             cbID.ValueMember = "ID";
+
+            cbID.Text = "";
         }
 
         private void cbID_TextChanged(object sender, EventArgs e)
         {
-            if ("1234567890".Contains(cbID.Text))
+            EmpleadosNegocios empleados = new EmpleadosNegocios();
+
+            try
             {
                 objEntidades.Empleado = Convert.ToInt32(cbID.Text);
                 objEntidades.Fecha = Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"));
-
-                if (objNegocios.RevisarLlegada(objEntidades) == "llego") btnPonche.Text = "Salir";
-                else if (objNegocios.RevisarLlegada(objEntidades) == "no llego") btnPonche.Text = "Ingresar";
-                else btnPonche.Text = "Jornada Completada";
+            } catch (Exception)
+            {
+                return;
             }
+
+            if (objNegocios.RevisarLlegada(objEntidades) == "llego") btnPonche.Text = "Salir";
+            else if (objNegocios.RevisarLlegada(objEntidades) == "no llego") btnPonche.Text = "Ingresar";
+            else btnPonche.Text = "Jornada Completada";
         }
 
         private void btnPonche_Click(object sender, EventArgs e)
         {
-            objEntidades.Empleado = Convert.ToInt32(cbID.Text);
-            objEntidades.Fecha = Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"));
-
-            if (objNegocios.RevisarLlegada(objEntidades) == "no llego")
+            try
             {
-                objEntidades.Llegada = TimeSpan.Parse(DateTime.Now.ToString("hh:mm:ss"));
-                objEntidades.Observacion = "";
+                objEntidades.Empleado = Convert.ToInt32(cbID.Text);
+                objEntidades.Fecha = Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"));
 
-                objNegocios.InsertarJornada(objEntidades);
+                if (objNegocios.RevisarLlegada(objEntidades) == "no llego")
+                {
+                    objEntidades.Llegada = TimeSpan.Parse(DateTime.Now.ToString("hh:mm:ss"));
+                    objEntidades.Observacion = "";
 
-                MessageBox.Show("Llegada registrada");
-                btnPonche.Text = "Salir";
+                    objNegocios.InsertarJornada(objEntidades);
+
+                    MessageBox.Show("Llegada registrada");
+                    btnPonche.Text = "Salir";
+                }
+                else if (objNegocios.RevisarLlegada(objEntidades) == "llego")
+                {
+                    objEntidades.Salida = TimeSpan.Parse(DateTime.Now.ToString("hh:mm:ss"));
+
+                    objNegocios.InsertarSalida(objEntidades);
+
+                    MessageBox.Show("Salida registrada");
+                    btnPonche.Text = "Jornada Completada";
+                }
             }
-            else if (objNegocios.RevisarLlegada(objEntidades) == "llego")
+            catch (Exception)
             {
-                objEntidades.Salida = TimeSpan.Parse(DateTime.Now.ToString("hh:mm:ss"));
-
-                objNegocios.InsertarSalida(objEntidades);
-
-                MessageBox.Show("Salida registrada");
-                btnPonche.Text = "Jornada Completada";
+                MessageBox.Show("ID No valido");
             }
+
+            cbID.Text = "";
+        }
+
+        private void cbID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ("1234567890".Contains(e.KeyChar) || e.KeyChar == (char)Keys.Back) e.Handled = false;
+            else e.Handled = true;
+
+            if (e.KeyChar == (char)Keys.Enter) btnPonche.PerformClick();
         }
     }
 }

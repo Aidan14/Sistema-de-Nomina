@@ -53,7 +53,7 @@ namespace CapaPresentacion
             this.panel13.Controls.Add(this.cbID);
             this.panel13.Controls.Add(this.pictureBox2);
             this.panel13.Controls.Add(this.pictureBox1);
-            this.panel13.Location = new System.Drawing.Point(362, 289);
+            this.panel13.Location = new System.Drawing.Point(332, 286);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(379, 195);
             this.panel13.TabIndex = 6;
@@ -100,6 +100,7 @@ namespace CapaPresentacion
             this.cbID.Size = new System.Drawing.Size(310, 27);
             this.cbID.TabIndex = 71;
             this.cbID.TextChanged += new System.EventHandler(this.cbID_TextChanged);
+            this.cbID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbID_KeyPress);
             // 
             // pictureBox2
             // 
@@ -121,7 +122,7 @@ namespace CapaPresentacion
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel12.Location = new System.Drawing.Point(365, 292);
+            this.panel12.Location = new System.Drawing.Point(335, 289);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(376, 196);
             this.panel12.TabIndex = 7;
@@ -130,7 +131,7 @@ namespace CapaPresentacion
             // 
             this.lbFecha.Font = new System.Drawing.Font("Calibri Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFecha.ForeColor = System.Drawing.Color.DimGray;
-            this.lbFecha.Location = new System.Drawing.Point(312, 138);
+            this.lbFecha.Location = new System.Drawing.Point(282, 135);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(483, 50);
             this.lbFecha.TabIndex = 8;
@@ -141,7 +142,7 @@ namespace CapaPresentacion
             // 
             this.lbHora.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHora.ForeColor = System.Drawing.Color.DimGray;
-            this.lbHora.Location = new System.Drawing.Point(312, 204);
+            this.lbHora.Location = new System.Drawing.Point(282, 201);
             this.lbHora.Name = "lbHora";
             this.lbHora.Size = new System.Drawing.Size(483, 50);
             this.lbHora.TabIndex = 8;
@@ -157,7 +158,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1114, 722);
+            this.ClientSize = new System.Drawing.Size(1058, 672);
             this.Controls.Add(this.lbHora);
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.panel13);

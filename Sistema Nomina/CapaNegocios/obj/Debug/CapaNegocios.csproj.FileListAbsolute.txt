@@ -1,0 +1,11 @@
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\bin\Debug\CapaNegocios.dll
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\bin\Debug\CapaNegocios.pdb
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\bin\Debug\CapaDatos.dll
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\bin\Debug\CapaEntidades.dll
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\bin\Debug\CapaDatos.pdb
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\bin\Debug\CapaEntidades.pdb
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\obj\Debug\CapaNegocios.csproj.AssemblyReference.cache
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\obj\Debug\CapaNegocios.csproj.CoreCompileInputs.cache
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\obj\Debug\CapaNegocios.csproj.CopyComplete
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\obj\Debug\CapaNegocios.dll
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaNegocios\obj\Debug\CapaNegocios.pdb

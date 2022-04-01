@@ -92,10 +92,40 @@ namespace CapaPresentacion
             AbrirManejo(registro);
         }
 
+        private void btnGenerarQR_Click(object sender, EventArgs e)
+        {
+            string QRText = tablaEmpleados.CurrentRow.Cells[0].Value.ToString();
+            AbrirQR(QRText);
+        }
+
         private void AbrirManejo(Registro registro)
         {
             Form formBG = new Form();
             using (ManejarEmpleados frm = new ManejarEmpleados(registro))
+            {
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .60d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                frm.Owner = formBG;
+                frm.TopMost = true;
+                frm.FormClosing += new FormClosingEventHandler(this.Form2_FormClosing);
+                frm.ShowDialog();
+
+                formBG.Dispose();
+            }
+        }
+
+        private void AbrirQR(string QRText)
+        {
+            Form formBG = new Form();
+            using (FormQR frm = new FormQR(QRText))
             {
                 formBG.StartPosition = FormStartPosition.Manual;
                 formBG.FormBorderStyle = FormBorderStyle.None;

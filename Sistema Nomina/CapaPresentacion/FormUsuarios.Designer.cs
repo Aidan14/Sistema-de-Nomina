@@ -59,7 +59,7 @@ namespace CapaPresentacion
             this.panelArriba.Controls.Add(this.panel1);
             this.panelArriba.Location = new System.Drawing.Point(37, 56);
             this.panelArriba.Name = "panelArriba";
-            this.panelArriba.Size = new System.Drawing.Size(1045, 64);
+            this.panelArriba.Size = new System.Drawing.Size(983, 64);
             this.panelArriba.TabIndex = 16;
             // 
             // iconButton2
@@ -74,7 +74,7 @@ namespace CapaPresentacion
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton2.IconSize = 30;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(983, 13);
+            this.iconButton2.Location = new System.Drawing.Point(923, 13);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.iconButton2.Size = new System.Drawing.Size(40, 40);
@@ -128,7 +128,7 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.iconPictureBox1);
             this.panel1.Location = new System.Drawing.Point(223, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 40);
+            this.panel1.Size = new System.Drawing.Size(705, 40);
             this.panel1.TabIndex = 8;
             // 
             // txtBuscador
@@ -139,7 +139,7 @@ namespace CapaPresentacion
             this.txtBuscador.ForeColor = System.Drawing.Color.DimGray;
             this.txtBuscador.Location = new System.Drawing.Point(13, 10);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(732, 20);
+            this.txtBuscador.Size = new System.Drawing.Size(678, 20);
             this.txtBuscador.TabIndex = 1;
             this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
             // 
@@ -161,10 +161,10 @@ namespace CapaPresentacion
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.tablaUsuarios);
-            this.panel2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(37, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1045, 532);
+            this.panel2.Size = new System.Drawing.Size(983, 483);
             this.panel2.TabIndex = 18;
             // 
             // tablaUsuarios
@@ -204,7 +204,7 @@ namespace CapaPresentacion
             this.tablaUsuarios.RowHeadersVisible = false;
             this.tablaUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tablaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaUsuarios.Size = new System.Drawing.Size(1002, 488);
+            this.tablaUsuarios.Size = new System.Drawing.Size(942, 441);
             this.tablaUsuarios.TabIndex = 0;
             // 
             // sombraArriba
@@ -212,7 +212,7 @@ namespace CapaPresentacion
             this.sombraArriba.BackColor = System.Drawing.Color.Gainsboro;
             this.sombraArriba.Location = new System.Drawing.Point(40, 59);
             this.sombraArriba.Name = "sombraArriba";
-            this.sombraArriba.Size = new System.Drawing.Size(1042, 65);
+            this.sombraArriba.Size = new System.Drawing.Size(980, 65);
             this.sombraArriba.TabIndex = 17;
             // 
             // label3
@@ -231,14 +231,14 @@ namespace CapaPresentacion
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Location = new System.Drawing.Point(40, 154);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1042, 533);
+            this.panel4.Size = new System.Drawing.Size(980, 486);
             this.panel4.TabIndex = 19;
             // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1114, 722);
+            this.ClientSize = new System.Drawing.Size(1058, 672);
             this.Controls.Add(this.panelArriba);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.sombraArriba);
