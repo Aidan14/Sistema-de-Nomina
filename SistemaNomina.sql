@@ -524,8 +524,6 @@ INSERT INTO Jornadas VALUES (2, '29/03/2022', '08:00:00', '17:00:00', '');
 INSERT INTO Jornadas VALUES (2, '30/03/2022', '08:00:00', '16:00:00', '');
 INSERT INTO Jornadas VALUES (2, '31/03/2022', '08:00:00', '16:00:00', '');
 
-INSERT INTO Nominas VALUES (1, '29/03/2022', '01/03/2022', '15/03/2022')
-
 GO
 SELECT * FROM Cargos
 SELECT * FROM Departamentos

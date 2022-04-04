@@ -44,6 +44,7 @@ namespace CapaPresentacion
         public void mostrarBuscarTabla(string buscar)
         {
             tablaDetalles.DataSource = objNegocios.ListarDetalles(buscar);
+            CalcularTotales();
         }
 
         private void txtBuscador_TextChanged(object sender, EventArgs e)
@@ -94,6 +95,24 @@ namespace CapaPresentacion
 
                 formBG.Dispose();
             }
+        }
+
+        private void CalcularTotales()
+        {
+            double brutoTotal = 0, deduccionTotal = 0, netoTotal = 0;
+
+            for (int i=0; i<tablaDetalles.Rows.Count; i++)
+            {
+                brutoTotal += Convert.ToDouble(tablaDetalles.Rows[i].Cells["Bruto"].Value.ToString());
+                deduccionTotal += Convert.ToDouble(tablaDetalles.Rows[i].Cells["ARS"].Value.ToString());
+                deduccionTotal += Convert.ToDouble(tablaDetalles.Rows[i].Cells["AFP"].Value.ToString());
+                deduccionTotal += Convert.ToDouble(tablaDetalles.Rows[i].Cells["ISR"].Value.ToString());
+                netoTotal += Convert.ToDouble(tablaDetalles.Rows[i].Cells["Neto"].Value.ToString());
+            }
+
+            lbBrutoTotal.Text = brutoTotal.ToString();
+            lbDeduccionTotal.Text = deduccionTotal.ToString();
+            lbNetoTotal.Text = netoTotal.ToString();
         }
     }
 }

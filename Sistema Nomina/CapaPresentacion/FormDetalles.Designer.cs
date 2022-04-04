@@ -43,11 +43,20 @@ namespace CapaPresentacion
             this.sombraArriba = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
+            this.lbBrutoTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbNetoTotal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbDeduccionTotal = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panelArriba.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDetalles)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelArriba
@@ -164,7 +173,7 @@ namespace CapaPresentacion
             this.panel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(37, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(983, 483);
+            this.panel2.Size = new System.Drawing.Size(983, 415);
             this.panel2.TabIndex = 18;
             // 
             // tablaDetalles
@@ -197,14 +206,14 @@ namespace CapaPresentacion
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaDetalles.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaDetalles.EnableHeadersVisualStyles = false;
-            this.tablaDetalles.Location = new System.Drawing.Point(21, 24);
+            this.tablaDetalles.Location = new System.Drawing.Point(21, 17);
             this.tablaDetalles.MultiSelect = false;
             this.tablaDetalles.Name = "tablaDetalles";
             this.tablaDetalles.ReadOnly = true;
             this.tablaDetalles.RowHeadersVisible = false;
             this.tablaDetalles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tablaDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaDetalles.Size = new System.Drawing.Size(941, 439);
+            this.tablaDetalles.Size = new System.Drawing.Size(941, 374);
             this.tablaDetalles.TabIndex = 0;
             // 
             // sombraArriba
@@ -231,15 +240,108 @@ namespace CapaPresentacion
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Location = new System.Drawing.Point(40, 154);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(980, 486);
+            this.panel4.Size = new System.Drawing.Size(980, 418);
             this.panel4.TabIndex = 19;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.Color.DimGray;
+            this.label.Location = new System.Drawing.Point(29, 18);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(90, 19);
+            this.label.TabIndex = 1;
+            this.label.Text = "Bruto Total:";
+            // 
+            // lbBrutoTotal
+            // 
+            this.lbBrutoTotal.AutoSize = true;
+            this.lbBrutoTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBrutoTotal.ForeColor = System.Drawing.Color.DimGray;
+            this.lbBrutoTotal.Location = new System.Drawing.Point(115, 18);
+            this.lbBrutoTotal.Name = "lbBrutoTotal";
+            this.lbBrutoTotal.Size = new System.Drawing.Size(81, 19);
+            this.lbBrutoTotal.TabIndex = 1;
+            this.lbBrutoTotal.Text = "000000000";
+            this.lbBrutoTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(484, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Neto Total:";
+            // 
+            // lbNetoTotal
+            // 
+            this.lbNetoTotal.AutoSize = true;
+            this.lbNetoTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNetoTotal.ForeColor = System.Drawing.Color.DimGray;
+            this.lbNetoTotal.Location = new System.Drawing.Point(564, 18);
+            this.lbNetoTotal.Name = "lbNetoTotal";
+            this.lbNetoTotal.Size = new System.Drawing.Size(81, 19);
+            this.lbNetoTotal.TabIndex = 1;
+            this.lbNetoTotal.Text = "000000000";
+            this.lbNetoTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(221, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 19);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Deducciones Totales:";
+            // 
+            // lbDeduccionTotal
+            // 
+            this.lbDeduccionTotal.AutoSize = true;
+            this.lbDeduccionTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDeduccionTotal.ForeColor = System.Drawing.Color.DimGray;
+            this.lbDeduccionTotal.Location = new System.Drawing.Point(367, 18);
+            this.lbDeduccionTotal.Name = "lbDeduccionTotal";
+            this.lbDeduccionTotal.Size = new System.Drawing.Size(81, 19);
+            this.lbDeduccionTotal.TabIndex = 1;
+            this.lbDeduccionTotal.Text = "000000000";
+            this.lbDeduccionTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Location = new System.Drawing.Point(40, 592);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(980, 56);
+            this.panel3.TabIndex = 17;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.lbDeduccionTotal);
+            this.panel5.Controls.Add(this.lbBrutoTotal);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.label);
+            this.panel5.Controls.Add(this.lbNetoTotal);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(37, 589);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(983, 54);
+            this.panel5.TabIndex = 16;
             // 
             // FormDetalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 672);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelArriba);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.sombraArriba);
             this.Controls.Add(this.label3);
@@ -254,6 +356,8 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablaDetalles)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,5 +377,13 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel sombraArriba;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label lbDeduccionTotal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbNetoTotal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbBrutoTotal;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
     }
 }
