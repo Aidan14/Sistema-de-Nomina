@@ -37,11 +37,12 @@ namespace CapaDatos
                     Fecha_Nacimiento = LeerFilas.GetDateTime(3),
                     Departamento = LeerFilas.GetInt32(4),
                     Cargo = LeerFilas.GetInt32(5),
-                    Sexo = Convert.ToChar(LeerFilas.GetValue(6)),
-                    Telefono = LeerFilas.GetString(7),
-                    Direccion = LeerFilas.GetString(8),
-                    Estado = LeerFilas.GetString(9),
-                    Pago_Hora = LeerFilas.GetDouble(10)
+                    Horario = LeerFilas.GetInt32(6),
+                    Sexo = Convert.ToChar(LeerFilas.GetValue(7)),
+                    Telefono = LeerFilas.GetString(8),
+                    Direccion = LeerFilas.GetString(9),
+                    Estado = LeerFilas.GetString(10),
+                    Pago_Hora = LeerFilas.GetDouble(11)
                 });
             }
 
@@ -62,6 +63,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@Fecha_Nacimiento", Empleado.Fecha_Nacimiento);
             cmd.Parameters.AddWithValue("@ID_Departamento", Empleado.Departamento);
             cmd.Parameters.AddWithValue("@ID_Cargo", Empleado.Cargo);
+            cmd.Parameters.AddWithValue("@ID_Horario", Empleado.Horario);
             cmd.Parameters.AddWithValue("@Sexo", Empleado.Sexo);
             cmd.Parameters.AddWithValue("@Telefono", Empleado.Telefono);
             cmd.Parameters.AddWithValue("@Direccion", Empleado.Direccion);
@@ -84,6 +86,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@Fecha_Nacimiento", Empleado.Fecha_Nacimiento);
             cmd.Parameters.AddWithValue("@ID_Departamento", Empleado.Departamento);
             cmd.Parameters.AddWithValue("@ID_Cargo", Empleado.Cargo);
+            cmd.Parameters.AddWithValue("@ID_Horario", Empleado.Horario);
             cmd.Parameters.AddWithValue("@Sexo", Empleado.Sexo);
             cmd.Parameters.AddWithValue("@Telefono", Empleado.Telefono);
             cmd.Parameters.AddWithValue("@Direccion", Empleado.Direccion);
@@ -120,6 +123,21 @@ namespace CapaDatos
             Conexion.Close();
 
             return dt;
+        }
+
+        public int HorarioEmpleado(int empleado)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT ID_Horario FROM Empleados WHERE ID_Empleado = @ID_Empleado", Conexion);
+            Conexion.Open();
+
+            cmd.Parameters.AddWithValue("ID_Empleado", empleado);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            int horario = dr.GetInt32(0);
+
+            Conexion.Close();
+            return horario;
         }
     }
 }

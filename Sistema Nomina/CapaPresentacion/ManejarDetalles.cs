@@ -148,11 +148,16 @@ namespace CapaPresentacion
         private void Calcular()
         {
             EmpleadosNegocios empleados = new EmpleadosNegocios();
+            HorariosNegocios horarios = new HorariosNegocios();
 
             double pagoHN = empleados.SueldoEmpleado(Convert.ToInt32(cbEmpleado.Text));
             double pagoHE = pagoHN * 1.25;
 
-            int HT = 0;
+            double HT = 0;
+            double HN = 0;
+            double HE = 0;
+
+            double HorasHorario = horarios.Horas(Convert.ToInt32(empleados.HorarioEmpleado(Convert.ToInt32(cbEmpleado.Text))));
 
             for (int i = 0; i<tablaJornadas.RowCount; i++)
             {
@@ -160,31 +165,28 @@ namespace CapaPresentacion
                 TimeSpan horaSalida = TimeSpan.Parse(tablaJornadas.Rows[i].Cells["Salida"].Value.ToString());
 
                 HT += horaSalida.Subtract(horaEntrada).Hours;
+
+                if (horaSalida.Subtract(horaEntrada).Hours > HorasHorario)
+                {
+                    HN += horaSalida.Subtract(horaEntrada).Hours;
+                    HE += horaSalida.Subtract(horaEntrada).Hours - HorasHorario;
+                }
+                else HN += horaSalida.Subtract(horaEntrada).Hours;
             }
 
-            int HN = 0;
-            int HE = 0;
+            double bruto = Math.Round((HN * pagoHN) + (HE * pagoHE));
 
-            if (HT <= 88) HN = HT;
-            else
-            {
-                HN = 88;
-                HE = HT - 88;
-            }
+            double AFP = Math.Round((bruto * (3.92 / 100)), 2);
+            double ARS = Math.Round((bruto * (2.58 / 100)), 2);
 
-            double bruto = (HN * pagoHN) + (HE * pagoHE);
-
-            double AFP = (bruto * (3.92 / 100));
-            double ARS = (bruto * (2.58 / 100));
-
-            double AntesISR = bruto - (AFP + ARS);
+            double AntesISR = Math.Round(bruto - (AFP + ARS), 2);
             double ISR = 0;
 
-            if (AntesISR > 34685 && AntesISR <= 52027) ISR = AntesISR * 0.15;
-            else if (AntesISR > 52027 && AntesISR <= 72260) ISR = AntesISR * 0.2;
-            else if (AntesISR > 72260) ISR = AntesISR * 0.25;
+            if (AntesISR > 34685 && AntesISR <= 52027) ISR = Math.Round(AntesISR * 0.15);
+            else if (AntesISR > 52027 && AntesISR <= 72260) ISR = Math.Round(AntesISR * 0.2, 2);
+            else if (AntesISR > 72260) Math.Round(ISR = AntesISR * 0.25, 2);
 
-            double neto = AntesISR - ISR;
+            double neto = Math.Round(AntesISR - ISR, 2);
 
             lbHT.Text = Convert.ToString(HT);
             lbHE.Text = Convert.ToString(HE);

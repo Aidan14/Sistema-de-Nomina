@@ -37,5 +37,10 @@ namespace CapaNegocios
         {
             return objDatos.ListarActivos();
         }
+
+        public int HorarioEmpleado(int empleado)
+        {
+            return objDatos.HorarioEmpleado(empleado);
+        }
     }
 }

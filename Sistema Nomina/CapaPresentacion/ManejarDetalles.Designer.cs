@@ -29,8 +29,8 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -164,7 +164,7 @@ namespace CapaPresentacion
             this.cbEmpleado.Location = new System.Drawing.Point(277, 92);
             this.cbEmpleado.Name = "cbEmpleado";
             this.cbEmpleado.Size = new System.Drawing.Size(187, 27);
-            this.cbEmpleado.TabIndex = 72;
+            this.cbEmpleado.TabIndex = 1;
             this.cbEmpleado.TextChanged += new System.EventHandler(this.cb_TextChanged);
             // 
             // cbNomina
@@ -177,7 +177,7 @@ namespace CapaPresentacion
             this.cbNomina.Location = new System.Drawing.Point(32, 93);
             this.cbNomina.Name = "cbNomina";
             this.cbNomina.Size = new System.Drawing.Size(187, 27);
-            this.cbNomina.TabIndex = 73;
+            this.cbNomina.TabIndex = 0;
             this.cbNomina.TextChanged += new System.EventHandler(this.cb_TextChanged);
             // 
             // pictureBox6
@@ -224,7 +224,7 @@ namespace CapaPresentacion
             this.btnGuardar.Location = new System.Drawing.Point(24, 578);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(453, 42);
-            this.btnGuardar.TabIndex = 68;
+            this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -358,7 +358,7 @@ namespace CapaPresentacion
             this.lbHT.Location = new System.Drawing.Point(30, 175);
             this.lbHT.Name = "lbHT";
             this.lbHT.Size = new System.Drawing.Size(193, 23);
-            this.lbHT.TabIndex = 93;
+            this.lbHT.TabIndex = 2;
             this.lbHT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbHE
@@ -368,7 +368,7 @@ namespace CapaPresentacion
             this.lbHE.Location = new System.Drawing.Point(275, 175);
             this.lbHE.Name = "lbHE";
             this.lbHE.Size = new System.Drawing.Size(193, 23);
-            this.lbHE.TabIndex = 93;
+            this.lbHE.TabIndex = 3;
             this.lbHE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox17
@@ -406,7 +406,7 @@ namespace CapaPresentacion
             this.lbPagoHN.Location = new System.Drawing.Point(30, 261);
             this.lbPagoHN.Name = "lbPagoHN";
             this.lbPagoHN.Size = new System.Drawing.Size(193, 23);
-            this.lbPagoHN.TabIndex = 93;
+            this.lbPagoHN.TabIndex = 4;
             this.lbPagoHN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox19
@@ -444,7 +444,7 @@ namespace CapaPresentacion
             this.lbPagoHE.Location = new System.Drawing.Point(275, 261);
             this.lbPagoHE.Name = "lbPagoHE";
             this.lbPagoHE.Size = new System.Drawing.Size(193, 23);
-            this.lbPagoHE.TabIndex = 93;
+            this.lbPagoHE.TabIndex = 5;
             this.lbPagoHE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tablaJornadas
@@ -457,25 +457,25 @@ namespace CapaPresentacion
             this.tablaJornadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaJornadas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tablaJornadas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaJornadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaJornadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaJornadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1, 10, 0, 10);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaJornadas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1, 10, 0, 10);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaJornadas.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaJornadas.EnableHeadersVisualStyles = false;
             this.tablaJornadas.Location = new System.Drawing.Point(516, 62);
             this.tablaJornadas.MultiSelect = false;
@@ -578,7 +578,7 @@ namespace CapaPresentacion
             this.lbBruto.Location = new System.Drawing.Point(30, 507);
             this.lbBruto.Name = "lbBruto";
             this.lbBruto.Size = new System.Drawing.Size(193, 23);
-            this.lbBruto.TabIndex = 93;
+            this.lbBruto.TabIndex = 10;
             this.lbBruto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbNeto
@@ -588,7 +588,7 @@ namespace CapaPresentacion
             this.lbNeto.Location = new System.Drawing.Point(275, 507);
             this.lbNeto.Name = "lbNeto";
             this.lbNeto.Size = new System.Drawing.Size(190, 23);
-            this.lbNeto.TabIndex = 93;
+            this.lbNeto.TabIndex = 11;
             this.lbNeto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbAFP
@@ -598,7 +598,7 @@ namespace CapaPresentacion
             this.lbAFP.Location = new System.Drawing.Point(275, 340);
             this.lbAFP.Name = "lbAFP";
             this.lbAFP.Size = new System.Drawing.Size(193, 23);
-            this.lbAFP.TabIndex = 93;
+            this.lbAFP.TabIndex = 7;
             this.lbAFP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbARS
@@ -608,7 +608,7 @@ namespace CapaPresentacion
             this.lbARS.Location = new System.Drawing.Point(31, 340);
             this.lbARS.Name = "lbARS";
             this.lbARS.Size = new System.Drawing.Size(193, 23);
-            this.lbARS.TabIndex = 95;
+            this.lbARS.TabIndex = 6;
             this.lbARS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbISR
@@ -618,7 +618,7 @@ namespace CapaPresentacion
             this.lbISR.Location = new System.Drawing.Point(274, 425);
             this.lbISR.Name = "lbISR";
             this.lbISR.Size = new System.Drawing.Size(193, 23);
-            this.lbISR.TabIndex = 98;
+            this.lbISR.TabIndex = 9;
             this.lbISR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox9
@@ -656,7 +656,7 @@ namespace CapaPresentacion
             this.lbAntesISR.Location = new System.Drawing.Point(30, 425);
             this.lbAntesISR.Name = "lbAntesISR";
             this.lbAntesISR.Size = new System.Drawing.Size(193, 23);
-            this.lbAntesISR.TabIndex = 98;
+            this.lbAntesISR.TabIndex = 8;
             this.lbAntesISR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ManejarDetalles

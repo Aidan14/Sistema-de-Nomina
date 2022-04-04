@@ -14,7 +14,7 @@ namespace CapaPresentacion
 {
     public partial class ManejarNominas : Form
     {
-        bool editarse = false;
+        bool editarse = false; int idNomina;
         NominasNegocios objNegocios = new NominasNegocios();
         NominasEntidades objEntidades = new NominasEntidades();
 
@@ -31,9 +31,8 @@ namespace CapaPresentacion
 
             if (registro.editarse == false)
             {
-                cbID.Visible = false;
-                lbID.Visible = true;
-                lbID.Text = registro.id;
+                cbID.Text = registro.id;
+                cbID.KeyPress += new KeyPressEventHandler(this.cbID_KeyPress);
                 mtxtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 lbFuncion.Text = "Agregar Nomina";
             }
@@ -51,14 +50,15 @@ namespace CapaPresentacion
 
         private void LlenarComboBoxes()
         {
-            cbID.DataSource = objNegocios.ListarNominas("");
-            cbID.DisplayMember = "ID";
-            cbID.ValueMember = "ID";
-
             UsuariosNegocios empleados = new UsuariosNegocios();
             cbUsuario.DataSource = empleados.ListarUsuarios("");
             cbUsuario.DisplayMember = "ID";
             cbUsuario.ValueMember = "ID";
+            
+            if (!registro.editarse) return;
+            cbID.DataSource = objNegocios.ListarNominas("");
+            cbID.DisplayMember = "ID";
+            cbID.ValueMember = "ID";
         }
 
         [System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -70,6 +70,11 @@ namespace CapaPresentacion
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = (char)Keys.None;
         }
 
         private void panel_MouseDown(object sender, MouseEventArgs e)
@@ -143,6 +148,9 @@ namespace CapaPresentacion
             EmpleadosNegocios empleados = new EmpleadosNegocios();
             JornadasNegocios jornadas = new JornadasNegocios();
             DetallesNegocios detalles = new DetallesNegocios();
+            HorariosNegocios horarios = new HorariosNegocios();
+
+            idNomina = Convert.ToInt32(cbID.Text);
 
             DataTable dtEmpleados = empleados.ListarActivos();
             for (int i = 0; i < dtEmpleados.Rows.Count; i++)
@@ -151,9 +159,13 @@ namespace CapaPresentacion
                 int pagoHN = Convert.ToInt32(dtEmpleados.Rows[i]["Pago_Hora"].ToString());
                 double pagoHE = pagoHN * 1.25;
 
-                DataTable dtJornadas = jornadas.ListarEspecifica(Convert.ToInt32(cbID.Text), idEmpleado.ToString());
+                DataTable dtJornadas = jornadas.ListarEspecifica(idNomina, idEmpleado.ToString());
 
-                int HT = 0;
+                double HT = 0;
+                double HN = 0;
+                double HE = 0;
+
+                double HorasHorario = horarios.Horas(Convert.ToInt32(empleados.HorarioEmpleado(idEmpleado)));
 
                 for (int j = 0; j < dtJornadas.Rows.Count; j++)
                 {
@@ -161,38 +173,37 @@ namespace CapaPresentacion
                     TimeSpan horaSalida = TimeSpan.Parse(dtJornadas.Rows[i]["Hora_Salida"].ToString());
 
                     HT += horaSalida.Subtract(horaEntrada).Hours;
+
+                    if (horaSalida.Subtract(horaEntrada).Hours > HorasHorario)
+                    {
+                        HN += horaSalida.Subtract(horaEntrada).Hours;
+                        HE += horaSalida.Subtract(horaEntrada).Hours - HorasHorario;
+                    }
+                    else HN += horaSalida.Subtract(horaEntrada).Hours;
                 }
 
-                int HN = 0;
-                int HE = 0;
+                if (HT == 0) continue;
 
-                if (HT <= 88) HN = HT;
-                else
-                {
-                    HN = 88;
-                    HE = HT - 88;
-                }
+                double bruto = Math.Round((HN * pagoHN) + (HE * pagoHE));
 
-                double bruto = (HN * pagoHN) + (HE * pagoHE);
+                double AFP = Math.Round((bruto * (3.92 / 100)), 2);
+                double ARS = Math.Round((bruto * (2.58 / 100)), 2);
 
-                double AFP = (bruto * (3.92 / 100));
-                double ARS = (bruto * (2.58 / 100));
-
-                double AntesISR = bruto - (AFP + ARS);
+                double AntesISR = Math.Round(bruto - (AFP + ARS), 2);
                 double ISR = 0;
 
-                if (AntesISR > 34685 && AntesISR <= 52027) ISR = AntesISR * 0.15;
-                else if (AntesISR > 52027 && AntesISR <= 72260) ISR = AntesISR * 0.2;
-                else if (AntesISR > 72260) ISR = AntesISR * 0.25;
+                if (AntesISR > 34685 && AntesISR <= 52027) ISR = Math.Round(AntesISR * 0.15);
+                else if (AntesISR > 52027 && AntesISR <= 72260) ISR = Math.Round(AntesISR * 0.2, 2);
+                else if (AntesISR > 72260) Math.Round(ISR = AntesISR * 0.25, 2);
 
-                double neto = AntesISR - ISR;
+                double neto = Math.Round(AntesISR - ISR, 2);
 
                 detalles.InsertarDetalle(new DetallesEntidades
                 {
-                    Nomina = Convert.ToInt32(lbID.Text),
+                    Nomina = idNomina,
                     Empleado = idEmpleado,
                     Bruto = bruto,
-                    Horas_Trabajadas = HT,
+                    Horas_Trabajadas = (int)HT,
                     AFP = AFP,
                     ARS = ARS,
                     ISR = ISR,

@@ -20,9 +20,9 @@ namespace CapaPresentacion
 
         public struct Registro
         {
-            public string id, cedula, nombre, nacimiento, departamento, cargo, sexo, telefono, direccion, estado, pago; public bool editarse;
+            public string id, cedula, nombre, nacimiento, departamento, cargo, horario, sexo, telefono, direccion, estado, pago; public bool editarse;
 
-            public Registro(string id, string cedula, string nombre, string nacimiento, string departamento, string cargo, string sexo, string telefono, string direccion, string estado, string pago, bool editarse)
+            public Registro(string id, string cedula, string nombre, string nacimiento, string departamento, string cargo, string horario, string sexo, string telefono, string direccion, string estado, string pago, bool editarse)
             {
                 this.id = id;
                 this.cedula = cedula;
@@ -30,6 +30,7 @@ namespace CapaPresentacion
                 this.nacimiento = nacimiento;
                 this.departamento = departamento;
                 this.cargo = cargo;
+                this.horario = horario;
                 this.sexo = sexo;
                 this.telefono = telefono;
                 this.direccion = direccion;
@@ -48,6 +49,16 @@ namespace CapaPresentacion
         private void FormEmpleados_Load(object sender, EventArgs e)
         {
             mostrarBuscarTabla("");
+            tablaEmpleados.Columns[0].Width = 30;
+            tablaEmpleados.Columns[1].Width = 110;
+            tablaEmpleados.Columns[2].Width = 105;
+            tablaEmpleados.Columns[3].Width = 110;
+            tablaEmpleados.Columns[4].Width = 110;
+            tablaEmpleados.Columns[5].Width = 50;
+            tablaEmpleados.Columns[6].Width = 60;
+            tablaEmpleados.Columns[7].Width = 40;
+            tablaEmpleados.Columns[8].Width = 100;
+            tablaEmpleados.Columns[10].Width = 60;
         }
 
         public void mostrarBuscarTabla(string buscar)
@@ -62,7 +73,7 @@ namespace CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro("", "", "", "", "", "", "", "", "", "", "", false);
+            Registro registro = new Registro("", "", "", "", "", "", "", "", "", "", "", "", false);
 
             AbrirManejo(registro);
         }
@@ -87,7 +98,8 @@ namespace CapaPresentacion
                 tablaEmpleados.CurrentRow.Cells[7].Value.ToString(),
                 tablaEmpleados.CurrentRow.Cells[8].Value.ToString(),
                 tablaEmpleados.CurrentRow.Cells[9].Value.ToString(),
-                tablaEmpleados.CurrentRow.Cells[10].Value.ToString(), true);
+                tablaEmpleados.CurrentRow.Cells[10].Value.ToString(),
+                tablaEmpleados.CurrentRow.Cells[11].Value.ToString(), true);
 
             AbrirManejo(registro);
         }

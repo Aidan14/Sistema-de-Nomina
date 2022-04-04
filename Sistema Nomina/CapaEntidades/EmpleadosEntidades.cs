@@ -14,6 +14,7 @@ namespace CapaEntidades
         private DateTime _Fecha_Nacimiento;
         private int _Departamento;
         private int _Cargo;
+        private int _Horario;
         private char _Sexo;
         private string _Telefono;
         private string _Direccion;
@@ -26,6 +27,7 @@ namespace CapaEntidades
         public DateTime Fecha_Nacimiento { get => _Fecha_Nacimiento; set => _Fecha_Nacimiento = value; }
         public int Departamento { get => _Departamento; set => _Departamento = value; }
         public int Cargo { get => _Cargo; set => _Cargo = value; }
+        public int Horario { get => _Horario; set => _Horario = value; }
         public char Sexo { get => _Sexo; set => _Sexo = value; }
         public string Telefono { get => _Telefono; set => _Telefono = value; }
         public string Direccion { get => _Direccion; set => _Direccion = value; }

@@ -64,19 +64,17 @@ namespace CapaPresentacion
             this.panel14 = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbBruto = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.iconButton12 = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.lbBruto = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbNominas = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconButton11 = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.lbNominas = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -213,8 +211,9 @@ namespace CapaPresentacion
             this.btnLogout.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(190, 33);
             this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "           Cerrar Sesion";
+            this.btnLogout.Text = "Cerrar Sesion";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -238,10 +237,11 @@ namespace CapaPresentacion
             this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnConfiguracion.Size = new System.Drawing.Size(190, 35);
             this.btnConfiguracion.TabIndex = 0;
-            this.btnConfiguracion.Text = "           Configuracion";
+            this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfiguracion.UseVisualStyleBackColor = false;
-            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnUsuarios
             // 
@@ -263,10 +263,11 @@ namespace CapaPresentacion
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnUsuarios.Size = new System.Drawing.Size(190, 35);
             this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "           Usuarios";
+            this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUsuarios.UseVisualStyleBackColor = false;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnUsuarios.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnNominas
             // 
@@ -288,10 +289,11 @@ namespace CapaPresentacion
             this.btnNominas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnNominas.Size = new System.Drawing.Size(190, 35);
             this.btnNominas.TabIndex = 0;
-            this.btnNominas.Text = "           Nominas";
+            this.btnNominas.Text = "Nominas";
             this.btnNominas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNominas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNominas.UseVisualStyleBackColor = false;
-            this.btnNominas.Click += new System.EventHandler(this.btnNominas_Click);
+            this.btnNominas.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnDetalles
             // 
@@ -313,10 +315,11 @@ namespace CapaPresentacion
             this.btnDetalles.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnDetalles.Size = new System.Drawing.Size(190, 35);
             this.btnDetalles.TabIndex = 0;
-            this.btnDetalles.Text = "           Detalles";
+            this.btnDetalles.Text = "Detalles";
             this.btnDetalles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetalles.UseVisualStyleBackColor = false;
-            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
+            this.btnDetalles.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // lbRol
             // 
@@ -362,10 +365,11 @@ namespace CapaPresentacion
             this.btnCargos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnCargos.Size = new System.Drawing.Size(190, 35);
             this.btnCargos.TabIndex = 0;
-            this.btnCargos.Text = "           Cargos";
+            this.btnCargos.Text = "Cargos";
             this.btnCargos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCargos.UseVisualStyleBackColor = false;
-            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
+            this.btnCargos.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnDepartamentos
             // 
@@ -387,10 +391,11 @@ namespace CapaPresentacion
             this.btnDepartamentos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnDepartamentos.Size = new System.Drawing.Size(190, 35);
             this.btnDepartamentos.TabIndex = 0;
-            this.btnDepartamentos.Text = "           Departamentos";
+            this.btnDepartamentos.Text = "Departamentos";
             this.btnDepartamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepartamentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDepartamentos.UseVisualStyleBackColor = false;
-            this.btnDepartamentos.Click += new System.EventHandler(this.btnDepartamentos_Click);
+            this.btnDepartamentos.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnJornadas
             // 
@@ -412,10 +417,11 @@ namespace CapaPresentacion
             this.btnJornadas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnJornadas.Size = new System.Drawing.Size(190, 35);
             this.btnJornadas.TabIndex = 0;
-            this.btnJornadas.Text = "           Jornadas";
+            this.btnJornadas.Text = "Jornadas";
             this.btnJornadas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJornadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnJornadas.UseVisualStyleBackColor = false;
-            this.btnJornadas.Click += new System.EventHandler(this.btnJornadas_Click);
+            this.btnJornadas.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnEmpleados
             // 
@@ -437,10 +443,11 @@ namespace CapaPresentacion
             this.btnEmpleados.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnEmpleados.Size = new System.Drawing.Size(190, 35);
             this.btnEmpleados.TabIndex = 0;
-            this.btnEmpleados.Text = "           Empleados";
+            this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmpleados.UseVisualStyleBackColor = false;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            this.btnEmpleados.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnAsistencia
             // 
@@ -462,10 +469,11 @@ namespace CapaPresentacion
             this.btnAsistencia.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnAsistencia.Size = new System.Drawing.Size(190, 35);
             this.btnAsistencia.TabIndex = 0;
-            this.btnAsistencia.Text = "           Asistencia";
+            this.btnAsistencia.Text = "Asistencia";
             this.btnAsistencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAsistencia.UseVisualStyleBackColor = false;
-            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
+            this.btnAsistencia.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnDashboard
             // 
@@ -487,10 +495,11 @@ namespace CapaPresentacion
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(190, 35);
             this.btnDashboard.TabIndex = 0;
-            this.btnDashboard.Text = "           Dashboard";
+            this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.btnDashboard.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // btnHorarios
             // 
@@ -512,10 +521,11 @@ namespace CapaPresentacion
             this.btnHorarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnHorarios.Size = new System.Drawing.Size(190, 35);
             this.btnHorarios.TabIndex = 0;
-            this.btnHorarios.Text = "           Horarios";
+            this.btnHorarios.Text = "Horarios";
             this.btnHorarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHorarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHorarios.UseVisualStyleBackColor = false;
-            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
+            this.btnHorarios.Click += new System.EventHandler(this.btnTab_Click);
             // 
             // panel4
             // 
@@ -679,7 +689,7 @@ namespace CapaPresentacion
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
             this.panel14.Controls.Add(this.iconButton3);
             this.panel14.Controls.Add(this.label8);
-            this.panel14.Controls.Add(this.label9);
+            this.panel14.Controls.Add(this.lbBruto);
             this.panel14.Location = new System.Drawing.Point(510, 13);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(220, 92);
@@ -715,24 +725,23 @@ namespace CapaPresentacion
             this.label8.TabIndex = 4;
             this.label8.Text = "Bruto Pagado";
             // 
-            // label9
+            // lbBruto
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(5, 9);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.label9.Size = new System.Drawing.Size(167, 51);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "0";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBruto.ForeColor = System.Drawing.Color.White;
+            this.lbBruto.Location = new System.Drawing.Point(5, 9);
+            this.lbBruto.Name = "lbBruto";
+            this.lbBruto.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lbBruto.Size = new System.Drawing.Size(167, 51);
+            this.lbBruto.TabIndex = 4;
+            this.lbBruto.Text = "0";
+            this.lbBruto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
             this.panel8.Controls.Add(this.iconButton12);
             this.panel8.Controls.Add(this.label10);
-            this.panel8.Controls.Add(this.lbBruto);
             this.panel8.Location = new System.Drawing.Point(510, 13);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(220, 92);
@@ -768,24 +777,12 @@ namespace CapaPresentacion
             this.label10.TabIndex = 4;
             this.label10.Text = "Bruto Pagado";
             // 
-            // lbBruto
-            // 
-            this.lbBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBruto.ForeColor = System.Drawing.Color.White;
-            this.lbBruto.Location = new System.Drawing.Point(5, 9);
-            this.lbBruto.Name = "lbBruto";
-            this.lbBruto.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.lbBruto.Size = new System.Drawing.Size(167, 51);
-            this.lbBruto.TabIndex = 4;
-            this.lbBruto.Text = "0";
-            this.lbBruto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
             this.panel3.Controls.Add(this.iconButton2);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lbNominas);
             this.panel3.Location = new System.Drawing.Point(263, 13);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(220, 92);
@@ -821,23 +818,22 @@ namespace CapaPresentacion
             this.label4.TabIndex = 4;
             this.label4.Text = "Nominas Efectuadas";
             // 
-            // label5
+            // lbNominas
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(7, 9);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.label5.Size = new System.Drawing.Size(168, 51);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "0";
+            this.lbNominas.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNominas.ForeColor = System.Drawing.Color.White;
+            this.lbNominas.Location = new System.Drawing.Point(7, 9);
+            this.lbNominas.Name = "lbNominas";
+            this.lbNominas.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lbNominas.Size = new System.Drawing.Size(168, 51);
+            this.lbNominas.TabIndex = 4;
+            this.lbNominas.Text = "0";
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
             this.panel7.Controls.Add(this.iconButton11);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.lbNominas);
             this.panel7.Location = new System.Drawing.Point(263, 13);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(220, 92);
@@ -872,17 +868,6 @@ namespace CapaPresentacion
             this.label7.Size = new System.Drawing.Size(162, 35);
             this.label7.TabIndex = 4;
             this.label7.Text = "Nominas Efectuadas";
-            // 
-            // lbNominas
-            // 
-            this.lbNominas.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNominas.ForeColor = System.Drawing.Color.White;
-            this.lbNominas.Location = new System.Drawing.Point(7, 9);
-            this.lbNominas.Name = "lbNominas";
-            this.lbNominas.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.lbNominas.Size = new System.Drawing.Size(168, 51);
-            this.lbNominas.TabIndex = 4;
-            this.lbNominas.Text = "0";
             // 
             // panel12
             // 
@@ -993,11 +978,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel8;
         private FontAwesome.Sharp.IconButton iconButton12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lbBruto;
         private System.Windows.Forms.Panel panel7;
         private FontAwesome.Sharp.IconButton iconButton11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbNominas;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label3;
@@ -1005,10 +988,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel14;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbNominas;
+        private System.Windows.Forms.Label lbBruto;
     }
 }

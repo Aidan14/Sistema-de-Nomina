@@ -56,7 +56,7 @@ namespace CapaPresentacion
             this.cbID.Location = new System.Drawing.Point(31, 92);
             this.cbID.Name = "cbID";
             this.cbID.Size = new System.Drawing.Size(187, 27);
-            this.cbID.TabIndex = 33;
+            this.cbID.TabIndex = 0;
             // 
             // btnGuardar
             // 
@@ -83,7 +83,7 @@ namespace CapaPresentacion
             this.txtNombre.Location = new System.Drawing.Point(31, 180);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(187, 20);
-            this.txtNombre.TabIndex = 22;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 

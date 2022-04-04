@@ -195,7 +195,7 @@ namespace CapaPresentacion
             // 
             this.tablaEmpleados.AllowUserToAddRows = false;
             this.tablaEmpleados.AllowUserToDeleteRows = false;
-            this.tablaEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.tablaEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaEmpleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tablaEmpleados.BackgroundColor = System.Drawing.Color.White;
             this.tablaEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None;

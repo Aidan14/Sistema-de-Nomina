@@ -38,11 +38,12 @@ namespace CapaPresentacion
             else
             {
                 cbID.Text = registro.id;
-                txtCedula.Text = registro.cedula;
+                mtxtCedula.Text = registro.cedula;
                 txtNombre.Text = registro.nombre;
                 mtxtNacimiento.Text = registro.nacimiento;
                 cbDepartamento.Text = registro.departamento;
                 cbCargo.Text = registro.cargo;
+                cbHorario.Text = registro.horario;
 
                 if (registro.sexo == "M") rbM.Checked = true;
                 else if (registro.sexo == "F") rbF.Checked = true;
@@ -75,6 +76,11 @@ namespace CapaPresentacion
             cbCargo.DataSource = cargos.ListarCargos("");
             cbCargo.DisplayMember = "ID";
             cbCargo.ValueMember = "ID";
+
+            HorariosNegocios horarios = new HorariosNegocios();
+            cbHorario.DataSource = horarios.ListarHorarios("");
+            cbHorario.DisplayMember = "ID";
+            cbHorario.ValueMember = "ID";
         }
 
         [System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -100,11 +106,12 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    objEntidades.Cedula = txtCedula.Text;
+                    objEntidades.Cedula = mtxtCedula.Text;
                     objEntidades.Nombre = txtNombre.Text;
                     objEntidades.Fecha_Nacimiento = Convert.ToDateTime(mtxtNacimiento.Text);
                     objEntidades.Departamento = Convert.ToInt32(cbDepartamento.Text);
                     objEntidades.Cargo = Convert.ToInt32(cbCargo.Text);
+                    //objEntidades.
 
                     if (rbM.Checked) objEntidades.Sexo = 'M';
                     else objEntidades.Sexo = 'F';
@@ -132,11 +139,12 @@ namespace CapaPresentacion
                 try
                 {
                     objEntidades.ID = Convert.ToInt32(cbID.Text);
-                    objEntidades.Cedula = txtCedula.Text;
+                    objEntidades.Cedula = mtxtCedula.Text;
                     objEntidades.Nombre = txtNombre.Text;
                     objEntidades.Fecha_Nacimiento = Convert.ToDateTime(mtxtNacimiento.Text);
                     objEntidades.Departamento = Convert.ToInt32(cbDepartamento.Text);
                     objEntidades.Cargo = Convert.ToInt32(cbCargo.Text);
+                    objEntidades.Horario = Convert.ToInt32(cbHorario.Text);
 
                     if (rbM.Checked) objEntidades.Sexo = 'M';
                     else objEntidades.Sexo = 'F';
@@ -174,32 +182,6 @@ namespace CapaPresentacion
                 btnEstado.Text = "Activo";
                 btnEstado.BackColor = Color.FromArgb(0, 166, 90);
                 btnEstado.IconChar = FontAwesome.Sharp.IconChar.Check;
-            }
-        }
-
-        private void txt_Enter(object sender, EventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
-
-            switch (txt.Name)
-            {
-                case "txtCedula": if (txt.Text == "Cedula") txt.Text = ""; break;
-                case "txtNombre": if (txt.Text == "Nombre") txt.Text = ""; break;
-                case "txtDireccion": if (txt.Text == "Direccion") txt.Text = ""; break;
-                case "txtPago": if (txt.Text == "Pago") txt.Text = ""; break;
-            }
-        }
-
-        private void txt_Leave(object sender, EventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
-
-            switch (txt.Name)
-            {
-                case "txtCedula": if (txt.Text == "") txt.Text = "Cedula"; break;
-                case "txtNombre": if (txt.Text == "") txt.Text = "Nombre"; break;
-                case "txtDireccion": if (txt.Text == "") txt.Text = "Direccion"; break;
-                case "txtPago": if (txt.Text == "") txt.Text = "Pago"; break;
             }
         }
     }

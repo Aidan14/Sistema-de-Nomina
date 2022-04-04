@@ -3,3 +3,4 @@ C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaEntidades\bin\Debug\
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaEntidades\obj\Debug\CapaEntidades.csproj.CoreCompileInputs.cache
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaEntidades\obj\Debug\CapaEntidades.dll
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaEntidades\obj\Debug\CapaEntidades.pdb
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaEntidades\obj\Debug\CapaEntidades.csproj.AssemblyReference.cache

@@ -68,7 +68,7 @@ namespace CapaPresentacion
             this.cbID.Location = new System.Drawing.Point(31, 92);
             this.cbID.Name = "cbID";
             this.cbID.Size = new System.Drawing.Size(187, 27);
-            this.cbID.TabIndex = 60;
+            this.cbID.TabIndex = 0;
             // 
             // btnGuardar
             // 
@@ -80,7 +80,7 @@ namespace CapaPresentacion
             this.btnGuardar.Location = new System.Drawing.Point(21, 243);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(453, 42);
-            this.btnGuardar.TabIndex = 59;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -94,7 +94,7 @@ namespace CapaPresentacion
             this.txtRol.Location = new System.Drawing.Point(277, 185);
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(187, 23);
-            this.txtRol.TabIndex = 52;
+            this.txtRol.TabIndex = 3;
             // 
             // txtContraseña
             // 
@@ -105,7 +105,7 @@ namespace CapaPresentacion
             this.txtContraseña.Location = new System.Drawing.Point(31, 185);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(187, 23);
-            this.txtContraseña.TabIndex = 53;
+            this.txtContraseña.TabIndex = 2;
             // 
             // txtNombre
             // 
@@ -116,7 +116,7 @@ namespace CapaPresentacion
             this.txtNombre.Location = new System.Drawing.Point(277, 94);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(187, 23);
-            this.txtNombre.TabIndex = 54;
+            this.txtNombre.TabIndex = 1;
             // 
             // btnClose
             // 

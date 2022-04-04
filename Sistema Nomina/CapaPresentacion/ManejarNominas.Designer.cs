@@ -57,7 +57,6 @@ namespace CapaPresentacion
             this.rb15 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.cBAuto = new System.Windows.Forms.CheckBox();
-            this.lbID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -123,7 +122,7 @@ namespace CapaPresentacion
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 86;
-            this.label1.Text = "ID Jornada";
+            this.label1.Text = "ID Nomina";
             // 
             // cbUsuario
             // 
@@ -135,7 +134,7 @@ namespace CapaPresentacion
             this.cbUsuario.Location = new System.Drawing.Point(277, 92);
             this.cbUsuario.Name = "cbUsuario";
             this.cbUsuario.Size = new System.Drawing.Size(187, 27);
-            this.cbUsuario.TabIndex = 72;
+            this.cbUsuario.TabIndex = 1;
             // 
             // cbID
             // 
@@ -193,7 +192,7 @@ namespace CapaPresentacion
             this.mtxtHasta.Mask = "00/00/0000";
             this.mtxtHasta.Name = "mtxtHasta";
             this.mtxtHasta.Size = new System.Drawing.Size(187, 20);
-            this.mtxtHasta.TabIndex = 70;
+            this.mtxtHasta.TabIndex = 7;
             this.mtxtHasta.ValidatingType = typeof(System.DateTime);
             // 
             // mtxtFecha
@@ -206,7 +205,7 @@ namespace CapaPresentacion
             this.mtxtFecha.Mask = "00/00/0000";
             this.mtxtFecha.Name = "mtxtFecha";
             this.mtxtFecha.Size = new System.Drawing.Size(187, 20);
-            this.mtxtFecha.TabIndex = 69;
+            this.mtxtFecha.TabIndex = 2;
             this.mtxtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // mtxtDesde
@@ -219,7 +218,7 @@ namespace CapaPresentacion
             this.mtxtDesde.Mask = "00/00/0000";
             this.mtxtDesde.Name = "mtxtDesde";
             this.mtxtDesde.Size = new System.Drawing.Size(187, 20);
-            this.mtxtDesde.TabIndex = 71;
+            this.mtxtDesde.TabIndex = 6;
             this.mtxtDesde.ValidatingType = typeof(System.DateTime);
             this.mtxtDesde.TextChanged += new System.EventHandler(this.mtxtDesde_TextChanged);
             // 
@@ -233,7 +232,7 @@ namespace CapaPresentacion
             this.btnGuardar.Location = new System.Drawing.Point(22, 319);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(453, 42);
-            this.btnGuardar.TabIndex = 68;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -339,7 +338,7 @@ namespace CapaPresentacion
             this.rb30.Location = new System.Drawing.Point(338, 171);
             this.rb30.Name = "rb30";
             this.rb30.Size = new System.Drawing.Size(48, 27);
-            this.rb30.TabIndex = 94;
+            this.rb30.TabIndex = 4;
             this.rb30.TabStop = true;
             this.rb30.Text = "30";
             this.rb30.UseVisualStyleBackColor = true;
@@ -353,7 +352,7 @@ namespace CapaPresentacion
             this.rb15.Location = new System.Drawing.Point(270, 171);
             this.rb15.Name = "rb15";
             this.rb15.Size = new System.Drawing.Size(48, 27);
-            this.rb15.TabIndex = 95;
+            this.rb15.TabIndex = 3;
             this.rb15.TabStop = true;
             this.rb15.Text = "15";
             this.rb15.UseVisualStyleBackColor = true;
@@ -377,19 +376,8 @@ namespace CapaPresentacion
             this.cBAuto.Location = new System.Drawing.Point(445, 177);
             this.cBAuto.Name = "cBAuto";
             this.cBAuto.Size = new System.Drawing.Size(15, 14);
-            this.cBAuto.TabIndex = 96;
+            this.cBAuto.TabIndex = 5;
             this.cBAuto.UseVisualStyleBackColor = true;
-            // 
-            // lbID
-            // 
-            this.lbID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.ForeColor = System.Drawing.Color.DimGray;
-            this.lbID.Location = new System.Drawing.Point(28, 96);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(191, 19);
-            this.lbID.TabIndex = 86;
-            this.lbID.Text = "1";
-            this.lbID.Visible = false;
             // 
             // ManejarNominas
             // 
@@ -406,14 +394,10 @@ namespace CapaPresentacion
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbUsuario);
-            this.Controls.Add(this.cbID);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mtxtHasta);
             this.Controls.Add(this.mtxtFecha);
             this.Controls.Add(this.mtxtDesde);
@@ -426,6 +410,9 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.cbID);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManejarNominas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -477,6 +464,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.RadioButton rb15;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox cBAuto;
-        private System.Windows.Forms.Label lbID;
     }
 }

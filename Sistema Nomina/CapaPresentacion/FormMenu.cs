@@ -15,15 +15,23 @@ namespace CapaPresentacion
 {
     public partial class FormMenu : Form
     {
-        public FormMenu(FormLogin.Datos datos)
+        FormLogin.Datos datos;
+
+        public FormMenu(FormLogin.Datos _datos)
         {
             InitializeComponent();
-            lbUsuario.Text = datos.nombre;
+            datos = _datos;
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
+            lbUsuario.Text = datos.nombre;
+            lbRol.Text = datos.rol;
+            CalcularPaneles();
+        }
 
+        private void CalcularPaneles()
+        {
             SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["Conectar"].ConnectionString);
 
             conexion.Open();
@@ -38,11 +46,10 @@ namespace CapaPresentacion
 
 
             DetallesNegocios negocios = new DetallesNegocios();
-            lbBruto.Text = Convert.ToString(negocios.BrutoPagado());
-            lbNeto.Text = Convert.ToString(negocios.NetoPagado());
+            lbBruto.Text = Convert.ToString(Math.Round(negocios.BrutoPagado()));
+            lbNeto.Text = Convert.ToString(Math.Round(negocios.NetoPagado()));
 
             conexion.Close();
-
         }
 
         [System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -74,7 +81,7 @@ namespace CapaPresentacion
         }
 
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        private void openChildForm(Form childForm, Button _activeButton)
         {
             if (activeForm != null) activeForm.Close();
 
@@ -87,64 +94,32 @@ namespace CapaPresentacion
             childForm.Show();
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
+        private void btnTab_Click(object sender, EventArgs e)
         {
-            if (activeForm != null)
+            Button btn = (Button)sender;
+
+            switch (btn.Text)
             {
-                activeForm.Close();
-                activeForm = null;
+                case "Horarios": openChildForm(new FormHorarios(), btn); break;
+                case "Cargos": openChildForm(new FormCargos(), btn); break;
+                case "Departamentos": openChildForm(new FormDepartamentos(), btn); break;
+                case "Usuarios": openChildForm(new FormUsuarios(), btn); break;
+                case "Empleados": openChildForm(new FormEmpleados(), btn); break;
+                case "Jornadas": openChildForm(new FormJornadas(), btn); break;
+                case "Asistencia": openChildForm(new FormAsistencia(), btn); break;
+                case "Nominas": openChildForm(new FormNominas(), btn); break;
+                case "Detalles": openChildForm(new FormDetalles(), btn); break;
+                case "Configuracion": break;
+
+                default:
+                    if (activeForm != null)
+                    {
+                        activeForm.Close();
+                        activeForm = null;
+                        CalcularPaneles();
+
+                    }; break;
             }
-        }
-
-        private void btnHorarios_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormHorarios());
-        }
-
-        private void btnCargos_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormCargos());
-        }
-
-        private void btnDepartamentos_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormDepartamentos());
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormUsuarios());
-        }
-
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormEmpleados());
-        }
-
-        private void btnJornadas_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormJornadas());
-        }
-
-        private void btnAsistencia_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormAsistencia());
-        }
-
-        private void btnNominas_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormNominas());
-        }
-
-        private void btnDetalles_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormDetalles());
-        }
-
-        private void btnConfiguracion_Click(object sender, EventArgs e)
-        {
-
-
         }
     }
 }

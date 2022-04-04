@@ -26,5 +26,10 @@ namespace CapaNegocios
         {
             objDatos.EditarHorario(Horario);
         }
+
+        public double Horas(int ID_Horario)
+        {
+            return objDatos.Horas(ID_Horario);
+        }
     }
 }

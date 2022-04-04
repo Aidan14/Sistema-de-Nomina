@@ -80,7 +80,7 @@ namespace CapaPresentacion
             this.cbID.Location = new System.Drawing.Point(32, 93);
             this.cbID.Name = "cbID";
             this.cbID.Size = new System.Drawing.Size(187, 27);
-            this.cbID.TabIndex = 59;
+            this.cbID.TabIndex = 0;
             // 
             // mtxtLlegada
             // 
@@ -92,7 +92,7 @@ namespace CapaPresentacion
             this.mtxtLlegada.Mask = "00:00:00";
             this.mtxtLlegada.Name = "mtxtLlegada";
             this.mtxtLlegada.Size = new System.Drawing.Size(187, 20);
-            this.mtxtLlegada.TabIndex = 58;
+            this.mtxtLlegada.TabIndex = 3;
             this.mtxtLlegada.ValidatingType = typeof(System.DateTime);
             // 
             // btnGuardar
@@ -105,7 +105,7 @@ namespace CapaPresentacion
             this.btnGuardar.Location = new System.Drawing.Point(25, 403);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(453, 42);
-            this.btnGuardar.TabIndex = 57;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -119,7 +119,7 @@ namespace CapaPresentacion
             this.txtObservacion.Location = new System.Drawing.Point(34, 348);
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(434, 20);
-            this.txtObservacion.TabIndex = 52;
+            this.txtObservacion.TabIndex = 5;
             // 
             // btnClose
             // 
@@ -179,7 +179,7 @@ namespace CapaPresentacion
             this.cbEmpleado.Location = new System.Drawing.Point(277, 92);
             this.cbEmpleado.Name = "cbEmpleado";
             this.cbEmpleado.Size = new System.Drawing.Size(187, 27);
-            this.cbEmpleado.TabIndex = 59;
+            this.cbEmpleado.TabIndex = 1;
             // 
             // mtxtSalida
             // 
@@ -191,7 +191,7 @@ namespace CapaPresentacion
             this.mtxtSalida.Mask = "00:00:00";
             this.mtxtSalida.Name = "mtxtSalida";
             this.mtxtSalida.Size = new System.Drawing.Size(187, 20);
-            this.mtxtSalida.TabIndex = 58;
+            this.mtxtSalida.TabIndex = 4;
             this.mtxtSalida.ValidatingType = typeof(System.DateTime);
             // 
             // label1
@@ -287,7 +287,7 @@ namespace CapaPresentacion
             this.mtxtFecha.Mask = "00/00/0000";
             this.mtxtFecha.Name = "mtxtFecha";
             this.mtxtFecha.Size = new System.Drawing.Size(187, 20);
-            this.mtxtFecha.TabIndex = 58;
+            this.mtxtFecha.TabIndex = 2;
             this.mtxtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // pictureBox3

@@ -68,7 +68,7 @@ namespace CapaPresentacion
             this.cbID.Location = new System.Drawing.Point(30, 88);
             this.cbID.Name = "cbID";
             this.cbID.Size = new System.Drawing.Size(187, 27);
-            this.cbID.TabIndex = 44;
+            this.cbID.TabIndex = 0;
             // 
             // btnGuardar
             // 
@@ -80,7 +80,7 @@ namespace CapaPresentacion
             this.btnGuardar.Location = new System.Drawing.Point(20, 246);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(459, 42);
-            this.btnGuardar.TabIndex = 42;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -94,7 +94,7 @@ namespace CapaPresentacion
             this.txtTipo.Location = new System.Drawing.Point(282, 89);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(187, 23);
-            this.txtTipo.TabIndex = 37;
+            this.txtTipo.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -137,7 +137,7 @@ namespace CapaPresentacion
             this.mtxtHasta.Mask = "00:00:00";
             this.mtxtHasta.Name = "mtxtHasta";
             this.mtxtHasta.Size = new System.Drawing.Size(187, 24);
-            this.mtxtHasta.TabIndex = 45;
+            this.mtxtHasta.TabIndex = 3;
             this.mtxtHasta.ValidatingType = typeof(System.DateTime);
             // 
             // mtxtDesde
@@ -150,7 +150,7 @@ namespace CapaPresentacion
             this.mtxtDesde.Mask = "00:00:00";
             this.mtxtDesde.Name = "mtxtDesde";
             this.mtxtDesde.Size = new System.Drawing.Size(187, 24);
-            this.mtxtDesde.TabIndex = 43;
+            this.mtxtDesde.TabIndex = 2;
             this.mtxtDesde.ValidatingType = typeof(System.DateTime);
             // 
             // pictureBox2

@@ -72,5 +72,23 @@ namespace CapaDatos
             cmd.ExecuteNonQuery();
             Conexion.Close();
         }
+
+        public double Horas(int ID_Horario)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Desde, Hasta FROM Horarios WHERE ID_Horario = @ID_Horario", Conexion);
+            cmd.Parameters.AddWithValue("@ID_Horario", ID_Horario);
+
+            Conexion.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            TimeSpan desde = dr.GetTimeSpan(0);
+            TimeSpan hasta = dr.GetTimeSpan(1);
+
+            double horas = hasta.Subtract(desde).Hours;
+            if (desde > hasta) horas = 24 - desde.Hours + hasta.Hours;
+
+            Conexion.Close();
+            return horas;
+        }
     }
 }

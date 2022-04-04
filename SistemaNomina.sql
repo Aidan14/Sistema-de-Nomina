@@ -15,7 +15,7 @@ CREATE TABLE Usuarios
 	ID_Usuario INT IDENTITY PRIMARY KEY,
 	Nombre NVARCHAR(50),
 	Contraseña NVARCHAR(50),
-	Rol NVARCHAR(50),
+	Rol NVARCHAR(50)
 )
 
 CREATE TABLE Departamentos
@@ -35,7 +35,7 @@ CREATE TABLE Horarios
 	ID_Horario INT IDENTITY PRIMARY KEY,
 	Tipo NVARCHAR(20),
 	Desde TIME,
-	Hasta TIME,
+	Hasta TIME
 )
 
 CREATE TABLE Empleados
@@ -46,6 +46,7 @@ CREATE TABLE Empleados
 	Fecha_Nacimiento DATE,
 	ID_Departamento INT,
 	ID_Cargo INT,
+	ID_Horario INT,
 	Sexo CHAR,
 	Telefono NVARCHAR(15),
 	Direccion NVARCHAR(200),
@@ -53,7 +54,8 @@ CREATE TABLE Empleados
 	Pago_Hora FLOAT
 
 	CONSTRAINT FK_Departamento_Empleado FOREIGN KEY (ID_Departamento) REFERENCES Departamentos(ID_Departamento),
-	CONSTRAINT FK_Cargo_Empleado FOREIGN KEY (ID_Cargo) REFERENCES Cargos(ID_Cargo)
+	CONSTRAINT FK_Cargo_Empleado FOREIGN KEY (ID_Cargo) REFERENCES Cargos(ID_Cargo),
+	CONSTRAINT FK_Horario_Empleado FOREIGN KEY (ID_Horario) REFERENCES Horarios(ID_Horario)
 )
 
 CREATE TABLE Jornadas
@@ -65,7 +67,7 @@ CREATE TABLE Jornadas
 	Hora_Salida TIME,
 	Observacion NVARCHAR(200),
 
-	CONSTRAINT FK_Horario_Empleado FOREIGN KEY (ID_Empleado) REFERENCES Empleados(ID_Empleado)
+	CONSTRAINT FK_Empleado_Jornada FOREIGN KEY (ID_Empleado) REFERENCES Empleados(ID_Empleado)
 )
 
 CREATE TABLE Nominas
@@ -248,14 +250,8 @@ SELECT * FROM Empleados
 WHERE	ID_Empleado LIKE '%' + @Buscar + '%' OR
 		Cedula LIKE '%' + @Buscar + '%' OR
 		Nombre LIKE '%' + @Buscar + '%' OR
-		Fecha_Nacimiento LIKE '%' + @Buscar + '%' OR
-		ID_Departamento LIKE '%' + @Buscar + '%' OR
-		ID_Cargo LIKE '%' + @Buscar + '%' OR
-		Sexo LIKE '%' + @Buscar + '%' OR
 		Telefono LIKE '%' + @Buscar + '%' OR
-		Direccion LIKE '%' + @Buscar + '%' OR
-		Estado LIKE '%' + @Buscar + '%' OR
-		Pago_Hora LIKE '%' + @Buscar + '%'
+		Estado LIKE '%' + @Buscar + '%'
 
 GO
 CREATE PROCEDURE SP_INSERTAR_EMPLEADO
@@ -264,6 +260,7 @@ CREATE PROCEDURE SP_INSERTAR_EMPLEADO
 @Fecha_Nacimiento DATE,
 @ID_Departamento INT,
 @ID_Cargo INT,
+@ID_Horario INT,
 @Sexo CHAR,
 @Telefono NVARCHAR(15),
 @Direccion NVARCHAR(200),
@@ -271,7 +268,7 @@ CREATE PROCEDURE SP_INSERTAR_EMPLEADO
 @Pago_Hora FLOAT
 AS
 INSERT INTO Empleados
-VALUES(@Cedula, @Nombre, @Fecha_Nacimiento, @ID_Departamento, @ID_Cargo, @Sexo, @Telefono, @Direccion, @Estado, @Pago_Hora)
+VALUES(@Cedula, @Nombre, @Fecha_Nacimiento, @ID_Departamento, @ID_Cargo, @ID_Horario, @Sexo, @Telefono, @Direccion, @Estado, @Pago_Hora)
 
 GO
 CREATE PROCEDURE SP_EDITAR_EMPLEADO
@@ -281,6 +278,7 @@ CREATE PROCEDURE SP_EDITAR_EMPLEADO
 @Fecha_Nacimiento DATE,
 @ID_Departamento INT,
 @ID_Cargo INT,
+@ID_Horario INT,
 @Sexo CHAR,
 @Telefono NVARCHAR(15),
 @Direccion NVARCHAR(200),
@@ -288,7 +286,7 @@ CREATE PROCEDURE SP_EDITAR_EMPLEADO
 @Pago_Hora FLOAT
 AS
 UPDATE Empleados
-SET Cedula = @Cedula, Nombre = @Nombre, Fecha_Nacimiento = @Fecha_Nacimiento, ID_Departamento = @ID_Departamento, ID_Cargo = @ID_Cargo, Sexo = @Sexo, Telefono = @Telefono, Direccion = @Direccion, Estado = @Estado, Pago_Hora = @Pago_Hora
+SET Cedula = @Cedula, Nombre = @Nombre, Fecha_Nacimiento = @Fecha_Nacimiento, ID_Departamento = @ID_Departamento, ID_Cargo = @ID_Cargo, ID_Horario = @ID_Horario, Sexo = @Sexo, Telefono = @Telefono, Direccion = @Direccion, Estado = @Estado, Pago_Hora = @Pago_Hora
 WHERE ID_Empleado = @ID_Empleado
 
 GO
@@ -458,9 +456,9 @@ INSERT INTO Departamentos VALUES ('Contabilidad')
 INSERT INTO Departamentos VALUES ('Marketing')
 INSERT INTO Departamentos VALUES ('Procesos')
 
-INSERT INTO Empleados VALUES ('B1651616', 'Pepe Ortega', '14/07/2005', 2, 1, 'M', '849-897-3216', 'La Esperilla, Calle Primera', 'Activo', 200)
-INSERT INTO Empleados VALUES ('B1651616', 'Jack Sparrow', '09/03/2004', 3, 2, 'M', '809-163-7137', 'La Altagracia, Calle #6', 'Activo', 100)
-INSERT INTO Empleados VALUES ('B1651616', 'Pepe Ortega', '10/11/2005', 1, 4, 'M', '829-180-6106', 'Av. John F. Kennedy', 'Activo', 150)
+INSERT INTO Empleados VALUES ('721-1430987-6', 'Pepe Ortega', '14/07/2005', 2, 1, 1, 'M', '849-897-3216', 'La Esperilla, Calle Primera', 'Activo', 200)
+INSERT INTO Empleados VALUES ('831-6017108-3', 'Jack Sparrow', '09/03/2004', 3, 2, 1, 'M', '809-163-7137', 'La Altagracia, Calle #6', 'Activo', 100)
+INSERT INTO Empleados VALUES ('127-5198576-1', 'Pepe Ortega', '10/11/2005', 1, 4, 1, 'M', '829-180-6106', 'Av. John F. Kennedy', 'Activo', 150)
 
 INSERT INTO Jornadas VALUES (1, '01/03/2022', '08:00:00', '16:00:00', '');
 INSERT INTO Jornadas VALUES (1, '02/03/2022', '08:00:00', '16:00:00', '');
@@ -489,6 +487,42 @@ INSERT INTO Jornadas VALUES (1, '24/03/2022', '08:00:00', '16:00:00', '');
 INSERT INTO Jornadas VALUES (1, '25/03/2022', '08:00:00', '16:00:00', '');
 INSERT INTO Jornadas VALUES (1, '26/03/2022', '08:00:00', '16:00:00', '');
 INSERT INTO Jornadas VALUES (1, '27/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '28/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '29/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '30/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (1, '31/03/2022', '08:00:00', '16:00:00', '');
+
+INSERT INTO Jornadas VALUES (2, '01/03/2022', '07:00:00', '18:00:00', '');
+INSERT INTO Jornadas VALUES (2, '02/03/2022', '08:00:00', '17:00:00', '');
+INSERT INTO Jornadas VALUES (2, '03/03/2022', '08:00:00', '20:00:00', '');
+INSERT INTO Jornadas VALUES (2, '04/03/2022', '09:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '05/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '06/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '07/03/2022', '08:00:00', '17:00:00', '');
+INSERT INTO Jornadas VALUES (2, '08/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '09/03/2022', '08:00:00', '17:00:00', '');
+INSERT INTO Jornadas VALUES (2, '10/03/2022', '09:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '11/03/2022', '08:00:00', '18:00:00', '');
+INSERT INTO Jornadas VALUES (2, '12/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '13/03/2022', '07:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '14/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '15/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '16/03/2022', '09:00:00', '17:00:00', '');
+INSERT INTO Jornadas VALUES (2, '17/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '18/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '19/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '20/03/2022', '08:00:00', '18:00:00', '');
+INSERT INTO Jornadas VALUES (2, '21/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '22/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '23/03/2022', '09:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '24/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '25/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '26/03/2022', '08:00:00', '17:00:00', '');
+INSERT INTO Jornadas VALUES (2, '27/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '28/03/2022', '09:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '29/03/2022', '08:00:00', '17:00:00', '');
+INSERT INTO Jornadas VALUES (2, '30/03/2022', '08:00:00', '16:00:00', '');
+INSERT INTO Jornadas VALUES (2, '31/03/2022', '08:00:00', '16:00:00', '');
 
 INSERT INTO Nominas VALUES (1, '29/03/2022', '01/03/2022', '15/03/2022')
 
@@ -515,3 +549,7 @@ SELECT * FROM Jornadas WHERE ID_Empleado = 1 AND Fecha BETWEEN '01/03/2022' AND 
 SELECT ID_Empleado, Pago_Hora FROM Empleados WHERE Estado = 'Activo'
 
 SELECT SUM(Sueldo_Base) AS 'Bruto Pagado' FROM Detalles
+
+SELECT COUNT(ID_Empleado) FROM Empleados
+
+SELECT Desde, Hasta FROM Horarios WHERE ID_Horario = 2

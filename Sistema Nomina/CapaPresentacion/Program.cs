@@ -14,7 +14,7 @@ namespace CapaPresentacion
         [STAThread]
         static void Main()
         {
-            FormLogin.Datos datos = new FormLogin.Datos("Username", "Role");
+            FormLogin.Datos datos = new FormLogin.Datos("Admin", "Admin");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

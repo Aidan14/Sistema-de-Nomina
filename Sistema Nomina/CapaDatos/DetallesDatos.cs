@@ -88,7 +88,7 @@ namespace CapaDatos
 
         public double BrutoPagado()
         {
-            SqlCommand cmd = new SqlCommand("SELECT SUM(Sueldo_Base) FROM Detalles", Conexion);
+            SqlCommand cmd = new SqlCommand("SELECT ISNULL(SUM(Sueldo_Base),0) FROM Detalles", Conexion);
             Conexion.Open();
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -101,7 +101,7 @@ namespace CapaDatos
 
         public double NetoPagado()
         {
-            SqlCommand cmd = new SqlCommand("SELECT SUM(Sueldo_Neto) FROM Detalles", Conexion);
+            SqlCommand cmd = new SqlCommand("SELECT ISNULL(SUM(Sueldo_Neto),0) FROM Detalles", Conexion);
             Conexion.Open();
 
             SqlDataReader dr = cmd.ExecuteReader();
