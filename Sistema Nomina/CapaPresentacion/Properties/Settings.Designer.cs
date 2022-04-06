@@ -23,39 +23,39 @@ namespace CapaPresentacion.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string afpPorcentaje {
+        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        public double afpPorcentaje {
             get {
-                return ((string)(this["afpPorcentaje"]));
+                return ((double)(this["afpPorcentaje"]));
+            }
+            set {
+                this["afpPorcentaje"] = value;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string arsPorcentaje {
+        [global::System.Configuration.DefaultSettingValueAttribute("2.58")]
+        public double arsPorcentaje {
             get {
-                return ((string)(this["arsPorcentaje"]));
+                return ((double)(this["arsPorcentaje"]));
+            }
+            set {
+                this["arsPorcentaje"] = value;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string isrPorcentaje {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double isrPorcentaje {
             get {
-                return ((string)(this["isrPorcentaje"]));
+                return ((double)(this["isrPorcentaje"]));
             }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Valor {
-            get {
-                return ((string)(this["Valor"]));
+            set {
+                this["isrPorcentaje"] = value;
             }
         }
     }

@@ -6,3 +6,4 @@ C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaDatos\obj\Debug\Capa
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete

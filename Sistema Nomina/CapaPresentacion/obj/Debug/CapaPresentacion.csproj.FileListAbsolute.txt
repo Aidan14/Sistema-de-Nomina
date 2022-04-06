@@ -36,3 +36,8 @@ C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Deb
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\CapaPresentacion.FormConfiguracion.resources
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\RdlCompile.cache
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\RdlCompile.compiled

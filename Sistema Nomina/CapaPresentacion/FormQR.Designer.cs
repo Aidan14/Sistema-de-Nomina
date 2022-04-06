@@ -43,6 +43,7 @@ namespace CapaPresentacion
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
+            this.picBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MouseDown);
             // 
             // btnClose
             // 
@@ -94,6 +95,7 @@ namespace CapaPresentacion
             this.Text = "FormQR";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FormQR_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
 

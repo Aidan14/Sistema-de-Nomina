@@ -109,7 +109,7 @@ namespace CapaPresentacion
                 case "Asistencia": openChildForm(new FormAsistencia(), btn); break;
                 case "Nominas": openChildForm(new FormNominas(), btn); break;
                 case "Detalles": openChildForm(new FormDetalles(), btn); break;
-                case "Configuracion": break;
+                case "Configuracion": openChildForm(new FormConfiguracion(), btn); break;
 
                 default:
                     if (activeForm != null)

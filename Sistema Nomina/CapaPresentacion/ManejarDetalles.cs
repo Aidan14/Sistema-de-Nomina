@@ -153,9 +153,10 @@ namespace CapaPresentacion
             double pagoHN = empleados.SueldoEmpleado(Convert.ToInt32(cbEmpleado.Text));
             double pagoHE = pagoHN * 1.25;
 
-            double HT = 0;
-            double HN = 0;
-            double HE = 0;
+            double HT = 0, HN = 0, HE = 0;
+
+            double porcentajeAFP = Properties.Settings.Default.afpPorcentaje;
+            double porcentajeARS = Properties.Settings.Default.arsPorcentaje;
 
             double HorasHorario = horarios.Horas(Convert.ToInt32(empleados.HorarioEmpleado(Convert.ToInt32(cbEmpleado.Text))));
 
@@ -176,8 +177,8 @@ namespace CapaPresentacion
 
             double bruto = Math.Round((HN * pagoHN) + (HE * pagoHE));
 
-            double AFP = Math.Round((bruto * (3.92 / 100)), 2);
-            double ARS = Math.Round((bruto * (2.58 / 100)), 2);
+            double AFP = Math.Round((bruto * (porcentajeAFP / 100)), 2);
+            double ARS = Math.Round((bruto * (porcentajeARS / 100)), 2);
 
             double AntesISR = Math.Round(bruto - (AFP + ARS), 2);
             double ISR = 0;

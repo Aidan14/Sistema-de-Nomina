@@ -2,17 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CapaPresentacion.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="afpPorcentaje" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
+    <Setting Name="afpPorcentaje" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.5</Value>
     </Setting>
-    <Setting Name="arsPorcentaje" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
+    <Setting Name="arsPorcentaje" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2.58</Value>
     </Setting>
-    <Setting Name="isrPorcentaje" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Valor" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
+    <Setting Name="isrPorcentaje" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>
