@@ -20,12 +20,13 @@ namespace CapaPresentacion
 
         public struct Registro
         {
-            public string nomina, empleado; public bool editarse;
+            public string nomina, empleado, nombre;  public bool editarse;
 
-            public Registro(string nomina, string empleado, bool editarse)
+            public Registro(string nomina, string empleado, string nombre, bool editarse)
             {
                 this.nomina = nomina;
                 this.empleado = empleado;
+                this.nombre = nombre;
                 this.editarse = editarse;
             }
 
@@ -54,7 +55,7 @@ namespace CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro("", "", false);
+            Registro registro = new Registro("", "", "", false);
 
             AbrirManejo(registro);
         }
@@ -66,9 +67,11 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (tablaDetalles.RowCount <= 0) return;
             Registro registro = new Registro(
                 tablaDetalles.CurrentRow.Cells[0].Value.ToString(),
-                tablaDetalles.CurrentRow.Cells[1].Value.ToString(),true);
+                tablaDetalles.CurrentRow.Cells[1].Value.ToString(),
+                tablaDetalles.CurrentRow.Cells[2].Value.ToString(), true);
 
             AbrirManejo(registro);
         }
@@ -113,6 +116,11 @@ namespace CapaPresentacion
             lbBrutoTotal.Text = brutoTotal.ToString();
             lbDeduccionTotal.Text = deduccionTotal.ToString();
             lbNetoTotal.Text = netoTotal.ToString();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            //new ReporteDetalles
         }
     }
 }

@@ -83,6 +83,14 @@ namespace CapaPresentacion
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbAntesISR = new System.Windows.Forms.Label();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbTotalDeducciones = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -108,6 +116,10 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -137,7 +149,7 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(20, 476);
+            this.label4.Location = new System.Drawing.Point(264, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 87;
@@ -280,7 +292,7 @@ namespace CapaPresentacion
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(25, 498);
+            this.pictureBox4.Location = new System.Drawing.Point(269, 169);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(203, 40);
             this.pictureBox4.TabIndex = 85;
@@ -289,7 +301,7 @@ namespace CapaPresentacion
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox3.Location = new System.Drawing.Point(23, 496);
+            this.pictureBox3.Location = new System.Drawing.Point(267, 167);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(207, 44);
             this.pictureBox3.TabIndex = 80;
@@ -298,7 +310,7 @@ namespace CapaPresentacion
             // pictureBox13
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox13.Location = new System.Drawing.Point(23, 164);
+            this.pictureBox13.Location = new System.Drawing.Point(510, 578);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(207, 44);
             this.pictureBox13.TabIndex = 83;
@@ -306,7 +318,7 @@ namespace CapaPresentacion
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Location = new System.Drawing.Point(25, 166);
+            this.pictureBox14.Location = new System.Drawing.Point(512, 580);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(203, 40);
             this.pictureBox14.TabIndex = 84;
@@ -317,7 +329,7 @@ namespace CapaPresentacion
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(20, 142);
+            this.label8.Location = new System.Drawing.Point(507, 556);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 19);
             this.label8.TabIndex = 89;
@@ -326,7 +338,7 @@ namespace CapaPresentacion
             // pictureBox15
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox15.Location = new System.Drawing.Point(268, 164);
+            this.pictureBox15.Location = new System.Drawing.Point(755, 578);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(207, 44);
             this.pictureBox15.TabIndex = 83;
@@ -334,7 +346,7 @@ namespace CapaPresentacion
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(270, 166);
+            this.pictureBox16.Location = new System.Drawing.Point(757, 580);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(203, 40);
             this.pictureBox16.TabIndex = 84;
@@ -345,7 +357,7 @@ namespace CapaPresentacion
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(265, 142);
+            this.label9.Location = new System.Drawing.Point(752, 556);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 19);
             this.label9.TabIndex = 89;
@@ -355,7 +367,7 @@ namespace CapaPresentacion
             // 
             this.lbHT.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHT.ForeColor = System.Drawing.Color.DimGray;
-            this.lbHT.Location = new System.Drawing.Point(30, 175);
+            this.lbHT.Location = new System.Drawing.Point(517, 589);
             this.lbHT.Name = "lbHT";
             this.lbHT.Size = new System.Drawing.Size(193, 23);
             this.lbHT.TabIndex = 2;
@@ -365,7 +377,7 @@ namespace CapaPresentacion
             // 
             this.lbHE.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHE.ForeColor = System.Drawing.Color.DimGray;
-            this.lbHE.Location = new System.Drawing.Point(275, 175);
+            this.lbHE.Location = new System.Drawing.Point(762, 589);
             this.lbHE.Name = "lbHE";
             this.lbHE.Size = new System.Drawing.Size(193, 23);
             this.lbHE.TabIndex = 3;
@@ -484,7 +496,7 @@ namespace CapaPresentacion
             this.tablaJornadas.RowHeadersVisible = false;
             this.tablaJornadas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tablaJornadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaJornadas.Size = new System.Drawing.Size(459, 558);
+            this.tablaJornadas.Size = new System.Drawing.Size(459, 476);
             this.tablaJornadas.TabIndex = 94;
             // 
             // pictureBox11
@@ -575,7 +587,7 @@ namespace CapaPresentacion
             // 
             this.lbBruto.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBruto.ForeColor = System.Drawing.Color.DimGray;
-            this.lbBruto.Location = new System.Drawing.Point(30, 507);
+            this.lbBruto.Location = new System.Drawing.Point(274, 178);
             this.lbBruto.Name = "lbBruto";
             this.lbBruto.Size = new System.Drawing.Size(193, 23);
             this.lbBruto.TabIndex = 10;
@@ -659,6 +671,82 @@ namespace CapaPresentacion
             this.lbAntesISR.TabIndex = 8;
             this.lbAntesISR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox25
+            // 
+            this.pictureBox25.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox25.Location = new System.Drawing.Point(23, 167);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(207, 44);
+            this.pictureBox25.TabIndex = 83;
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Location = new System.Drawing.Point(25, 169);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(203, 40);
+            this.pictureBox26.TabIndex = 84;
+            this.pictureBox26.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(20, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(162, 19);
+            this.label7.TabIndex = 89;
+            this.label7.Text = "Nombre del Empleado";
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.ForeColor = System.Drawing.Color.DimGray;
+            this.lbNombre.Location = new System.Drawing.Point(30, 178);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(193, 23);
+            this.lbNombre.TabIndex = 2;
+            this.lbNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox27.Location = new System.Drawing.Point(24, 496);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(207, 44);
+            this.pictureBox27.TabIndex = 80;
+            this.pictureBox27.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.Location = new System.Drawing.Point(26, 498);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(203, 40);
+            this.pictureBox28.TabIndex = 85;
+            this.pictureBox28.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(21, 476);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 19);
+            this.label11.TabIndex = 87;
+            this.label11.Text = "Deducciones Totales";
+            // 
+            // lbTotalDeducciones
+            // 
+            this.lbTotalDeducciones.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalDeducciones.ForeColor = System.Drawing.Color.DimGray;
+            this.lbTotalDeducciones.Location = new System.Drawing.Point(31, 507);
+            this.lbTotalDeducciones.Name = "lbTotalDeducciones";
+            this.lbTotalDeducciones.Size = new System.Drawing.Size(193, 23);
+            this.lbTotalDeducciones.TabIndex = 10;
+            this.lbTotalDeducciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ManejarDetalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -673,28 +761,34 @@ namespace CapaPresentacion
             this.Controls.Add(this.lbPagoHN);
             this.Controls.Add(this.lbNeto);
             this.Controls.Add(this.lbAFP);
+            this.Controls.Add(this.lbTotalDeducciones);
             this.Controls.Add(this.lbBruto);
+            this.Controls.Add(this.lbNombre);
             this.Controls.Add(this.lbHT);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label14);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox18);
+            this.Controls.Add(this.pictureBox26);
             this.Controls.Add(this.cbEmpleado);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.pictureBox17);
+            this.Controls.Add(this.pictureBox25);
             this.Controls.Add(this.cbNomina);
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.pictureBox6);
@@ -713,7 +807,9 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox22);
             this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox28);
             this.Controls.Add(this.pictureBox21);
+            this.Controls.Add(this.pictureBox27);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.tablaJornadas);
@@ -748,6 +844,10 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -806,5 +906,13 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbAntesISR;
+        private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.PictureBox pictureBox27;
+        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbTotalDeducciones;
     }
 }

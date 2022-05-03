@@ -33,12 +33,14 @@ namespace CapaDatos
                 {
                     Nomina = LeerFilas.GetInt32(0),
                     Empleado = LeerFilas.GetInt32(1),
-                    Bruto = LeerFilas.GetDouble(2),
-                    Horas_Trabajadas = LeerFilas.GetInt32(3),
-                    AFP = LeerFilas.GetDouble(4),
-                    ARS = LeerFilas.GetDouble(5),
-                    ISR = LeerFilas.GetDouble(6),
-                    Neto = LeerFilas.GetDouble(7),
+                    Nombre = LeerFilas.GetString(2),
+                    Pago_Hora = LeerFilas.GetDouble(3),
+                    Horas_Trabajadas = LeerFilas.GetInt32(4),
+                    Bruto = LeerFilas.GetDouble(5),
+                    AFP = LeerFilas.GetDouble(6),
+                    ARS = LeerFilas.GetDouble(7),
+                    ISR = LeerFilas.GetDouble(8),
+                    Neto = LeerFilas.GetDouble(9),
                 });
             }
 

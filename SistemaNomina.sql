@@ -383,13 +383,25 @@ AS
 DELETE FROM Nominas
 WHERE ID_Nomina = @ID_Nomina
 
+--VIEW: Detalles
+
+GO
+CREATE VIEW Detalles_Final
+AS
+SELECT Detalles.ID_Nomina, Detalles.ID_Empleado, Nombre, Pago_Hora, Horas_Trabajadas, Sueldo_Base, AFP, ARS, ISR, Sueldo_Neto
+FROM Detalles
+INNER JOIN Nominas
+ON Nominas.ID_Nomina = Detalles.ID_Nomina
+INNER JOIN Empleados
+ON Empleados.ID_Empleado = Detalles.ID_Empleado
+
 --PROCEDIMIENTOS: Detalles
 
 GO
 CREATE PROCEDURE SP_BUSCAR_DETALLE
 @Buscar NVARCHAR(50)
 AS
-SELECT * FROM Detalles
+SELECT * FROM Detalles_Final
 WHERE	ID_Nomina LIKE '%' + @Buscar + '%'
 
 GO
@@ -456,8 +468,8 @@ INSERT INTO Departamentos VALUES ('Contabilidad')
 INSERT INTO Departamentos VALUES ('Marketing')
 INSERT INTO Departamentos VALUES ('Procesos')
 
-INSERT INTO Empleados VALUES ('721-1430987-6', 'Pepe Ortega', '14/07/2005', 2, 1, 1, 'M', '849-897-3216', 'La Esperilla, Calle Primera', 'Activo', 200)
-INSERT INTO Empleados VALUES ('831-6017108-3', 'Jack Sparrow', '09/03/2004', 3, 2, 1, 'M', '809-163-7137', 'La Altagracia, Calle #6', 'Activo', 100)
+INSERT INTO Empleados VALUES ('721-1430987-6', 'Pepe Ortega', '14/07/2005', 2, 1, 1, 'M', '849-897-3216', 'La Esperilla, Calle Primera', 'Activo', 300)
+INSERT INTO Empleados VALUES ('831-6017108-3', 'Jack Sparrow', '09/03/2004', 3, 2, 1, 'M', '809-163-7137', 'La Altagracia, Calle #6', 'Activo', 200)
 INSERT INTO Empleados VALUES ('127-5198576-1', 'Pepe Ortega', '10/11/2005', 1, 4, 1, 'M', '829-180-6106', 'Av. John F. Kennedy', 'Activo', 150)
 
 INSERT INTO Jornadas VALUES (1, '01/03/2022', '08:00:00', '16:00:00', '');
@@ -534,20 +546,4 @@ SELECT * FROM Jornadas
 SELECT * FROM Nominas
 SELECT * FROM Usuarios
 
-
-
-SELECT * FROM Jornadas WHERE Fecha = '29/03/2022' AND ID_Empleado = 1
-
-SELECT * FROM Jornadas WHERE ID_Empleado = 1 AND Fecha BETWEEN '01/03/2022' AND '30/03/2022'
-
-SELECT Periodo_Desde, Periodo_Hasta FROM Nominas WHERE ID_Nomina = 1
-
-SELECT * FROM Jornadas WHERE ID_Empleado = 1 AND Fecha BETWEEN '01/03/2022' AND '16/03/2022'
-
-SELECT ID_Empleado, Pago_Hora FROM Empleados WHERE Estado = 'Activo'
-
-SELECT SUM(Sueldo_Base) AS 'Bruto Pagado' FROM Detalles
-
-SELECT COUNT(ID_Empleado) FROM Empleados
-
-SELECT Desde, Hasta FROM Horarios WHERE ID_Horario = 2
+exec SP_BUSCAR_DETALLE ''

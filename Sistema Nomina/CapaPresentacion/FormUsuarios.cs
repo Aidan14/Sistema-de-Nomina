@@ -67,6 +67,7 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (tablaUsuarios.RowCount <= 0) return;
             Registro registro = new Registro(
                 tablaUsuarios.CurrentRow.Cells[0].Value.ToString(),
                 tablaUsuarios.CurrentRow.Cells[1].Value.ToString(),

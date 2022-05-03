@@ -57,7 +57,9 @@ namespace CapaPresentacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             mostrarBuscarTabla("");
-            Registro registro = new Registro(Convert.ToString(Convert.ToInt32(tablaNominas.Rows[tablaNominas.Rows.Count - 1].Cells["ID"].Value.ToString()) + 1), "", "", "", "", false);
+            Registro registro = new Registro();
+            
+            if (tablaNominas.RowCount > 0) registro = new Registro(Convert.ToString(Convert.ToInt32(tablaNominas.Rows[tablaNominas.Rows.Count - 1].Cells["ID"].Value.ToString()) + 1), "", "", "", "", false);
 
             AbrirManejo(registro);
         }
@@ -69,6 +71,7 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (tablaNominas.RowCount <= 0) return;
             DateTime fecha = Convert.ToDateTime(tablaNominas.CurrentRow.Cells[2].Value.ToString());
             DateTime desde = Convert.ToDateTime(tablaNominas.CurrentRow.Cells[3].Value.ToString());
             DateTime hasta = Convert.ToDateTime(tablaNominas.CurrentRow.Cells[4].Value.ToString());
@@ -87,6 +90,30 @@ namespace CapaPresentacion
         {
             Form formBG = new Form();
             using (ManejarNominas frm = new ManejarNominas(registro))
+            {
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .60d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                frm.Owner = formBG;
+                frm.TopMost = true;
+                frm.FormClosing += new FormClosingEventHandler(this.Form2_FormClosing);
+                frm.ShowDialog();
+
+                formBG.Dispose();
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Form formBG = new Form();
+            using (PreviewDetalles frm = new PreviewDetalles())
             {
                 formBG.StartPosition = FormStartPosition.Manual;
                 formBG.FormBorderStyle = FormBorderStyle.None;

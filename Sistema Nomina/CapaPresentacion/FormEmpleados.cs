@@ -85,6 +85,7 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (tablaEmpleados.RowCount <= 0) return;
             DateTime nac = Convert.ToDateTime(tablaEmpleados.CurrentRow.Cells[3].Value.ToString());
 
             Registro registro = new Registro(

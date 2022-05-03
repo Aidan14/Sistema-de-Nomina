@@ -69,6 +69,7 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (tablaJornadas.RowCount <= 0) return;
             DateTime fecha = Convert.ToDateTime(tablaJornadas.CurrentRow.Cells[2].Value.ToString());
 
             Registro registro = new Registro(

@@ -30,19 +30,28 @@ namespace CapaPresentacion
         {
             LlenarComboBoxes();
 
-            if (registro.editarse == false)
+            try
             {
-                lbFuncion.Text = "Agregar Detalle";
-            }
-            else
-            {
-                cbNomina.Text = registro.nomina;
-                cbEmpleado.Text = registro.empleado;
-                editarse = true;
-                lbFuncion.Text = "Editar Detalle";
-            }
+                if (registro.editarse == false)
+                {
+                    lbFuncion.Text = "Agregar Detalle";
+                }
+                else
+                {
+                    cbNomina.Text = registro.nomina;
+                    cbEmpleado.Text = registro.empleado;
+                    lbNombre.Text = registro.nombre;
+                    editarse = true;
+                    lbFuncion.Text = "Editar Detalle";
+                }
 
-            tablaJornadas.Columns[5].Visible = false;
+                tablaJornadas.Columns[5].Visible = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cree una nomina primero");
+                this.Close();
+            }
         }
 
         private void LlenarComboBoxes()
@@ -187,6 +196,7 @@ namespace CapaPresentacion
             else if (AntesISR > 52027 && AntesISR <= 72260) ISR = Math.Round(AntesISR * 0.2, 2);
             else if (AntesISR > 72260) Math.Round(ISR = AntesISR * 0.25, 2);
 
+            double deduccionesTotales = Math.Round(ISR + ARS + AFP);
             double neto = Math.Round(AntesISR - ISR, 2);
 
             lbHT.Text = Convert.ToString(HT);
@@ -198,6 +208,7 @@ namespace CapaPresentacion
             lbAntesISR.Text = Convert.ToString(AntesISR);
             lbISR.Text = Convert.ToString(ISR);
             lbBruto.Text = Convert.ToString(bruto);
+            lbTotalDeducciones.Text = Convert.ToString(deduccionesTotales);
             lbNeto.Text = Convert.ToString(neto);
 
         }

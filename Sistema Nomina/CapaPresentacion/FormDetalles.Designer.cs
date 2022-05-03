@@ -33,6 +33,7 @@ namespace CapaPresentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelArriba = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnPrint = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,6 +64,7 @@ namespace CapaPresentacion
             // 
             this.panelArriba.BackColor = System.Drawing.Color.White;
             this.panelArriba.Controls.Add(this.iconButton2);
+            this.panelArriba.Controls.Add(this.btnPrint);
             this.panelArriba.Controls.Add(this.btnEditar);
             this.panelArriba.Controls.Add(this.btnNuevo);
             this.panelArriba.Controls.Add(this.panel1);
@@ -89,6 +91,27 @@ namespace CapaPresentacion
             this.iconButton2.Size = new System.Drawing.Size(34, 37);
             this.iconButton2.TabIndex = 0;
             this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Gray;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnPrint.IconColor = System.Drawing.Color.White;
+            this.btnPrint.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPrint.IconSize = 24;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(219, 13);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(83, 40);
+            this.btnPrint.TabIndex = 0;
+            this.btnPrint.Text = "PDF";
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnEditar
             // 
@@ -135,9 +158,9 @@ namespace CapaPresentacion
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.txtBuscador);
             this.panel1.Controls.Add(this.iconPictureBox1);
-            this.panel1.Location = new System.Drawing.Point(223, 13);
+            this.panel1.Location = new System.Drawing.Point(321, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(706, 40);
+            this.panel1.Size = new System.Drawing.Size(608, 40);
             this.panel1.TabIndex = 8;
             // 
             // txtBuscador
@@ -173,7 +196,7 @@ namespace CapaPresentacion
             this.panel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(37, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(983, 415);
+            this.panel2.Size = new System.Drawing.Size(983, 403);
             this.panel2.TabIndex = 18;
             // 
             // tablaDetalles
@@ -188,7 +211,7 @@ namespace CapaPresentacion
             this.tablaDetalles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
@@ -240,7 +263,7 @@ namespace CapaPresentacion
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Location = new System.Drawing.Point(40, 154);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(980, 418);
+            this.panel4.Size = new System.Drawing.Size(980, 406);
             this.panel4.TabIndex = 19;
             // 
             // label
@@ -315,7 +338,7 @@ namespace CapaPresentacion
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(40, 592);
+            this.panel3.Location = new System.Drawing.Point(40, 584);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(980, 56);
             this.panel3.TabIndex = 17;
@@ -329,7 +352,7 @@ namespace CapaPresentacion
             this.panel5.Controls.Add(this.label);
             this.panel5.Controls.Add(this.lbNetoTotal);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(37, 589);
+            this.panel5.Location = new System.Drawing.Point(37, 581);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(983, 54);
             this.panel5.TabIndex = 16;
@@ -385,5 +408,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label lbBrutoTotal;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
+        private FontAwesome.Sharp.IconButton btnPrint;
     }
 }

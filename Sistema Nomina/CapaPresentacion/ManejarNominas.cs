@@ -32,6 +32,7 @@ namespace CapaPresentacion
             if (registro.editarse == false)
             {
                 cbID.Text = registro.id;
+                if (cbID.Text == "") cbID.Text = "1";
                 cbID.KeyPress += new KeyPressEventHandler(this.cbID_KeyPress);
                 mtxtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 lbFuncion.Text = "Agregar Nomina";
