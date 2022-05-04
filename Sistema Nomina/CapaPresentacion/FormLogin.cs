@@ -97,7 +97,7 @@ namespace CapaPresentacion
             if (dr.HasRows)
             {
                 dr.Read();
-                Datos datos1 = new Datos(dr.GetString(1), txtClave.Text);
+                Datos datos1 = new Datos(dr.GetString(1), dr.GetString(3));
                 new FormMenu(datos1).Show();
                 this.Hide();
             }

@@ -57,3 +57,4 @@ C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\bin\Deb
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\bin\Debug\stdole.dll
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\CapaPresentacion.PreviewDetalles.resources
+C:\Users\Aidan\Desktop\Sistema-de-Nomina\Sistema Nomina\CapaPresentacion\obj\Debug\CapaPresentacion.PreviewEmpleado.resources

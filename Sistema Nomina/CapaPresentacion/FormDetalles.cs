@@ -32,6 +32,17 @@ namespace CapaPresentacion
 
         }
 
+        public struct Datos
+        {
+            public string nomina, empleado;
+
+            public Datos(string nomina, string empleado)
+            {
+                this.nomina = nomina;
+                this.empleado = empleado;
+            }
+        }
+
         public FormDetalles()
         {
             InitializeComponent();
@@ -100,6 +111,30 @@ namespace CapaPresentacion
             }
         }
 
+        private void AbrirReporte(Datos datos)
+        {
+            Form formBG = new Form();
+            using (PreviewEmpleado frm = new PreviewEmpleado(datos))
+            {
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .60d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                frm.Owner = formBG;
+                frm.TopMost = true;
+                frm.FormClosing += new FormClosingEventHandler(this.Form2_FormClosing);
+                frm.ShowDialog();
+
+                formBG.Dispose();
+            }
+        }
+
         private void CalcularTotales()
         {
             double brutoTotal = 0, deduccionTotal = 0, netoTotal = 0;
@@ -120,7 +155,12 @@ namespace CapaPresentacion
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //new ReporteDetalles
+            if (tablaDetalles.RowCount <= 0) return;
+            Datos datos = new Datos(
+                tablaDetalles.CurrentRow.Cells[0].Value.ToString(),
+                tablaDetalles.CurrentRow.Cells[1].Value.ToString());
+
+            AbrirReporte(datos);
         }
     }
 }

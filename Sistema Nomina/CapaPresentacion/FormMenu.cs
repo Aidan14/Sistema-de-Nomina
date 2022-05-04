@@ -27,6 +27,8 @@ namespace CapaPresentacion
         {
             lbUsuario.Text = datos.nombre;
             lbRol.Text = datos.rol;
+
+            if (lbRol.Text != "admin") btnConfiguracion.Enabled = false;
             CalcularPaneles();
         }
 

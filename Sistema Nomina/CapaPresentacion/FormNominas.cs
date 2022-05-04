@@ -112,8 +112,11 @@ namespace CapaPresentacion
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (tablaNominas.RowCount <= 0) return;
+            string datos = tablaNominas.CurrentRow.Cells[0].Value.ToString();
+
             Form formBG = new Form();
-            using (PreviewDetalles frm = new PreviewDetalles())
+            using (PreviewDetalles frm = new PreviewDetalles(datos))
             {
                 formBG.StartPosition = FormStartPosition.Manual;
                 formBG.FormBorderStyle = FormBorderStyle.None;

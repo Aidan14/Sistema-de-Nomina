@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion
 {
-    partial class PreviewDetalles
+    partial class PreviewEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.reportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ReporteDetalles1 = new CapaPresentacion.ReporteDetalles();
+            this.ReporteEmpleado1 = new CapaPresentacion.ReporteEmpleado();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@ namespace CapaPresentacion
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
-            this.reportViewer.ReportSource = this.ReporteDetalles1;
+            this.reportViewer.ReportSource = this.ReporteEmpleado1;
             this.reportViewer.ShowCloseButton = false;
             this.reportViewer.ShowCopyButton = false;
             this.reportViewer.ShowGotoPageButton = false;
@@ -54,7 +54,7 @@ namespace CapaPresentacion
             this.reportViewer.ShowRefreshButton = false;
             this.reportViewer.ShowTextSearchButton = false;
             this.reportViewer.Size = new System.Drawing.Size(869, 649);
-            this.reportViewer.TabIndex = 0;
+            this.reportViewer.TabIndex = 1;
             this.reportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // btnClose
@@ -69,15 +69,15 @@ namespace CapaPresentacion
             this.btnClose.IconColor = System.Drawing.Color.Silver;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 24;
-            this.btnClose.Location = new System.Drawing.Point(829, 2);
+            this.btnClose.Location = new System.Drawing.Point(828, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(1, 3, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(39, 28);
-            this.btnClose.TabIndex = 67;
+            this.btnClose.TabIndex = 68;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // PreviewDetalles
+            // PreviewEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,17 +85,18 @@ namespace CapaPresentacion
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.reportViewer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PreviewDetalles";
+            this.Name = "PreviewEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PreviewDetalles";
-            this.Load += new System.EventHandler(this.PreviewDetalles_Load);
+            this.Text = "PreviewEmpleado";
+            this.Load += new System.EventHandler(this.PreviewEmpleado_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private CrystalDecisions.Windows.Forms.CrystalReportViewer reportViewer;
-        private ReporteDetalles ReporteDetalles1;
+        private ReporteEmpleado ReporteEmpleado1;
         private FontAwesome.Sharp.IconButton btnClose;
     }
 }

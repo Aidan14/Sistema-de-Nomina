@@ -442,12 +442,36 @@ AS
 DELETE FROM Detalles
 WHERE ID_Nomina = @ID_Nomina AND ID_Empleado = @ID_Empleado
 
--- INNER JOIN NOMINA
+--PROCEDIMIENTO: Reporte Nomina
 
-/*SELECT Nomina.Fecha, Nomina.Periodo_Desde, Nomina.Periodo_Hasta, Sueldo_Base, AFP, ARS, ISR, Sueldo_Neto
-FROM Nomina
-INNER JOIN Detalle_Nomina
-ON Detalle_Nomina.ID_Nomina = Nomina.ID_Nomina*/
+GO
+CREATE PROCEDURE SP_REPORTE_NOMINA
+@ID_Nomina INT
+AS
+SELECT Detalles.ID_Nomina, Nominas.Fecha, Usuarios.Nombre AS 'Usuario', Nominas.Periodo_Desde, Nominas.Periodo_Hasta, Detalles.ID_Empleado, Empleados.Nombre, Pago_Hora, Horas_Trabajadas, Sueldo_Base, AFP, ARS, ISR, Sueldo_Neto
+FROM Detalles
+INNER JOIN Nominas
+ON Nominas.ID_Nomina = Detalles.ID_Nomina
+INNER JOIN Empleados
+ON Empleados.ID_Empleado = Detalles.ID_Empleado
+INNER JOIN Usuarios
+ON Usuarios.ID_Usuario = Nominas.ID_Nomina
+WHERE Detalles.ID_Nomina = @ID_Nomina
+
+--PROCEDIMIENTO: Reporte Empleado
+
+GO
+CREATE PROCEDURE SP_REPORTE_EMPLEADO
+@ID_Nomina INT,
+@ID_Empleado INT
+AS
+SELECT Detalles.ID_Nomina, Nominas.Periodo_Desde, Nominas.Periodo_Hasta, Detalles.ID_Empleado, Nombre, Pago_Hora, Horas_Trabajadas, Sueldo_Base, AFP, ARS, ISR, Sueldo_Neto
+FROM Detalles
+INNER JOIN Nominas
+ON Nominas.ID_Nomina = Detalles.ID_Nomina
+INNER JOIN Empleados
+ON Empleados.ID_Empleado = Detalles.ID_Empleado
+WHERE Nominas.ID_Nomina = @ID_Nomina AND Empleados.ID_Empleado = @ID_Empleado
 
 GO
 INSERT INTO Usuarios VALUES ('Admin', '1234', 'admin')
@@ -545,5 +569,3 @@ SELECT * FROM Horarios
 SELECT * FROM Jornadas
 SELECT * FROM Nominas
 SELECT * FROM Usuarios
-
-exec SP_BUSCAR_DETALLE ''
